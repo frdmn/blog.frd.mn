@@ -1,6 +1,24 @@
 .site-header {
   position: relative;
   z-index: $z-indexFixedHeader;
-  padding: $baseUnit/1.5 $baseUnit/2;
+  padding: $baseUnit/1.5;
   background-color: $colorMain;
+  &__left,
+  &__right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__inner {
+    margin: 0 $baseUnit*1
+  }
+
+  &__left {
+    left: $baseUnit/2;
+  }
+
+  &__right {
+    right: $baseUnit/2;
+  }
 }

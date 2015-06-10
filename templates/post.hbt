@@ -2,9 +2,21 @@
 <!--{{> nav}}-->
 
 <header class="site-header">
-  <a href="/">
-    <div class="icon--penrose-small" data-grunticon-embed></div>
-  </a>
+  <div class="site-header__inner">
+    <div class="constrain constrain--max">
+      asdfasdf
+    </div>
+    <div class="site-header__left">
+      <a href="/">
+        <div class="icon--penrose-small" data-grunticon-embed></div>
+      </a>
+    </div>
+    <div class="site-header__right">
+      <a href="/">
+        <div class="icon--penrose-small" data-grunticon-embed></div>
+      </a>
+    </div>
+  </div>
 </header>
 
 <div class="constrain constrain--max">
