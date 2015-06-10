@@ -1,7 +1,7 @@
 .site-header {
   position: relative;
   z-index: $z-indexFixedHeader;
-  padding: $baseUnit/1.5;
+  padding: $baseUnit/1.75;
   background-color: $colorMain;
   &__left,
   &__right {
@@ -11,7 +11,7 @@
   }
 
   &__inner {
-    margin: 0 $baseUnit*1
+    margin: 0 $baseUnit*1.25;
   }
 
   &__left {

@@ -4,7 +4,7 @@
 <header class="site-header">
   <div class="site-header__inner">
     <div class="constrain constrain--max">
-      <h3 class="headline heading-4 headline--darkbg space--bottom-none">{{title}}</h3>
+      <h3 class="headline heading-4 headline--darkbg space--bottom-none ellipsis">{{title}}</h3>
     </div>
     <div class="site-header__left">
       <a href="/">
