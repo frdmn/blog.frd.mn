@@ -1,13 +1,22 @@
 {{> header}}
 {{> nav}}
-default
 
-<h2>{{title}}</h2>
-<h3>{{date}}</h3>
+<header class="site-header">
+  <a href="/">
+    <div class="penrose-small" data-grunticon-embed></div>
+  </a>
+</header>
 
-<article>
-    {{{contents}}}
-</article>
+<div class="constrain constrain--max">
+
+  <h2>{{title}}</h2>
+  <h3>{{date}}</h3>
+
+  <article>
+      {{{contents}}}
+  </article>
+
+</div>
 
 <nav>
   {{#if next}}
