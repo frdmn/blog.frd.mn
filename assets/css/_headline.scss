@@ -1,0 +1,18 @@
+.headline {
+  font-family: $fontSecondary;
+}
+
+.headline--darkbg {
+  color: #fff;
+}
+
+.headline--upper {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.headline--spaced {
+  letter-spacing: .25em;
+  opacity: .5;
+}
