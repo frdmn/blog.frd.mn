@@ -14,6 +14,44 @@
  * e.g. $prototyping: true;
  */
 
+$navObject: true;
+$gridObject: true;
+$buttonObject: true;
+$constrainObject: true;
+
+$fontPrimary: "ff-tisa-web-pro", serif;
+$fontSecondary: "futura-pt", sans-serif;
+
+$headingSize1: 67px;
+$headingSize2: 50px;
+$headingSize3: 37px;
+$headingSize4: 28px;
+$headingSize5: 21px;
+$headingSize6: 16px;
+
+$baseFontSize: 28px;
+$baseLineHeight: 42px;
+
+$constrainSmall:   380px;
+$constrainMedium:  480px;
+$constrainLarge:   720px;
+$constrainMax:     880px;
+
+/* colors */
+
+$colorGreyLight: #ecf0f1;
+$colorGrey:      #bdc3c7;
+
+$colorMain:     #1D77EF;
+$colorMainDark: #0000FF;
+
+$colorLink: $colorMain;
+
+/* z-indexes */
+
+$z-indexFixedHeader:    9999999;
+$z-indexFixedHeaderNav: 9999998;
+$z-indexFixedBorders:   9999997;
 
 /**
  * basicss import
@@ -21,9 +59,11 @@
 
 @import 'bower_components/basicss/basicss';
 
+$bodyBorderWidth: $baseUnit/2;
+$bodyBorderColor: $colorMain;
+
 /**
  * userstyle imports
  *
  * e.g. @import 'nav';
  */
-
