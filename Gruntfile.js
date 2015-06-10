@@ -180,6 +180,14 @@ module.exports = function(grunt) {
                 files: ['*.html'],
                 tasks: ['htmlhint', 'execute']
             },
+            templates: {
+                files: ['templates/**/*.hbt'],
+                tasks: ['execute']
+            },
+            content: {
+                files: ['content/**/*.md'],
+                tasks: ['execute']
+            },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
                 tasks: ['jshint', 'concat', 'execute'],
