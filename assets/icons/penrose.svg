@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="120px" height="109px" viewBox="0 0 120 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>penrose</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Frontpage" sketch:type="MSArtboardGroup" transform="translate(-408.000000, -46.000000)" fill="#FFFFFF">
+            <g id="penrose" sketch:type="MSLayerGroup" transform="translate(408.000000, 46.000000)">
+                <path d="M92.7270998,75.9762833 L45.6704687,76.0026488 L36.6445113,92.2356585 L119.964205,92.2487385 L69.1347578,0.114779874 L50.3954825,0.162167893 L92.7270998,75.9762833 L92.7270998,75.9762833 Z" id="right" sketch:type="MSShapeGroup"></path>
+                <path d="M50.3931646,0.155942233 L0.114068441,92.2338082 L9.33218962,108.929916 L51.0441919,32.8698753 L74.3199508,76.0014825 L92.7561945,76.0014825 L50.3931646,0.155942233 L50.3931646,0.155942233 Z" id="left" opacity="0.494869403" sketch:type="MSShapeGroup"></path>
+                <path d="M60.2457395,49.9219751 L36.6042977,92.2480087 L119.968973,92.291526 L111.409367,108.923815 L9.33593565,108.923816 L51.0538193,32.8842228 L60.2457395,49.9219751 L60.2457395,49.9219751 Z" id="bottom" opacity="0" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
