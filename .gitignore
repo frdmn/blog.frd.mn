@@ -6,6 +6,8 @@ node_modules
 bower_components
 build
 
+info.json
+
 assets/css/style.css
 assets/js/modernizr.js
 assets/js/build.js
