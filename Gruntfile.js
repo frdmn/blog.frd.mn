@@ -152,6 +152,13 @@ module.exports = function(grunt) {
             }
         },
 
+        // Execute metalsmith
+        execute: {
+            target: {
+                src: ['index.js']
+            }
+        },
+
         // Watch
         watch: {
             options: {
@@ -159,7 +166,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['<%= dirs.css %>/*.scss'],
-                tasks: ['sass:dev', 'autoprefixer']
+                tasks: ['sass:dev', 'autoprefixer', 'execute']
             },
             images: {
                 files: ['<%= dirs.images %>/*.{png,jpg,gif}'],
@@ -171,11 +178,11 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['*.html'],
-                tasks: ['htmlhint']
+                tasks: ['htmlhint', 'execute']
             },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
-                tasks: ['jshint', 'concat'],
+                tasks: ['jshint', 'concat', 'execute'],
                 options: {
                     spawn: false
                 }
