@@ -42,15 +42,15 @@ $constrainMax:     880px;
 $colorGreyLight: #ecf0f1;
 $colorGrey:      #bdc3c7;
 
-$colorMain:     #1D77EF;
+$colorMain:     #5495FA;
 $colorMainDark: #0000FF;
 
 $colorLink: $colorMain;
 
 /* z-indexes */
 
-$z-indexFixedHeader:    9999999;
-$z-indexFixedHeaderNav: 9999998;
+$z-indexFixedHeaderNav: 9999999;
+$z-indexFixedHeader:    9999998;
 $z-indexFixedBorders:   9999997;
 
 /**
@@ -59,7 +59,7 @@ $z-indexFixedBorders:   9999997;
 
 @import 'bower_components/basicss/basicss';
 
-$bodyBorderWidth: $baseUnit/2;
+$bodyBorderWidth: $baseUnit/3;
 $bodyBorderColor: $colorMain;
 
 /**
@@ -67,6 +67,8 @@ $bodyBorderColor: $colorMain;
  *
  * e.g. @import 'nav';
  */
+
+@import 'icon';
 
 @import 'base';
 @import 'site-header';

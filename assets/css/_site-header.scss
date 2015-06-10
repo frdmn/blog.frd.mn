@@ -1,3 +1,6 @@
 .site-header {
+  position: relative;
+  z-index: $z-indexFixedHeader;
+  padding: $baseUnit/1.5 $baseUnit/2;
   background-color: $colorMain;
 }

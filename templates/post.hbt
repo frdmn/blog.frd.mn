@@ -1,9 +1,9 @@
 {{> header}}
-{{> nav}}
+<!--{{> nav}}-->
 
 <header class="site-header">
   <a href="/">
-    <div class="penrose-small" data-grunticon-embed></div>
+    <div class="icon--penrose-small" data-grunticon-embed></div>
   </a>
 </header>
 
