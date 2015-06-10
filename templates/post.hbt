@@ -7,12 +7,12 @@
       <h3 class="headline heading-4 headline--darkbg space--bottom-none ellipsis">{{title}}</h3>
     </div>
     <div class="site-header__left">
-      <a href="/">
+      <a href="{{siteInfo 'url'}}">
         <div class="icon--penrose-small" data-grunticon-embed></div>
       </a>
     </div>
     <div class="site-header__right">
-      <a href="/">
+      <a href="{{siteInfo 'url'}}">
         <div class="icon--penrose-small" data-grunticon-embed></div>
       </a>
     </div>
