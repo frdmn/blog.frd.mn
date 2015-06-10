@@ -4,6 +4,7 @@
 
 node_modules
 bower_components
+build
 
 assets/css/style.css
 assets/js/modernizr.js
