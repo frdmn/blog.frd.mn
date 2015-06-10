@@ -5,9 +5,9 @@ Static blog based on [Metalsmith](http://www.metalsmith.io/)
 ## Installation
 
 1. Make sure you've installed all requirements
-2. Clone this repository:
+2. Clone this repository:  
   `git clone https://github.com/frdmn/blog.frd.mn`
-3. Install the project using `npn`, `bower` & `grunt`:
+3. Install the project using `npn`, `bower` & `grunt`:  
   `npm install && bower install && grunt`
 
 ## Contributing
