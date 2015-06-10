@@ -1,0 +1,21 @@
+{{> header}}
+{{> nav}}
+default
+
+<h2>{{title}}</h2>
+<h3>{{date}}</h3>
+
+<article>
+    {{{contents}}}
+</article>
+
+<nav>
+  {{#if next}}
+    <a href="{{next.link}}">{{next.title}}</a>
+  {{/if}}
+  {{#if previous}}
+    <a href="{{previous.link}}">{{previous.title}}</a>
+  {{/if}}
+</nav>
+
+{{> footer}}
