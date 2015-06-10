@@ -2,6 +2,7 @@
   "name": "blog-frd-mn",
   "version": "0.0.1",
   "description": "blog",
+  "main": "index.js",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-autoprefixer": "~0.6.5",
@@ -16,6 +17,14 @@
     "grunt-htmlhint": "~0.4.0",
     "grunt-notify": "^0.4.1",
     "grunt-sass": "^0.14.2",
-    "load-grunt-tasks": "~0.3.0"
+    "load-grunt-tasks": "~0.3.0",
+    "handlebars": "^3.0.3",
+    "metalsmith": "^1.7.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-feed": "0.0.6",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-sitemap": "0.0.9",
+    "metalsmith-templates": "^0.7.0"
   }
 }
