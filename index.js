@@ -5,6 +5,7 @@ var Metalsmith   = require('metalsmith'),
     permalinks   = require('metalsmith-permalinks'),
     feed         = require('metalsmith-feed'),
     sitemap      = require('metalsmith-sitemap'),
+    assets       = require('metalsmith-assets'),
     Handlebars   = require('handlebars'),
     fs           = require('fs'),
     logger       = require('./plugins/logger'),
@@ -128,6 +129,10 @@ Metalsmith(__dirname)
    * Set build destination
    */
   .destination('./build')
+  .use(assets({
+    source: './assets', // relative to the working directory
+    destination: './assets' // relative to the build directory
+  }))
   .use(logger('metadata'))
   /**
    * Set build destination
