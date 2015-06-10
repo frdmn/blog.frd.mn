@@ -1,3 +1,4 @@
+  </div>
   <script src="{{siteInfo 'url'}}/assets/js/build.js"></script>
 
   <!-- Google Analytics -->
