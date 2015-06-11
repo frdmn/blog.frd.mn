@@ -2,8 +2,6 @@ html {
   background: $bodyBorderColor;
 }
 
-html:before,
-html:after,
 body:before,
 body:after {
   position: fixed;
@@ -13,29 +11,19 @@ body:after {
   z-index: $z-indexFixedBorders;
 }
 
+body {
+  border-left: $bodyBorderWidth solid $bodyBorderColor;
+  border-right: $bodyBorderWidth solid $bodyBorderColor;
+}
 
 body:before {
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: $bodyBorderWidth;
-}
-
-body:after {
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: $bodyBorderWidth;
-}
-
-html:before {
   left: $bodyBorderWidth;
   right: $bodyBorderWidth;
   top: 0;
   height: $bodyBorderWidth;
 }
 
-html:after {
+body:after {
   left: $bodyBorderWidth;
   right: $bodyBorderWidth;
   bottom: 0;
