@@ -43,7 +43,6 @@ $colorGreyLight: #ecf0f1;
 $colorGrey:      #bdc3c7;
 
 $colorMain:     #5495FA;
-$colorMainDark: #0000FF;
 
 $colorLink: $colorMain;
 
@@ -72,5 +71,6 @@ $bodyBorderColor: $colorMain;
 
 @import 'base';
 @import 'title-bar';
+@import 'header-archive';
 @import 'headline';
 @import 'ellipsis';

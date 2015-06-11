@@ -1,0 +1,43 @@
+.header-archive {
+  position: fixed;
+  z-index: $z-indexFixedHeaderNav;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $colorMain;
+  transition: .3s;
+  transition-delay: .3s;
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+    transition: .3s;
+    box-shadow: 0 $bodyBorderWidth 0 $colorMain;
+  }
+
+  &--visible {
+    .header-archive__nav {
+      transform: translateY(100%);
+    }
+  }
+
+  &--active {
+    transform: translateY(100%);
+    .header-archive__nav {
+      transform: translateY(0);
+    }
+  }
+}
+
+.header-archive__title-bar {
+  background-color: #fff;
+  .title-bar__left {
+    left: $baseUnit/2 + $bodyBorderWidth;
+  }
+
+  .title-bar__right {
+    right: $baseUnit/2 + $bodyBorderWidth;
+  }
+}

@@ -1,35 +1,44 @@
 {{> header}}
 <!--{{> nav}}-->
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <div class="constrain constrain--max">
-      <h3 class="headline heading-4 headline--darkbg space--bottom-none ellipsis">{{title}}</h3>
-    </div>
-    <div class="site-header__left">
-      <a href="{{siteInfo 'url'}}">
-        <div class="icon--penrose-small" data-grunticon-embed></div>
-      </a>
-    </div>
-    <div class="site-header__right">
-      <a href="{{siteInfo 'url'}}">
-        <div class="icon--penrose-small" data-grunticon-embed></div>
-      </a>
+<div class="header-archive header-archive--visible">
+  <div class="header-archive__content">
+
+  </div>
+  <div class="header-archive__nav">
+    <div class="title-bar header-archive__title-bar">
+      <div class="title-bar__inner">
+        <div class="constrain constrain--max">
+          <h3 class="headline heading-4 space--bottom-none ellipsis">{{title}}</h3>
+        </div>
+        <div class="title-bar__left">
+          <a href="{{siteInfo 'url'}}">
+            <div class="icon--penrose-small-dark" data-grunticon-embed></div>
+          </a>
+        </div>
+        <div class="title-bar__right">
+          <a href="{{siteInfo 'url'}}">
+            <div class="icon--penrose-small-dark" data-grunticon-embed></div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-</header>
+</div>
 
-<header class="site-header">
-  <div class="site-header__inner">
+
+
+<header class="title-bar">
+  <div class="title-bar__inner">
     <div class="constrain constrain--max">
       <h3 class="headline heading-4 headline--darkbg space--bottom-none ellipsis">{{title}}</h3>
     </div>
-    <div class="site-header__left">
+    <div class="title-bar__left">
       <a href="{{siteInfo 'url'}}">
         <div class="icon--penrose-small" data-grunticon-embed></div>
       </a>
     </div>
-    <div class="site-header__right">
+    <div class="title-bar__right">
       <a href="{{siteInfo 'url'}}">
         <div class="icon--penrose-small" data-grunticon-embed></div>
       </a>
