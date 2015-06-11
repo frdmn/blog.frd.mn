@@ -1,7 +1,7 @@
 {{> header}}
 <!--{{> nav}}-->
 
-<div class="header-archive header-archive--visible">
+<div class="header-archive">
   <div class="header-archive__content">
 
   </div>
