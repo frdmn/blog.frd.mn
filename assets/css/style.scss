@@ -48,9 +48,10 @@ $colorLink: $colorMain;
 
 /* z-indexes */
 
-$z-indexFixedHeaderNav: 9999999;
-$z-indexFixedHeader:    9999998;
-$z-indexFixedBorders:   9999997;
+$z-indexFixedHeader:    99999;
+$z-indexFixedHeaderNav: 99998;
+
+$z-indexFixedBorders:   99997;
 
 /**
  * basicss import

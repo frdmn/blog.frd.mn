@@ -9,17 +9,18 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
   // inner div to make sure title doesnt clash
   // with absolute positioned divs (left/right)
   &__inner {
-    margin: 0 $baseUnit*1.25;
+    margin: 0 $baseUnit*1.25 + $bodyBorderWidth;
   }
-
+  
   &__left {
-    left: $baseUnit/2;
+    left: $baseUnit/2 + $bodyBorderWidth;
   }
 
   &__right {
-    right: $baseUnit/2;
+    right: $baseUnit/2 + $bodyBorderWidth;
   }
 }

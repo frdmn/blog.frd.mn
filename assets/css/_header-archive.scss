@@ -6,8 +6,7 @@
   width: 100%;
   height: 100%;
   background: $colorMain;
-  transition: .3s;
-  transition-delay: .3s;
+  transition: .3s .3s;
   &__nav {
     position: absolute;
     bottom: 0;
@@ -31,13 +30,9 @@
   }
 }
 
+// Alter title bar used inside header-archive;
+// see also: _title-bar.scss
+
 .header-archive__title-bar {
   background-color: #fff;
-  .title-bar__left {
-    left: $baseUnit/2 + $bodyBorderWidth;
-  }
-
-  .title-bar__right {
-    right: $baseUnit/2 + $bodyBorderWidth;
-  }
 }
