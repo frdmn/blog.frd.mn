@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="37px" viewBox="0 0 40 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>penrose-small-dark</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.329411765   0 0 0 0 0.584313725   0 0 0 0 0.980392157  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Post-scrolled-(to-top)" sketch:type="MSArtboardGroup" transform="translate(-31.000000, -25.000000)">
+            <text id="INSTALL-NGINX,-PHP-F" sketch:type="MSTextLayer" font-family="Futura PT" font-size="67" font-weight="633" sketch:alignment="middle">
+                <tspan x="62.7725" y="-298" fill="#000000">INSTALL NGINX, PHP-FPM, </tspan>
+                <tspan x="52.0525" y="-212" fill="#000000">MYSQL AND PHPMYADMIN </tspan>
+                <tspan x="92.353" y="-126" fill="#000000">ON OS X MAVERICKS OR </tspan>
+                <tspan x="321.292" y="-40" fill="#000000">YOSEMITE</tspan>
+                <tspan x="632.708" y="-40" font-size="38" fill="#000000"></tspan>
+                <tspan x="477" y="46" font-size="21" fill="#000000"></tspan>
+                <tspan x="301.0305" y="73" font-size="21" fill="#000000">24. JANUARY 2015 —  </tspan>
+                <tspan x="520.0815" y="73" font-size="21" fill="#1D77EF">0 COMMENTS</tspan>
+                <tspan x="652.9695" y="73" font-size="21" font-weight="313" fill="#000000"></tspan>
+            </text>
+            <rect id="Rectangle-1" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="0" y="0" width="937" height="87"></rect>
+            <g id="penrose" sketch:type="MSLayerGroup" transform="translate(31.000000, 25.000000)" fill="#000000">
+                <path d="M30.9090333,25.3254278 L15.2234896,25.3342163 L12.2148371,30.7452195 L39.9880683,30.7495795 L23.0449193,0.038259958 L16.7984942,0.0540559643 L30.9090333,25.3254278 L30.9090333,25.3254278 Z" id="right" opacity="0" sketch:type="MSShapeGroup"></path>
+                <path d="M16.7977215,0.0519807442 L0.0380228138,30.7446027 L3.11072988,36.309972 L17.0147307,10.9566251 L24.773317,25.3338275 L30.9187315,25.3338275 L16.7977215,0.0519807442 L16.7977215,0.0519807442 Z" id="left" opacity="0.494869403" sketch:type="MSShapeGroup"></path>
+                <path d="M20.0819132,16.6406584 L12.2014326,30.7493362 L39.9896578,30.763842 L37.1364558,36.3079385 L3.11197855,36.3079387 L17.0179398,10.9614076 L20.0819132,16.6406584 L20.0819132,16.6406584 Z" id="bottom" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
