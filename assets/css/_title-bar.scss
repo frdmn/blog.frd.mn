@@ -24,3 +24,8 @@
     right: $baseUnit/2 + $bodyBorderWidth;
   }
 }
+
+.title-bar--hidden {
+  transition-delay: 0s;
+  transform: translateY(-100%);
+}
