@@ -4,7 +4,17 @@
   <div class="header-archive__content">
     <div class="header-archive__content-inner">
       <div class="constrain constrain--max">
-        {{> nav}}
+        <!--{{> nav}}-->
+        <h4 class="headline heading-5 headline--upper headline--spaced headline--darkbg space--bottom-half space--top-double">Latest Posts</h2>
+        <nav>
+          <ul class="big-list big-list--darkbg">
+            {{#each collections.posts}}
+              <li>
+                <a href="{{this.link}}">{{this.title}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

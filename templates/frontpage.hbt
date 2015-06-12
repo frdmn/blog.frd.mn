@@ -1,14 +1,23 @@
 {{> header}}
-<h2>{{title}}</h2>
 
-<article>
-  <ul>
-    {{#each collections.posts}}
-      <li>
-        <h3><a href="{{this.link}}">{{this.title}}</a></h3>
-      </li>
-    {{/each}}
-  </ul>
-</article>
+<header class="title-bar text--center title-bar--spaced space--bottom-double">
+  <div class="title-bar__inner">
+    <div class="icon--penrose" data-grunticon-embed></div>
+  </div>
+</header>
+
+<div class="constrain constrain--max">
+  <h4 class="headline heading-5 headline--upper headline--spaced space--bottom-half">Latest Posts</h2>
+  <nav>
+    <ul class="big-list">
+      {{#each collections.posts}}
+        <li>
+          <a href="{{this.link}}">{{this.title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+</div>
+
 
 {{> footer}}
