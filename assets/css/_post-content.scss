@@ -22,7 +22,7 @@ $colorCodeBlock: #000;
 }
 
 .post-content {
-
+  word-wrap: break-word;
   > ul, > ol {
     @include media($breakDesktopWide) {
       margin-left: 0;
