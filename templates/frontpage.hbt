@@ -6,17 +6,19 @@
   </div>
 </header>
 
-<div class="constrain constrain--max">
-  <h4 class="headline heading-5 headline--upper headline--spaced space--bottom-half">Latest Posts</h2>
-  <nav>
-    <ul class="big-list">
-      {{#each collections.posts}}
-        <li>
-          <a href="{{this.link}}">{{this.title}}</a>
-        </li>
-      {{/each}}
-    </ul>
-  </nav>
+<div class="page-main">
+  <div class="constrain constrain--max">
+    <h4 class="headline heading-5 headline--upper headline--spaced space--bottom-half">Latest Posts</h2>
+    <nav>
+      <ul class="big-list">
+        {{#each collections.posts}}
+          <li>
+            <a href="{{this.link}}">{{this.title}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
 </div>
 
 
