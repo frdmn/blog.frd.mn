@@ -44,7 +44,10 @@ html:after {
 }
 
 .page-main {
-  margin: 0 $baseUnit;
+  margin: 0 $baseUnit/1.5;
+  @include media($breakLaptop) {
+    margin: 0 $baseUnit;
+  }
 }
 
 .page-author {
