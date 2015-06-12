@@ -37,8 +37,6 @@
   </div>
 </div>
 
-
-
 <header id="static-title-bar" class="title-bar">
   <div class="title-bar__inner">
     <div class="constrain constrain--max">
@@ -55,13 +53,18 @@
   </div>
 </header>
 
-<div class="constrain constrain--max">
-
-  <h2>{{title}}</h2>
-  <h3>{{date}}</h3>
-
+<div class="constrain constrain--max space--top-double">
   <article>
+    <header class="post-header">
+      <h1 class="headline headline--upper text--center space--bottom-half">{{title}}</h2>
+      <div class="post-header__meta space--bottom-double text--center">
+        <span class="headline headline--upper headline--spaced heading-5">{{date}} — 144 Comments</span>
+      </div>
+    </header>
+    <div class="post-content">
       {{{contents}}}
+    </div>
+
   </article>
 
 </div>
