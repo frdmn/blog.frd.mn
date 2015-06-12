@@ -68,6 +68,27 @@ $colorCodeBlock: #000;
     text-transform: uppercase;;
   }
 
+  blockquote {
+    position: relative;
+    background: $colorGreyLight;
+    text-indent: $baseUnit;
+    padding: $baseUnit/2 $baseUnit;
+    font-style: italic;
+    &:before {
+      position: absolute;
+      content: '\201C';
+      top: ceil(-$baseUnit*1);
+      left: ceil(-$baseUnit*.75); // offset text-indent
+      @include font-size($headingSize1 * 2, false);
+      color: $colorGrey;
+      font-family: $fontSecondary;
+      font-style: normal;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
 /*   h1,h2,h3 {
   border-bottom: 1px solid #eee;
   //text-align: center;
