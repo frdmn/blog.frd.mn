@@ -34,6 +34,10 @@ html:after {
   width: $bodyBorderWidth;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .page-wrap {
   background: #fff;
 }
