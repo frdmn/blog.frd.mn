@@ -12,7 +12,7 @@ $(function() {
       $body = $('body');
 
   $headerNav.headroom({
-    offset: 600,
+    offset: 180,
     classes : {
         pinned : 'header-archive--visible',
     },
