@@ -1,8 +1,15 @@
 
-@include media(max-width $breakLaptop) {
+@include media(max-width $breakLaptop - 1) {
   .media__img,
   .media__body {
     display: block;
     float: none;
+  }
+}
+
+@include media($breakLaptop) {
+  .media__img,
+  .media--small .media__img {
+    margin-right: $baseUnit;
   }
 }
