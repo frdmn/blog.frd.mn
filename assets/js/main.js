@@ -6,12 +6,15 @@
  */
 
 $(function() {
-  var $headerNav = $(".header-archive");
+  var $headerNav = $('.header-archive'),
+      $archiveToggle = $('.archive-toggle'),
+      $titleBar = $('#static-title-bar'),
+      $body = $('body');
 
   $headerNav.headroom({
     offset: 600,
     classes : {
-        pinned : "header-archive--visible",
+        pinned : 'header-archive--visible',
     },
     onPin : function() {
       if(!$headerNav.hasClass('header-archive')) $headerNav.addClass('header-archive');
@@ -27,5 +30,12 @@ $(function() {
     onNotTop : function() {
       if(!$headerNav.hasClass('header-archive')) $headerNav.addClass('header-archive');
     }
+  });
+
+  $archiveToggle.click(function() {
+    $archiveToggle.toggleClass('archive-toggle--active');
+    $headerNav.toggleClass('header-archive--active');
+    $body.toggleClass('no-scroll');
+    $titleBar.toggleClass('title-bar--hidden');
   });
 });
