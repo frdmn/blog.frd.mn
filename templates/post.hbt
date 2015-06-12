@@ -20,9 +20,7 @@
           </a>
         </div>
         <div class="title-bar__right">
-          <a href="{{siteInfo 'url'}}">
-            <div class="icon--penrose-small-dark" data-grunticon-embed></div>
-          </a>
+          <button class="archive-toggle"></button>
         </div>
       </div>
     </div>
@@ -31,7 +29,7 @@
 
 
 
-<header class="title-bar">
+<header id="static-title-bar" class="title-bar">
   <div class="title-bar__inner">
     <div class="constrain constrain--max">
       <h3 class="headline heading-4 headline--darkbg space--bottom-none ellipsis">&nbsp;</h3>
@@ -42,9 +40,7 @@
       </a>
     </div>
     <div class="title-bar__right">
-      <a href="{{siteInfo 'url'}}">
-        <div class="icon--penrose-small" data-grunticon-embed></div>
-      </a>
+      <button class="archive-toggle archive-toggle--darkbg"></button>
     </div>
   </div>
 </header>
