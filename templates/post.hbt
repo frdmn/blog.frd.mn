@@ -5,7 +5,6 @@
     <div class="header-archive__content-inner">
       <div class="page-main">
         <div class="constrain constrain--max">
-          <!--{{> nav}}-->
           <h4 class="headline heading-5 headline--upper headline--spaced headline--darkbg space--bottom-half space--top-double">Latest Posts</h2>
           <nav>
             <ul class="big-list big-list--darkbg">
@@ -71,6 +70,20 @@
   </div>
 </div>
 
+<div class="page-author">
+  <div class="constrain constrain--max">
+    <div class="media media--small">
+      <div class="media__img">
+        <img class="rounded-image" src="{{siteInfo 'url'}}/assets/images/jonas.jpg" alt="Jonas Friedmann">
+      </div>
+      <div class="media__body text--center text-lap--left">
+        <h4 class="headline headline--darkbg headline--spaced headline--upper heading-5 space--bottom-none">About the Author</h4>
+        <p>Jonas Friedmann is a 23 year old network administrator, OS X user, Linux enthusiast and allergic to animals with hair/fur.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
 <nav>
   {{#if next}}
     <a href="{{next.link}}">{{next.title}}</a>
@@ -79,5 +92,5 @@
     <a href="{{previous.link}}">{{previous.title}}</a>
   {{/if}}
 </nav>
-
+-->
 {{> footer}}

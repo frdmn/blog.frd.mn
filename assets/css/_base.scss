@@ -45,3 +45,11 @@ html:after {
 .page-main {
   margin: 0 $baseUnit;
 }
+
+.page-author {
+  padding: $baseUnit*2 $baseUnit;
+  background: $colorMain;
+  color: #fff;
+  position: relative;
+  z-index: $z-indexFixedHeader;
+}
