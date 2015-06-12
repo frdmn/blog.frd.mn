@@ -187,7 +187,7 @@ module.exports = function(grunt) {
                 tasks: ['execute']
             },
             content: {
-                files: ['content/**/*.md'],
+                files: ['src/**/*.md'],
                 tasks: ['execute']
             },
             scripts: {
