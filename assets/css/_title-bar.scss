@@ -15,15 +15,24 @@
   // inner div to make sure title doesnt clash
   // with absolute positioned divs (left/right)
   &__inner {
-    margin: 0 $baseUnit*1.25 + $bodyBorderWidth;
+    margin: 0 ceil($baseUnit*1.25 + $bodyBorderWidth);
+    @include media(max-width $breakLaptop - 1) {
+      margin: 0 ceil($baseUnit/1.5 + $bodyBorderWidth);
+    }
   }
 
   &__left {
     left: $baseUnit/2 + $bodyBorderWidth;
+    @include media(max-width $breakLaptop - 1) {
+      left: $bodyBorderWidth;
+    }
   }
 
   &__right {
     right: $baseUnit/2 + $bodyBorderWidth;
+    @include media(max-width $breakLaptop - 1) {
+      right: $bodyBorderWidth;
+    }
   }
 }
 
