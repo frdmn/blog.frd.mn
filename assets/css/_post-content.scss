@@ -22,7 +22,23 @@ $colorCodeBlock: #000;
 }
 
 .post-content {
+  > ul, > ol {
+    @include media($breakDesktopWide) {
+      margin-left: 0;
+    }
+  }
 
+  ul {
+    list-style: none;
+    > li {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '\2014';
+        left: -$baseUnit;
+      }
+    }
+  }
   code {
     @include font-size(21px,false);
     background: #000;
