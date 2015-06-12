@@ -27,6 +27,10 @@
   }
 }
 
+.title-bar--spaced {
+  padding: ceil($baseUnit*1.25);
+}
+
 .title-bar--hidden {
   transition-delay: 0s;
   transform: translateY(-100%);
