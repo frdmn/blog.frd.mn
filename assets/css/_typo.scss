@@ -1,0 +1,27 @@
+html {
+  @include media(max-width $breakLaptop) {
+    font-size: 1.25em;
+  }
+}
+/*
+h1,
+.heading-1 {
+  @include media(max-width $breakLaptop) {
+    @include font-size($headingSize3);
+  }
+}
+
+h2,
+.heading-2 {
+  @include media(max-width $breakLaptop) {
+    @include font-size($headingSize4);
+  }
+}
+
+h3,
+.heading-3 {
+  @include media(max-width $breakLaptop) {
+    @include font-size($headingSize5);
+  }
+}
+ */
