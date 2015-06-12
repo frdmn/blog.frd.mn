@@ -22,6 +22,7 @@ $colorCodeBlock: #000;
 }
 
 .post-content {
+
   > ul, > ol {
     @include media($breakDesktopWide) {
       margin-left: 0;
@@ -68,6 +69,12 @@ $colorCodeBlock: #000;
     text-transform: uppercase;;
   }
 
+  hr {
+    margin: $baseUnit 0;
+    border: 0;
+    border-top: $baseBorder;
+  }
+
   blockquote {
     position: relative;
     background: $colorGreyLight;
@@ -89,10 +96,10 @@ $colorCodeBlock: #000;
     }
   }
 
-/*   h1,h2,h3 {
-  border-bottom: 1px solid #eee;
-  //text-align: center;
-  padding-bottom: $baseUnit;
-} */
+  h1,h2,h3 {
+    border-bottom: $baseBorder;
+    //text-align: center;
+    padding-bottom: $baseUnit;
+  }
 
 }

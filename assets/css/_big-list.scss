@@ -7,7 +7,7 @@
 
   > li {
     padding: $baseUnit/2 0;
-    border-top: 4px solid rgba(0,0,0,.1);
+    border-top: $baseBorder;
     margin: 0;
     > a {
       color: #000;
@@ -15,19 +15,19 @@
   }
 
   > li:last-child {
-    border-bottom: 4px solid rgba(0,0,0,.1);
+    border-bottom: $baseBorder;
   }
 }
 
 .big-list--darkbg {
   > li {
-    border-top: 4px solid rgba(255,255,255,.1);
+    border-top: $baseBorderLight;
     > a {
       color: #FFF;
     }
   }
 
   > li:last-child {
-    border-bottom: 4px solid rgba(255,255,255,.1);
+    border-bottom: $baseBorderLight;
   }
 }
