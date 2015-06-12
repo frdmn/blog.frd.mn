@@ -1,9 +1,12 @@
 {{> header}}
-<!--{{> nav}}-->
 
 <div class="header-archive">
   <div class="header-archive__content">
-
+    <div class="header-archive__content-inner">
+      <div class="constrain constrain--max">
+        {{> nav}}
+      </div>
+    </div>
   </div>
   <div class="header-archive__nav">
     <div class="title-bar header-archive__title-bar">
