@@ -38,4 +38,8 @@ $(function() {
     $body.toggleClass('no-scroll');
     $titleBar.toggleClass('title-bar--hidden');
   });
+
+  $('.post-content pre code').each(function() {
+    $(this).parent().wrap('<div class="code-block"></div>');
+  });
 });
