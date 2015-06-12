@@ -1,0 +1,8 @@
+.rounded-image {
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  @include media(max-width $breakLaptop) {
+    max-width: 120px !important;
+    margin: 0 auto $baseUnit;
+  }
+}
