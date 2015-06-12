@@ -18,6 +18,7 @@ body:after {
   right: $bodyBorderWidth;
   bottom: 0;
   height: $bodyBorderWidth;
+  z-index: $z-indexFixedBorderBottom;
 }
 
 html:before {
@@ -51,5 +52,5 @@ html:after {
   background: $colorMain;
   color: #fff;
   position: relative;
-  z-index: $z-indexFixedHeader;
+  z-index: $z-indexPageAuthor;
 }
