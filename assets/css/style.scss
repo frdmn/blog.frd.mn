@@ -17,6 +17,7 @@
 $navObject: true;
 $gridObject: true;
 $buttonObject: true;
+$mediaObject: true;
 $constrainObject: true;
 
 $fontPrimary: "ff-tisa-web-pro", serif;
@@ -72,6 +73,7 @@ $bodyBorderColor: $colorMain;
  */
 
 @import 'icon';
+@import 'media';
 
 @import 'base';
 @import 'title-bar';

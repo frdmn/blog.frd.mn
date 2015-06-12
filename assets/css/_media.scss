@@ -1,0 +1,8 @@
+
+@include media(max-width $breakLaptop) {
+  .media__img,
+  .media__body {
+    display: block;
+    float: none;
+  }
+}
