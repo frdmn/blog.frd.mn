@@ -23,7 +23,16 @@
     <div class="title-bar header-archive__title-bar">
       <div class="title-bar__inner">
         <div class="constrain constrain--max">
-          <h3 class="headline heading-4 space--bottom-none ellipsis">{{title}}</h3>
+
+          <div class="content-swap header-archive__content-swap">
+            <div class="content-swap__original">
+              <h3 class="headline heading-4 space--bottom-none ellipsis">{{title}}</h3>
+            </div>
+            <div class="content-swap__swap">
+              <h3 class="headline heading-4 space--bottom-none headline--maincolor">Post archive</h3>
+            </div>
+          </div>
+
         </div>
         <div class="title-bar__left">
           <a href="{{siteInfo 'url'}}">
