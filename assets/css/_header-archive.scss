@@ -106,6 +106,26 @@
   }
 }
 
+.icon--penrose-small-dark {
+  #left {
+    transition: .3s .3s;
+  }
+  #bottom {
+    transition: .3s .3s;
+  }
+}
+
+.header-archive--active .icon--penrose-small-dark {
+  #left {
+    fill: $colorMain;
+    opacity: .6;
+  }
+  #bottom {
+    fill: $colorMain;
+    opacity: 1;
+  }
+}
+
 // Alter title bar used inside header-archive;
 // see also: _title-bar.scss
 
