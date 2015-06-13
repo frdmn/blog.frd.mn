@@ -13,6 +13,7 @@ $(function() {
 
   $headerNav.headroom({
     offset: 180,
+    tolerance: 5,
     classes : {
         pinned : 'header-archive--visible',
     },
