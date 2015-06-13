@@ -109,8 +109,6 @@ To seure our MySQL server, we'll exececute the provided `secure_mysql_installati
 
     mysql_secure_installation
 
- <clear>
-
     > Enter current password for root (enter for none):
 
 Press enter since you don't have one set.
