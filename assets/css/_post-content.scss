@@ -69,7 +69,11 @@ $colorCodeBlock: #000;
     padding-top: $baseUnit*3.5;
     margin-top: -$baseUnit*2;
     font-family: $fontSecondary;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+    code {
+      vertical-align: .3em;
+      font-weight: 300;
+    }
   }
 
   hr {
