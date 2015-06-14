@@ -58,10 +58,19 @@ html:after {
   }
 }
 
-.page-author {
+.page-author,
+.page-comments {
   padding: $baseUnit*2 $baseUnit;
   background: $colorMain;
   color: #fff;
   position: relative;
   z-index: $z-indexPageAuthor;
+}
+
+.page-comments {
+  padding-top: 0;
+  &__inner {
+    padding-top: $baseUnit*2;
+    border-top: $baseBorderLight;
+  }
 }
