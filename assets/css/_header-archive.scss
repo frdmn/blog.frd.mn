@@ -21,13 +21,27 @@
     bottom: 0;
     left:0;
     right: 0;
-    transition: .3s;
-    box-shadow: 0 $bodyBorderWidth 0 $colorMain;
+    transition: .3s .3s;
+    &:after {
+      position: absolute;
+      content: '';
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: $bodyBorderWidth;
+      background: $colorMain;
+      opacity: 0;
+      transition: .3s .6s;
+    }
   }
 
   &--visible {
     .header-archive__nav {
       transform: translateY(100%);
+      &:after {
+        opacity: 1;
+        transition: 0s;
+      }
     }
   }
 
@@ -35,6 +49,7 @@
     transform: translateY(100%);
     .header-archive__nav {
       transform: translateY(0);
+      transition: transform .3s, all .3s .3s;
     }
 
     .header-archive__content-inner {
