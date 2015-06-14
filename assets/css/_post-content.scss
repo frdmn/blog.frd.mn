@@ -36,7 +36,10 @@ $colorCodeBlock: #000;
       &:before {
         position: absolute;
         content: '\2014';
-        left: -$baseUnit;
+        left: -$baseUnit/1.5;
+        @include media($breakLaptop) {
+          left: -$baseUnit;
+        }
       }
     }
   }
