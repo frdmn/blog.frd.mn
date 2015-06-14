@@ -7,7 +7,7 @@
   }
   &__original,
   &__swap {
-    transition: .3s .9s;
+    transition: .3s 1.2s;
   }
   &__swap {
     position: absolute;
@@ -29,6 +29,6 @@
   .content-swap__swap {
     transform: translateY(10%);
     opacity: 1;
-    transition: .3s .9s;
+    transition: .3s 1.2s;
   }
 }
