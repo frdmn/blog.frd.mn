@@ -13,7 +13,7 @@
       <ul class="big-list">
         {{#each collections.posts}}
           <li>
-            <a href="{{this.link}}">{{this.title}}</a><span class="buzz">🔥🔥🔥</span>
+            <a href="{{this.link}}">{{this.title}}</a><span class="buzz tooltip">🔥🔥🔥<span class="tooltip__content">124 Comments!</span></span>
           </li>
         {{/each}}
       </ul>
