@@ -1,0 +1,6 @@
+.buzz {
+  font-family: sans-serif;
+  @include font-size(21px);
+  margin-left: $baseUnit/4;
+  white-space: nowrap;
+}
