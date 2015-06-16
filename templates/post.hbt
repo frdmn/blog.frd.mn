@@ -89,6 +89,20 @@
   <div class="constrain constrain--max">
     <div class="page-comments__inner">
       <h4 class="headline headline--darkbg headline--upper heading-2 space--bottom-none">Comments</h4>
+      <div id="disqus_thread" style="background: #fff; padding: 42px"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    // Required: on line below, replace text in quotes with your forum shortname
+    var disqus_shortname = 'frdmn';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </div>
   </div>
 </div>
