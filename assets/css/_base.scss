@@ -59,12 +59,17 @@ html:after {
 }
 
 .page-author,
-.page-comments {
+.page-comments,
+.page-footer {
   padding: $baseUnit*2 $baseUnit;
   background: $colorMain;
   color: #fff;
   position: relative;
   z-index: $z-indexPageAuthor;
+}
+
+.page-footer {
+  padding: $baseUnit $baseUnit;
 }
 
 .page-comments {
