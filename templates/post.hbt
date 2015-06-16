@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<header id="static-title-bar" class="title-bar">
+<header id="static-title-bar" class="title-bar space--bottom-double">
   <div class="title-bar__inner text--center">
     <a href="{{siteInfo 'url'}}">
       <div class="icon--penrose-small" data-grunticon-embed></div>
