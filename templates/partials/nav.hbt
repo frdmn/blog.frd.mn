@@ -1,4 +1,4 @@
 <ul class="nav nav--slash">
-  <li>Contact</li>
-  <li>Imprint</li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#">Imprint</a></li>
 </ul>
