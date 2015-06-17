@@ -104,6 +104,7 @@ Metalsmith(__dirname)
     directory: 'templates',
     partials: {
       nav: 'partials/nav',
+      archive: 'partials/archive',
       header: 'partials/header',
       footer: 'partials/footer'
     }

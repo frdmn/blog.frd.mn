@@ -1,51 +1,6 @@
 {{> header}}
 
-<div class="header-archive">
-  <div class="header-archive__content">
-    <div class="header-archive__content-inner">
-      <div class="page-main">
-        <div class="constrain constrain--max">
-          <h4 class="headline heading-5 headline--upper headline--spaced headline--darkbg space--bottom-half space--top-double">Latest Posts</h2>
-          <nav>
-            <ul class="big-list big-list--darkbg">
-              {{#each collections.posts}}
-                <li>
-                  <a href="{{this.link}}">{{this.title}}</a>
-                </li>
-              {{/each}}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header-archive__nav">
-    <div class="title-bar header-archive__title-bar">
-      <div class="title-bar__inner">
-        <div class="constrain constrain--max">
-
-          <div class="content-swap header-archive__content-swap">
-            <div class="content-swap__original">
-              <h3 class="headline heading-4 space--bottom-none ellipsis">{{title}}</h3>
-            </div>
-            <div class="content-swap__swap">
-              <h3 class="headline heading-4 space--bottom-none headline--maincolor">Post archive</h3>
-            </div>
-          </div>
-
-        </div>
-        <div class="title-bar__left">
-          <a href="{{siteInfo 'url'}}">
-            <div class="icon--penrose-small-dark" data-grunticon-embed></div>
-          </a>
-        </div>
-        <div class="title-bar__right">
-          <button class="archive-toggle"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{{> archive}}
 
 <header id="static-title-bar" class="title-bar space--bottom-double">
   <div class="title-bar__inner text--center">
