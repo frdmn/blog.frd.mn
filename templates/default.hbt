@@ -1,6 +1,4 @@
 {{> header}}
-{{> nav}}
-default
 
 <h2>{{title}}</h2>
 
