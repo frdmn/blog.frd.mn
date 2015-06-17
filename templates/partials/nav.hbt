@@ -1,4 +1,7 @@
 <ul class="nav nav--slash">
-  <li><a href="#">Contact</a></li>
-  <li><a href="#">Imprint</a></li>
+  {{#each collections.pages}}
+    <li>
+      <a href="{{this.link}}">{{this.title}}</a>
+    </li>
+  {{/each}}
 </ul>
