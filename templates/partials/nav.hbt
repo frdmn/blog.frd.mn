@@ -1,4 +1,7 @@
 <ul class="nav nav--slash">
+  <li>
+    <a href="{{siteInfo 'url'}}">Posts</a>
+  </li>
   {{#each collections.pages}}
     <li>
       <a href="{{this.link}}">{{this.title}}</a>
