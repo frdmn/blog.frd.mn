@@ -1,0 +1,17 @@
+.nav--slash {
+  @include font-size(18px);
+  font-family: $fontSecondary;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  a {
+    color: #fff;
+  }
+  > li {
+    &:before {
+        content: "/" "\00A0";
+    }
+    &:first-child:before{
+      display: none;
+    }
+  }
+}
