@@ -50,6 +50,9 @@ Metalsmith(__dirname)
       pattern: 'posts/*.md',
       sortBy: 'date',
       reverse: true
+    },
+    pages: {
+      pattern: 'pages/*.md'
     }
   }))
 
