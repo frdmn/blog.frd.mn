@@ -1,13 +1,10 @@
   </div>
 
-<footer class="page-footer">
-  <div class="text--center">
-    <ul class="nav space--bottom-none">
-      <li>Contact</li>
-      <li>Imprint</li>
-    </ul>
-  </div>
-</footer>
+  <footer class="page-footer">
+    <div class="text--center">
+      {{> nav}}
+    </div>
+  </footer>
   <script src="{{siteInfo 'url'}}/assets/js/build.js"></script>
 
   <!-- Google Analytics -->
