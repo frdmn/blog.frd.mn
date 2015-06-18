@@ -16,7 +16,7 @@
       <header class="post-header">
         <h1 class="headline headline--upper text--center space--bottom-half">{{title}}</h2>
         <div class="post-header__meta space--bottom-double text--center">
-          <span class="headline headline--upper headline--spaced heading-5">{{date}} — 144 Comments</span>
+          <span class="headline headline--upper headline--spaced heading-5">{{date}} — <span class="disqus-comment-count" data-disqus-identifier="{{this.disqus_id}}"></span> Comments</span>
         </div>
       </header>
       <div class="post-content">
