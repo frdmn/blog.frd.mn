@@ -16,6 +16,11 @@
   opacity: .5;
 }
 
+.headline--seperated {
+  padding-bottom: $baseUnit;
+  border-bottom: $baseBorder;
+}
+
 .headline--maincolor {
   color: $colorMain;
 }
