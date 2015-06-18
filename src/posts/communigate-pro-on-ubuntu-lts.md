@@ -1,6 +1,7 @@
 ---
 title: "Communigate Pro on Ubuntu LTS"
 date: 2014-04-02
+disqus_id: 16
 ---
 Since there is no package for Debian based ditributions, here's a short guide how to install **Communigate Pro 6.0** on Ubuntu LTS 12.04:
 

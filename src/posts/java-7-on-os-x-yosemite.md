@@ -1,6 +1,7 @@
 ---
 title: "Java 7 on OS X Yosemite"
 date: 2014-09-07
+disqus_id: 17
 ---
 If you want to install Java 7 on OS X 10.10 you probably already came across this annoying message:
 

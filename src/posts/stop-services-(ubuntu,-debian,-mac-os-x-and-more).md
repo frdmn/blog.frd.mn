@@ -1,6 +1,7 @@
 ---
 title: "How to set up proper start/stop services (Ubuntu, Debian, Mac OS X and more)"
 date: 2014-09-15
+disqus_id: 15
 ---
 I’ve noticed that there are a lot of faulty or non properly working **start/stop scripts** out there in the wild. That’s why I made the decision to build some example or default services for the common distributions (and even operating systems, like Windows). In this case our example service is Python’s `SimpleHTTPServer` which starts a web server on port 80 and serves the current working directory to the web server. The server can be easily executed by:
 

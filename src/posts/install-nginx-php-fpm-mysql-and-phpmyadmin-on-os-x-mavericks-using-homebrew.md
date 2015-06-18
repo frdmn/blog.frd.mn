@@ -1,6 +1,7 @@
 ---
 title: "Install Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X using Homebrew"
 slug: "install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-using-homebrew"
+disqus_id: 13
 date: 2014-10-19
 ---
 Recently I've got a new MacBook Pro and decided to set it up from scratch, because I use the same Time Machine backup to migrate from since about four years. Perfect time to get rid of the web server/LAMP (**L**inux **A**pache **M**ySQL **P**HP) stack and replace it with Nginx and PHP-FPM as FastCGI implementation. Below you can read how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
