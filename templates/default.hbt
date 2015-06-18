@@ -2,7 +2,9 @@
 
 <header class="title-bar text--center title-bar--spaced space--bottom-double">
   <div class="title-bar__inner">
-    <div class="icon--penrose" data-grunticon-embed></div>
+    <a href="{{siteInfo 'url'}}">
+      <div class="icon--penrose" data-grunticon-embed></div>
+    </a>
   </div>
 </header>
 
