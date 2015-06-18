@@ -10,6 +10,7 @@ var Metalsmith   = require('metalsmith'),
     fs           = require('fs'),
     logger       = require('./plugins/logger'),
     setPermalink = require('./plugins/setpermalink'),
+    setSlug      = require('./plugins/setslug'),
     setTemplate  = require('./plugins/settemplate'),
     fixPath      = require('./plugins/fixpath'),
     dateFormat   = require('./plugins/dateformat');
@@ -82,11 +83,16 @@ Metalsmith(__dirname)
   .use(dateFormat())
 
   /**
+   * set page slug to title if missing
+   */
+  .use(setSlug())
+
+  /**
    * Build permalinks
    */
   .use(permalinks({
     relative: false,
-    pattern: ':title'
+    pattern: ':slug'
   }))
 
   /**
@@ -137,7 +143,7 @@ Metalsmith(__dirname)
     source: './assets', // relative to the working directory
     destination: './assets' // relative to the build directory
   }))
-  .use(logger('metadata'))
+  //.use(logger('metadata'))
   /**
    * Set build destination
    */
