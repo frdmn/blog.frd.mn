@@ -43,8 +43,8 @@
 <div class="page-comments">
   <div class="constrain constrain--max">
     <div class="page-comments__inner">
-      <h4 class="headline headline--darkbg headline--upper heading-2 space--bottom-none">Comments</h4>
-      <div id="disqus_thread" style="background: #fff; padding: 42px"></div>
+      <h4 class="headline headline--upper headline--seperated headline--spaced heading-5">Comments</h4>
+      <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     // Required: on line below, replace text in quotes with your forum shortname
