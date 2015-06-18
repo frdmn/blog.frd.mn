@@ -29,9 +29,6 @@
   <!-- retina iPhone 6 iOS 7 -->
   <link rel="apple-touch-icon" href="{{siteInfo 'url'}}/assets/images/favicon/180x180.png" sizes="180x180">
 
-  <script src="//use.typekit.net/buq7vrx.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-
   <!-- Grunticon -->
   <script>
 
@@ -47,6 +44,9 @@
 
   </script>
   <noscript><link href="{{siteInfo 'url'}}/assets/icons/grunticon/icons.fallback.css" rel="stylesheet"></noscript>
+
+  <script src="//use.typekit.net/buq7vrx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
   <!-- Modernizr -->
   <script src="{{siteInfo 'url'}}/assets/js/modernizr.js"></script>
