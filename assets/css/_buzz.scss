@@ -1,4 +1,4 @@
-.buzz {
+.buzz-wrap {
   opacity: 0;
   transition: .3s;
   &--active {
@@ -6,9 +6,14 @@
   }
 }
 
+.disqus-comment-count {
+  display: none;
+}
+
 .buzz--frontpage {
   font-family: sans-serif;
-  @include font-size(21px);
+  @include font-size(21px,false);
   margin-left: $baseUnit/4;
   white-space: nowrap;
+  line-height: 1.5;
 }
