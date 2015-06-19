@@ -15,7 +15,8 @@
       <ul class="big-list">
         {{#each collections.posts}}
           <li>
-            <a href="{{this.link}}">{{this.title}}</a><span class="buzz tooltip">🔥🔥🔥<span class="tooltip__content"><span class="disqus-comment-count" data-disqus-identifier="{{this.disqus_id}}"></span> Comments!</span></span>
+            <a href="{{this.link}}">{{this.title}}</a>
+            <span class="buzz-wrap"><span class="disqus-comment-count" data-disqus-identifier="{{this.disqus_id}}"></span>
           </li>
         {{/each}}
       </ul>
