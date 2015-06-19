@@ -5,12 +5,14 @@
  *
  */
 
-var Buzz = function(obj) {
+var Buzz = function(obj, fullOutput) {
   this.wrapper = obj.buzz;
   this.element = this.wrapper.childNodes[0];
 
+  this.fullOutput = fullOutput || false;
+
   /*defaults*/
-  this.steps = obj.steps || '25,50,100';
+  this.steps = obj.steps || '20,50,100';
   this.buzzIcon = obj.buzzIcon || '💜';
   this.template = obj.template || '{{buzz}} {{comments}}';
   this.wrapperActiveClass = obj.activeClass || 'active';
@@ -36,21 +38,19 @@ Buzz.prototype.waitForContent = function(callback) {
 
 Buzz.prototype.show = function () {
   var buzz = this;
-  console.log('comments: ' + buzz.comments);
-  buzz.steps.forEach(function(val,key) {
-    if (buzz.comments >= parseFloat(val)) {
-      buzz.progress += buzz.buzzIcon;
-    }
-  });
-  if (this.progress) {
-    var content = this.template;
+  var content = this.template.replace('{{comments}}', this.comments);
+  if (this.fullOutput) {
+    buzz.steps.forEach(function(val,key) {
+      if (buzz.comments >= parseFloat(val)) {
+        buzz.progress += buzz.buzzIcon;
+      }
+    });
     content = content.replace('{{buzz}}', this.progress);
-    content = content.replace('{{comments}}', this.comments);
-    this.wrapper.innerHTML = content;
-    setTimeout(function() {
-      buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
-    }, 100);
   }
+  this.wrapper.innerHTML = content;
+  setTimeout(function() {
+    buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
+  }, 100);
 };
 
 $(function() {
@@ -98,6 +98,14 @@ $(function() {
     obj.buzzIcon = '🔥';
     obj.activeClass = 'buzz-wrap--active';
     obj.template = '<span class="buzz buzz--frontpage tooltip">{{buzz}}<span class="tooltip__content">{{comments}} Comments!</span></span>';
+    var buzz = new Buzz(obj, true);
+  });
+
+  $('.comments').each(function() {
+    var obj = {};
+    obj.buzz = this;
+    obj.activeClass = 'comments--active';
+    obj.template = '{{comments}} Comments!';
     var buzz = new Buzz(obj);
   });
 
