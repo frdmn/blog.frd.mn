@@ -6,28 +6,51 @@
  */
 
 var Buzz = function(obj) {
-  this.element = obj.buzz;
-  this.count = false;
+  this.wrapper = obj.buzz;
+  this.element = this.wrapper.childNodes[0];
 
-  var buzz = this;
-  buzz.waitForContent(function() {
-    buzz.show();
-  });
+  /*defaults*/
+  this.steps = obj.steps || '25,50,100';
+  this.buzzIcon = obj.buzzIcon || '💜';
+  this.template = obj.template || '{{buzz}} {{comments}}';
+  this.wrapperActiveClass = obj.activeClass || 'active';
+
+  this.comments = false;
+  this.progress = '';
+
+  this.steps = this.steps.split(',');
+
+  this.waitForContent();
 };
 
 Buzz.prototype.waitForContent = function(callback) {
   var buzz = this;
   var interval = setInterval(function() {
     if (buzz.element.innerHTML) {
-      buzz.count = buzz.element.innerHTML;
+      buzz.comments = buzz.element.innerHTML;
       clearInterval(interval);
-      callback();
+      buzz.show();
     }
   }, 50);
 };
 
 Buzz.prototype.show = function () {
-  this.element.parentNode.parentNode.className = this.element.parentNode.parentNode.className + ' buzz--active';
+  var buzz = this;
+  console.log('comments: ' + buzz.comments);
+  buzz.steps.forEach(function(val,key) {
+    if (buzz.comments >= parseFloat(val)) {
+      buzz.progress += buzz.buzzIcon;
+    }
+  });
+  if (this.progress) {
+    var content = this.template;
+    content = content.replace('{{buzz}}', this.progress);
+    content = content.replace('{{comments}}', this.comments);
+    this.wrapper.innerHTML = content;
+    setTimeout(function() {
+      buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
+    }, 100);
+  }
 };
 
 $(function() {
@@ -69,9 +92,12 @@ $(function() {
     $(this).parent().wrap('<div class="code-block"></div>');
   });
 
-  $('.disqus-comment-count').each(function() {
+  $('.buzz-wrap').each(function() {
     var obj = {};
     obj.buzz = this;
+    obj.buzzIcon = '🔥';
+    obj.activeClass = 'buzz-wrap--active';
+    obj.template = '<span class="buzz buzz--frontpage tooltip">{{buzz}}<span class="tooltip__content">{{comments}} Comments!</span></span>';
     var buzz = new Buzz(obj);
   });
 
