@@ -5,6 +5,31 @@
  *
  */
 
+var Buzz = function(obj) {
+  this.element = obj.buzz;
+  this.count = false;
+
+  var buzz = this;
+  buzz.waitForContent(function() {
+    buzz.show();
+  });
+};
+
+Buzz.prototype.waitForContent = function(callback) {
+  var buzz = this;
+  var interval = setInterval(function() {
+    if (buzz.element.innerHTML) {
+      buzz.count = buzz.element.innerHTML;
+      clearInterval(interval);
+      callback();
+    }
+  }, 50);
+};
+
+Buzz.prototype.show = function () {
+  this.element.parentNode.parentNode.className = this.element.parentNode.parentNode.className + ' buzz--active';
+};
+
 $(function() {
   var $headerNav = $('.header-archive'),
       $archiveToggle = $('.archive-toggle'),
@@ -43,4 +68,11 @@ $(function() {
   $('.post-content pre code').each(function() {
     $(this).parent().wrap('<div class="code-block"></div>');
   });
+
+  $('.disqus-comment-count').each(function() {
+    var obj = {};
+    obj.buzz = this;
+    var buzz = new Buzz(obj);
+  });
+
 });
