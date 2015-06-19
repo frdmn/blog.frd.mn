@@ -1,4 +1,12 @@
 .buzz {
+  opacity: 0;
+  transition: .3s;
+  &--active {
+    opacity: 1;
+  }
+}
+
+.buzz--frontpage {
   font-family: sans-serif;
   @include font-size(21px);
   margin-left: $baseUnit/4;
