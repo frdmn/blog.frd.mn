@@ -46,3 +46,14 @@
     }
   }
 }
+
+.tooltip--dark,
+.big-list--darkbg .tooltip { // ← get rid of this line
+  .tooltip__content {
+    background: #000;
+    color: #FFF;
+    &:before {
+      border-top: 10px solid #000;
+    }
+  }
+}
