@@ -22,7 +22,7 @@ Open a new Terminal window and install the Xcode Command Line Tools:
 
 Confirm the installation dialog with `Install`.
 
-Back in Xcode, hit `⌘ + ,` to access the *Preferences* and navigate to the *Locations* tab. Set the *Command Line Tools* to the latest version available , *Xcode 6.1 (61A1052c)* in my example:
+Back in Xcode, hit <kbd>⌘</kbd> + <kbd>,</kbd> to access the *Preferences* and navigate to the *Locations* tab. Set the *Command Line Tools* to the latest version available , *Xcode 6.1 (61A1052c)* in my example:
 
 {<1>}![Xcode.app → Preferences → Location | Command Line Tools](/content/images/2014/10/Bildschirmfoto-2014-10-20-um-11-27-56.png)
 
