@@ -5,6 +5,23 @@
  *
  */
 
+
+/**
+ * Buzz function makes it possible to work with the disqus comment count.
+ *
+ * @param  {object} obj        containing relevant information
+ * @param  {bool}   fullOutput triggers full output (including buzz-bar)
+ *
+ * obj.buzz        = wrapper element, containing disqus comment span
+ * obj.steps       = steps for the buzz bar; optional
+ * obj.buzzIcon    = character/string that is used to generate the
+ *                   buzz-bar, according to obj.steps
+ * obj.template    = template to output comments (and buzz-bar);
+ *                   {{buzz}} and {{comments}} will be replaced
+ *                   by buzz-bar and comment count
+ * obj.activeClass = active class thats aplied to obj.buzz
+ */
+
 var Buzz = function(obj, fullOutput) {
   this.wrapper = obj.buzz;
   this.element = this.wrapper.childNodes[0];
