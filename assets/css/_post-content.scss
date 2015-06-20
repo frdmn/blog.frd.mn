@@ -65,6 +65,20 @@ $colorCodeBlock: #000;
       line-height: 1 !important;
   }
 
+  kbd {
+    @include font-size(21px,false);
+    padding: .1em .3em;
+    vertical-align: .1em;
+    box-shadow:
+      0 -1px 0 rgba(0,0,0,.05) inset,
+      0 0 0 1px rgba(0,0,0,.1),
+      0 1px 1px rgba(0,0,0,.2),
+      0 1px 2px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    color: #333;
+    border-radius: 4px;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     padding-top: $baseUnit*3.5;
     margin-top: -$baseUnit*2;
