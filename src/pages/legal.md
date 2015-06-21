@@ -8,5 +8,5 @@ Jonas Friedmann
 Barbarastraße 18  
 97074 Würzburg
 
-Phone: +49 171 4494499  
-Mail: [j@frd.mn](mailto:j@frd.mn)
+<span class="emoji">📱</span> +49 171 4494499  
+<span class="emoji">💌</span> [j@frd.mn](mailto:j@frd.mn)
