@@ -12,8 +12,8 @@
 
 .buzz--frontpage {
   font-family: sans-serif;
-  @include font-size(21px,false);
+  font-size: 21px; // when setting the fontsize in rem (fontsize mixin) emojis wont be displayed on smaller devices o_O
   margin-left: $baseUnit/4;
   white-space: nowrap;
-  line-height: 1.5;
+  line-height: 1;
 }
