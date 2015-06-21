@@ -9,6 +9,7 @@
   > li {
     &:before {
         content: "/" "\00A0";
+        color: rgba(#fff, .2);
     }
     &:first-child:before{
       display: none;
