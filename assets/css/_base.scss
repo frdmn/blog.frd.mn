@@ -58,6 +58,13 @@ html:after {
   }
 }
 
+.page-main--default {
+  padding-bottom: $baseUnit;
+  @include media($breakLaptop) {
+    padding-bottom: $baseUnit*1.5;
+  }
+}
+
 .page-author,
 .page-comments,
 .page-footer {
