@@ -8,8 +8,7 @@
             <ul class="big-list big-list--darkbg">
               {{#each collections.posts}}
                 <li>
-                  <a href="{{this.link}}">{{this.title}}</a>
-                  <span class="buzz-wrap"><span class="disqus-comment-count" data-disqus-identifier="{{this.disqus_id}}"></span>
+                  <a href="{{this.link}}">{{this.title}}</a><span class="buzz-wrap"><span class="disqus-comment-count" data-disqus-identifier="{{this.disqus_id}}"></span>
                 </li>
               {{/each}}
             </ul>
