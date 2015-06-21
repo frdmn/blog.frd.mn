@@ -1,8 +1,6 @@
 ---
-title: Imprint
+title: Legal
 ---
-
-## LEGAL DISCLOSURE
 
 Information in accordance with section 5 TMG
 
