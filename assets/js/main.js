@@ -64,10 +64,12 @@ Buzz.prototype.show = function () {
     });
     content = content.replace('{{buzz}}', this.progress);
   }
-  this.wrapper.innerHTML = content;
-  setTimeout(function() {
-    buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
-  }, 100);
+  if (this.fullOutput && this.comments > this.steps[0] || !this.fullOutput) {
+    this.wrapper.innerHTML = content;
+    setTimeout(function() {
+      buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
+    }, 100);
+  }
 };
 
 $(function() {
