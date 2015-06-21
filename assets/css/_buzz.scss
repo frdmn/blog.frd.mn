@@ -1,6 +1,7 @@
 .buzz-wrap {
   opacity: 0;
   transition: .3s;
+  white-space: nowrap;
   &--active {
     opacity: 1;
   }

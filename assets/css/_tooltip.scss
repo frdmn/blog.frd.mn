@@ -1,9 +1,9 @@
 .tooltip {
   position: relative;
-  display: inline-block;
   &__content {
     position: absolute;
-    top: -140%;
+    bottom: $baseUnit;
+    //margin-top: -$baseUnit;
     left: 50%;
     display: inline-block;
     opacity: 0;
