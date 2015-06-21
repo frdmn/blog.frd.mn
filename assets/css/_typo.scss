@@ -3,6 +3,12 @@ html {
     font-size: 1.25em;
   }
 }
+
+.text--secondary {
+  font-family: $fontSecondary;
+  @include font-size($headingSize3);
+}
+
 /*
 h1,
 .heading-1 {
