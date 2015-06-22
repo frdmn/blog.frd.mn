@@ -72,6 +72,40 @@ Buzz.prototype.show = function () {
   }
 };
 
+var Disqus = function(callback) {
+  var apiKey = '';
+
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      var json = JSON.parse(xhr.responseText);
+      callback(json);
+    }
+  };
+
+  xhr.open('GET', 'https://disqus.com/api/3.0/forums/listThreads.json?forum=frdmn&limit=100&include=open&api_key='+apiKey, true);
+  xhr.send(null);
+};
+
+var test = new Disqus(function(data) {
+  console.log(data.response);
+  var r = 1;
+  data.response.forEach(function(v,k) {
+
+    if(v.identifiers[0]) {
+      console.log(r + ' ('+k+')');
+      console.log();
+      console.log(v.id, v.link);
+      console.log('title: ' + v.title);
+      console.log('identifier: ' + v.identifiers[0]);
+      console.log('posts: ' + v.posts);
+      console.log('--------------');
+
+      r++;
+    }
+  });
+});
+
 $(function() {
   var $headerNav = $('.header-archive'),
       $archiveToggle = $('.archive-toggle'),
