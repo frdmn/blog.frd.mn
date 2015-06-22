@@ -72,10 +72,62 @@ Buzz.prototype.show = function () {
   }
 };
 
-var Disqus = function(callback) {
-  var apiKey = '';
+var Disqus = function() {
+  var data = true,
+      _self = this;
 
-  var xhr = new XMLHttpRequest();
+  this.options = {};
+  this.options.cache = 1 * 1000;
+
+  if (!this.getCache()) {
+    this.retrieveData(function(data) {
+      _self.setCache(data);
+      console.log(_self.getCache());
+    });
+  } else {
+    console.log(this.getCache());
+  }
+};
+
+/**
+ * Set data
+ *
+ * @param {object}  data  disqus data returned by retrieveData function
+ */
+
+Disqus.prototype.setCache = function (data) {
+  var date = Date.now();
+  data.timestamp = date;
+  localStorage.setItem('data', JSON.stringify(this.processData(data)));
+  return this;
+};
+
+/**
+ * Get cached data
+ *
+ * @return {data|boolean}  cached data object or false if cache time is expired
+ */
+
+Disqus.prototype.getCache = function () {
+  var data = JSON.parse(localStorage.getItem('data'));
+
+  if (data.timestamp >= Date.now() - this.options.cache) {
+    return data;
+  } else {
+    return false;
+  }
+};
+
+/**
+ * Retrieve data from disqus api
+ *
+ * @return {Function}  callback containing retrieved data
+ */
+
+Disqus.prototype.retrieveData = function (callback) {
+  console.log('retrieving new data');
+  var apiKey = '',
+      xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       var json = JSON.parse(xhr.responseText);
@@ -87,24 +139,26 @@ var Disqus = function(callback) {
   xhr.send(null);
 };
 
-var test = new Disqus(function(data) {
-  console.log(data.response);
-  var r = 1;
+/**
+ * Process disqus data object, remove items lacking identifiers
+ *
+ * @param  {object}  data  disqus data returned by retrieveData function
+ * @return {object}        processed data
+ */
+
+Disqus.prototype.processData = function (data) {
+  var output = {};
+  output.timestamp = data.timestamp;
   data.response.forEach(function(v,k) {
-
-    if(v.identifiers[0]) {
-      console.log(r + ' ('+k+')');
-      console.log();
-      console.log(v.id, v.link);
-      console.log('title: ' + v.title);
-      console.log('identifier: ' + v.identifiers[0]);
-      console.log('posts: ' + v.posts);
-      console.log('--------------');
-
-      r++;
+    var id = v.identifiers[0];
+    if (id) {
+      output[id] = v;
     }
   });
-});
+  return output;
+};
+
+var test = new Disqus();
 
 $(function() {
   var $headerNav = $('.header-archive'),
