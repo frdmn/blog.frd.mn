@@ -77,16 +77,7 @@ var Disqus = function() {
       _self = this;
 
   this.options = {};
-  this.options.cache = 1 * 1000;
-
-  if (!this.getCache()) {
-    this.retrieveData(function(data) {
-      _self.setCache(data);
-      console.log(_self.getCache());
-    });
-  } else {
-    console.log(this.getCache());
-  }
+  this.options.cache = 120 * 1000;
 };
 
 /**
@@ -111,10 +102,29 @@ Disqus.prototype.setCache = function (data) {
 Disqus.prototype.getCache = function () {
   var data = JSON.parse(localStorage.getItem('data'));
 
-  if (data.timestamp >= Date.now() - this.options.cache) {
+  if (data && data.timestamp >= Date.now() - this.options.cache) {
     return data;
   } else {
     return false;
+  }
+};
+
+Disqus.prototype.getComments = function(identifier, callback) {
+  this.actualData(function(data) {
+    comments = data[identifier].posts;
+    callback(comments);
+  });
+};
+
+Disqus.prototype.actualData = function(callback) {
+  var _self = this;
+  if (!this.getCache()) {
+    this.retrieveData(function(data) {
+      _self.setCache(data);
+      callback(_self.getCache());
+    });
+  } else {
+    callback(this.getCache());
   }
 };
 
@@ -158,7 +168,7 @@ Disqus.prototype.processData = function (data) {
   return output;
 };
 
-var test = new Disqus();
+
 
 $(function() {
   var $headerNav = $('.header-archive'),
@@ -199,21 +209,33 @@ $(function() {
     $(this).parent().wrap('<div class="code-block"></div>');
   });
 
-  $('.buzz-wrap').each(function() {
-    var obj = {};
-    obj.buzz = this;
-    obj.buzzIcon = '🔥';
-    obj.activeClass = 'buzz-wrap--active';
-    obj.template = '<span class="buzz buzz--frontpage tooltip">{{buzz}}<span class="tooltip__content">{{comments}} Comments!</span></span>';
-    var buzz = new Buzz(obj, true);
-  });
+  // $('.buzz-wrap').each(function() {
+  //   var obj = {};
+  //   obj.buzz = this;
+  //   obj.buzzIcon = '🔥';
+  //   obj.activeClass = 'buzz-wrap--active';
+  //   obj.template = '<span class="buzz buzz--frontpage tooltip">{{buzz}}<span class="tooltip__content">{{comments}} Comments!</span></span>';
+  //   var buzz = new Buzz(obj, true);
+  // });
+
+  // $('.comments').each(function() {
+  //   var obj = {};
+  //   obj.buzz = this;
+  //   obj.activeClass = 'comments--active';
+  //   obj.template = '{{comments}} Comments!';
+  //   var buzz = new Buzz(obj);
+  // });
+
+  var test = new Disqus();
 
   $('.comments').each(function() {
-    var obj = {};
-    obj.buzz = this;
-    obj.activeClass = 'comments--active';
-    obj.template = '{{comments}} Comments!';
-    var buzz = new Buzz(obj);
+    var $c = $(this);
+    var id = $c.attr('data-disqus-identifier');
+
+    test.getComments(id, function(d) {
+      $c.text(d);
+    });
   });
+
 
 });
