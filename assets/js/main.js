@@ -49,7 +49,7 @@ Disqus.prototype.getCache = function () {
 };
 
 /**
- * Returns comment count for given identifier. Should
+ * Return comment count for given identifier. Should
  * be called inside ready function to make sure
  * current data is available.
  *
