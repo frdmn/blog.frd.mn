@@ -51,10 +51,10 @@ Disqus.prototype.getCache = function () {
 /**
  * Returns comment count for given identifier. Should
  * be called inside ready function to make sure
- * current data is available
+ * current data is available.
  *
  * @param  {string} identifier disqus identifier
- * @return {number}            [description]
+ * @return {number}            comment count for identifier
  */
 
 Disqus.prototype.getComments = function(identifier) {
@@ -178,30 +178,35 @@ $(function() {
   //   var buzz = new Buzz(obj);
   // });
 
+
   var test = new Disqus();
 
   test.ready(function(e) {
     $('.comments').each(function() {
-      var $c = $(this);
-      var id = $c.attr('data-disqus-identifier');
+      var $c = $(this),
+          id = $c.attr('data-disqus-identifier');
       $c.text(test.getComments(id));
     });
 
     $('.comment').each(function() {
-      var $c = $(this);
-      var id = $c.attr('data-disqus-identifier');
-      $c.text(test.getComments(id));
+      var $c = $(this),
+          id = $c.attr('data-disqus-identifier'),
+          comments = test.getComments(id),
+          buzz = false;
+
+      [10,20,100].forEach(function(v,k) {
+        if (v <= comments) {
+          buzz = Array(k + 2).join('🔥');
+        }
+      });
+
+      if (buzz) {
+        $c.text('comments: ' + comments + ' ' + buzz);
+      } else {
+        $c.text('comments: ' + comments);
+      }
     });
   });
-
-  // $('.comments').each(function() {
-  //   var $c = $(this);
-  //   var id = $c.attr('data-disqus-identifier');
-  //
-  //   test.getComments(id, function(d) {
-  //     $c.text(d);
-  //   });
-  // });
 
 
 });
