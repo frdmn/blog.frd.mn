@@ -87,7 +87,6 @@ Disqus.prototype.ready = function(callback) {
  */
 
 Disqus.prototype.retrieveData = function (callback) {
-  console.log('retrieving new data');
   var apiKey = '',
       xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
