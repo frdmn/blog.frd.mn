@@ -10,7 +10,7 @@
 
 <div class="page-main page-main--default">
   <div class="constrain constrain--large">
-    <h4 class="headline heading-5 headline--upper headline--spaced space--bottom-half">{{title}}</h2>
+    <h4 class="headline heading-5 headline--upper headline--spaced headline--light headline--seperated space--bottom">{{title}}</h2>
     <div class="text--secondary">
       {{{contents}}}
     </div>
