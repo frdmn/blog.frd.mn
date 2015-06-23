@@ -5,72 +5,11 @@
  *
  */
 
-
 /**
- * Buzz function makes it possible to work with the disqus comment count.
+ * Disqus function makes it possible to work with the
+ * disqus comment count.
  *
- * @param  {object} obj        containing relevant information
- * @param  {bool}   fullOutput triggers full output (including buzz-bar)
- *
- * obj.buzz        = wrapper element, containing disqus comment span
- * obj.steps       = steps for the buzz bar; optional
- * obj.buzzIcon    = character/string that is used to generate the
- *                   buzz-bar, according to obj.steps
- * obj.template    = template to output comments (and buzz-bar);
- *                   {{buzz}} and {{comments}} will be replaced
- *                   by buzz-bar and comment count
- * obj.activeClass = active class thats aplied to obj.buzz
  */
-
-var Buzz = function(obj, fullOutput) {
-  this.wrapper = obj.buzz;
-  this.element = this.wrapper.childNodes[0];
-
-  this.fullOutput = fullOutput || false;
-
-  /*defaults*/
-  this.steps = obj.steps || '20,50,100';
-  this.buzzIcon = obj.buzzIcon || '💜';
-  this.template = obj.template || '{{buzz}} {{comments}}';
-  this.wrapperActiveClass = obj.activeClass || 'active';
-
-  this.comments = false;
-  this.progress = '';
-
-  this.steps = this.steps.split(',');
-
-  this.waitForContent();
-};
-
-Buzz.prototype.waitForContent = function(callback) {
-  var buzz = this;
-  var interval = setInterval(function() {
-    if (buzz.element.innerHTML) {
-      buzz.comments = buzz.element.innerHTML;
-      clearInterval(interval);
-      buzz.show();
-    }
-  }, 50);
-};
-
-Buzz.prototype.show = function () {
-  var buzz = this;
-  var content = this.template.replace('{{comments}}', this.comments);
-  if (this.fullOutput) {
-    buzz.steps.forEach(function(val,key) {
-      if (buzz.comments >= parseFloat(val)) {
-        buzz.progress += buzz.buzzIcon;
-      }
-    });
-    content = content.replace('{{buzz}}', this.progress);
-  }
-  if (this.fullOutput && this.comments > this.steps[0] || !this.fullOutput) {
-    this.wrapper.innerHTML = content;
-    setTimeout(function() {
-      buzz.wrapper.className = buzz.wrapper.className + ' ' + buzz.wrapperActiveClass;
-    }, 100);
-  }
-};
 
 var Disqus = function() {
   var data = true,
@@ -109,22 +48,35 @@ Disqus.prototype.getCache = function () {
   }
 };
 
-Disqus.prototype.getComments = function(identifier, callback) {
-  this.actualData(function(data) {
-    comments = data[identifier].posts;
-    callback(comments);
-  });
+/**
+ * Returns comment count for given identifier. Should
+ * be called inside ready function to make sure
+ * current data is available
+ *
+ * @param  {string} identifier disqus identifier
+ * @return {number}            [description]
+ */
+
+Disqus.prototype.getComments = function(identifier) {
+  return this.getCache()[identifier].posts;
 };
 
-Disqus.prototype.actualData = function(callback) {
+/**
+ * Ready function to make sure current data is available.
+ *
+ * @param  {Function} callback function that is called when
+ *                             current data is available
+ */
+
+Disqus.prototype.ready = function(callback) {
   var _self = this;
-  if (!this.getCache()) {
-    this.retrieveData(function(data) {
+  if (!_self.getCache()) {
+    _self.retrieveData(function(data) {
       _self.setCache(data);
-      callback(_self.getCache());
+      callback();
     });
   } else {
-    callback(this.getCache());
+    callback();
   }
 };
 
@@ -228,14 +180,28 @@ $(function() {
 
   var test = new Disqus();
 
-  $('.comments').each(function() {
-    var $c = $(this);
-    var id = $c.attr('data-disqus-identifier');
+  test.ready(function(e) {
+    $('.comments').each(function() {
+      var $c = $(this);
+      var id = $c.attr('data-disqus-identifier');
+      $c.text(test.getComments(id));
+    });
 
-    test.getComments(id, function(d) {
-      $c.text(d);
+    $('.comment').each(function() {
+      var $c = $(this);
+      var id = $c.attr('data-disqus-identifier');
+      $c.text(test.getComments(id));
     });
   });
+
+  // $('.comments').each(function() {
+  //   var $c = $(this);
+  //   var id = $c.attr('data-disqus-identifier');
+  //
+  //   test.getComments(id, function(d) {
+  //     $c.text(d);
+  //   });
+  // });
 
 
 });
