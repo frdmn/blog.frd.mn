@@ -193,14 +193,14 @@ $(function() {
           comments = test.getComments(id),
           buzz = false;
 
-      [10,20,100].forEach(function(v,k) {
+      [15,30,100].forEach(function(v,k) {
         if (v <= comments) {
           buzz = Array(k + 2).join('🔥');
         }
       });
 
       if (buzz) {
-        $c.html('<span class="buzz buzz--frontpage tooltip">' + buzz + '<span class="tooltip__content">' + comments + ' Comments!</span></span>');
+        $c.html('<span class="tooltip">' + buzz + '<span class="tooltip__content">' + comments + ' Comments!</span></span>');
         setTimeout(function() {
           $c.parent().addClass('comment-wrap--active');
         },50);
