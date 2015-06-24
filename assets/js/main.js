@@ -200,9 +200,7 @@ $(function() {
       });
 
       if (buzz) {
-        $c.text('comments: ' + comments + ' ' + buzz);
-      } else {
-        $c.text('comments: ' + comments);
+        $c.html('<span class="buzz buzz--frontpage tooltip">' + buzz + '<span class="tooltip__content">' + comments + ' Comments!</span></span>');
       }
     });
   });
