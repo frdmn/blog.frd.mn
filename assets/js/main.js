@@ -181,7 +181,7 @@ $(function() {
   var test = new Disqus();
 
   test.ready(function(e) {
-    $('.comments').each(function() {
+    $('.comment-single').each(function() {
       var $c = $(this),
           id = $c.attr('data-disqus-identifier');
       $c.text(test.getComments(id));
