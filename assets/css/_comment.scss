@@ -1,10 +1,14 @@
-.buzz-wrap {
+/* .buzz-wrap {
   opacity: 0;
   transition: .3s;
   white-space: nowrap;
   &--active {
     opacity: 1;
   }
+} */
+
+.comment {
+  font-family: sans-serif;
 }
 
 .disqus-comment-count {
