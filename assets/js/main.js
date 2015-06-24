@@ -201,6 +201,9 @@ $(function() {
 
       if (buzz) {
         $c.html('<span class="buzz buzz--frontpage tooltip">' + buzz + '<span class="tooltip__content">' + comments + ' Comments!</span></span>');
+        setTimeout(function() {
+          $c.parent().addClass('comment-wrap--active');
+        },50);
       }
     });
   });
