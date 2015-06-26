@@ -160,24 +160,6 @@ $(function() {
     $(this).parent().wrap('<div class="code-block"></div>');
   });
 
-  // $('.buzz-wrap').each(function() {
-  //   var obj = {};
-  //   obj.buzz = this;
-  //   obj.buzzIcon = '🔥';
-  //   obj.activeClass = 'buzz-wrap--active';
-  //   obj.template = '<span class="buzz buzz--frontpage tooltip">{{buzz}}<span class="tooltip__content">{{comments}} Comments!</span></span>';
-  //   var buzz = new Buzz(obj, true);
-  // });
-
-  // $('.comments').each(function() {
-  //   var obj = {};
-  //   obj.buzz = this;
-  //   obj.activeClass = 'comments--active';
-  //   obj.template = '{{comments}} Comments!';
-  //   var buzz = new Buzz(obj);
-  // });
-
-
   var test = new Disqus();
 
   test.ready(function(e) {
