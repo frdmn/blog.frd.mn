@@ -36,7 +36,7 @@ $colorCodeBlock: #000;
       &:before {
         position: absolute;
         content: '\2014';
-        left: -$baseUnit/1.5;
+        left: ceil(-$baseUnit/1.5);
         @include media($breakLaptop) {
           left: -$baseUnit;
         }
@@ -54,7 +54,7 @@ $colorCodeBlock: #000;
   pre {
     background: $colorCodeBlock;
     overflow-x: auto;
-    padding: $baseUnit/2 $baseUnit;
+    padding: ceil($baseUnit/2) $baseUnit;
   }
 
   pre code {
@@ -80,8 +80,8 @@ $colorCodeBlock: #000;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    padding-top: $baseUnit*3.5;
-    margin-top: -$baseUnit*2;
+    padding-top: ceil($baseUnit*3.5);
+    margin-top: ceil(-$baseUnit*2);
     font-family: $fontSecondary;
     text-transform: uppercase;
     code {
@@ -100,7 +100,7 @@ $colorCodeBlock: #000;
     position: relative;
     background: $colorGreyLight;
     text-indent: $baseUnit;
-    padding: $baseUnit/2 $baseUnit;
+    padding: ceil($baseUnit/2) $baseUnit;
     font-style: italic;
     &:before {
       position: absolute;

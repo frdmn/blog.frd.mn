@@ -52,7 +52,7 @@ html:after {
 }
 
 .page-main {
-  margin: 0 $baseUnit/1.5;
+  margin: 0 ceil($baseUnit/1.5);
   @include media($breakLaptop) {
     margin: 0 $baseUnit;
   }
@@ -61,14 +61,14 @@ html:after {
 .page-main--default {
   padding-bottom: $baseUnit;
   @include media($breakLaptop) {
-    padding-bottom: $baseUnit*1.5;
+    padding-bottom: ceil($baseUnit*1.5);
   }
 }
 
 .page-author,
 .page-comments,
 .page-footer {
-  padding: $baseUnit*2 $baseUnit;
+  padding: ceil($baseUnit*2) $baseUnit;
   background: $colorMain;
   color: #fff;
   position: relative;

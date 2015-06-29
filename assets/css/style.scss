@@ -65,7 +65,7 @@ $z-indexFixedBorderBottom: 99995;
 
 @import 'bower_components/basicss/basicss';
 
-$bodyBorderWidth: $baseUnit/3;
+$bodyBorderWidth: ceil($baseUnit/3);
 $bodyBorderColor: $colorMain;
 
 /**

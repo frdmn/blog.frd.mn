@@ -63,10 +63,10 @@
 }
 
 .archive-toggle {
-  width: $baseUnit*1.5;
+  width: ceil($baseUnit*1.5);
   height: $baseUnit;
   position: relative;
-  right: -$baseUnit/4;
+  right: ceil(-$baseUnit/4);
   text-indent: -9999px;
   background: transparent;
   border: 0;
@@ -80,8 +80,8 @@
     position: absolute;
     content: '';
     top: 50%;
-    left: $baseUnit/3;
-    right: $baseUnit/3;
+    left: ceil($baseUnit/3);
+    right: ceil($baseUnit/3);
     margin-top: -2px;
     height: 5px;
     box-shadow: 0 -10px 0 #000, 0 10px 0 #000;

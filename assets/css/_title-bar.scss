@@ -1,7 +1,7 @@
 .title-bar {
   position: relative;
   z-index: $z-indexFixedHeader;
-  padding: $baseUnit/1.75;
+  padding: ceil($baseUnit/1.75);
   background-color: $colorMain;
   transition: .3s;
   transition-delay: .6s;
@@ -22,14 +22,14 @@
   }
 
   &__left {
-    left: $baseUnit/2 + $bodyBorderWidth;
+    left: ceil($baseUnit/2) + $bodyBorderWidth;
     @include media(max-width $breakLaptop - 1) {
       left: $bodyBorderWidth;
     }
   }
 
   &__right {
-    right: $baseUnit/2 + $bodyBorderWidth;
+    right: ceil($baseUnit/2) + $bodyBorderWidth;
     @include media(max-width $breakLaptop - 1) {
       right: $bodyBorderWidth;
     }

@@ -10,7 +10,7 @@
     visibility: hidden;
     background: $colorMain;
     color: #fff;
-    padding: 0 $baseUnit/4;
+    padding: 0 ceil($baseUnit/4);
     font-family: $fontSecondary;
     @include font-size(21px);
     transition: .3s;

@@ -3,10 +3,10 @@
   @include font-size($headingSize3);
   list-style: none;
   margin: 0;
-  padding-bottom: $baseUnit*2;
+  padding-bottom: ceil($baseUnit*2);
 
   > li {
-    padding: $baseUnit/2 0;
+    padding: ceil($baseUnit/2) 0;
     border-top: $baseBorder;
     margin: 0;
     > a {

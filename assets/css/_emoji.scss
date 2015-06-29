@@ -2,5 +2,5 @@
   font-family: sans-serif;
   @include font-size( $headingSize4);
   white-space: nowrap;
-  margin-right: $baseUnit/4;
+  margin-right: ceil($baseUnit/4);
 }
