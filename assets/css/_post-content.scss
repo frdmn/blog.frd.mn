@@ -54,6 +54,7 @@ $colorCodeBlock: #000;
   pre {
     background: $colorCodeBlock;
     overflow-x: auto;
+    transform: translateZ(0);
     padding: ceil($baseUnit/2) $baseUnit;
   }
 
