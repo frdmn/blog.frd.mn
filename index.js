@@ -75,7 +75,9 @@ Metalsmith(__dirname)
   /**
    * Use markdown
    */
-  .use(markdown())
+  .use(markdown({
+    langPrefix: ''
+  }))
 
   /**
    * Format dates
