@@ -20,6 +20,12 @@
 }
 
 .headline--seperated {
+  padding-bottom: $baseUnit/8;
+  margin-bottom: $baseUnit/4;
+  border-bottom: $baseBorder;
+}
+
+.headline--seperated-space {
   padding-bottom: $baseUnit;
   border-bottom: $baseBorder;
 }

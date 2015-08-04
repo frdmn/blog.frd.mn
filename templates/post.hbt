@@ -25,7 +25,6 @@
     </article>
   </div>
 </div>
-
 <div class="text--center">
   <div class="emoji emoji--large">🏁</div>
 </div>
@@ -36,8 +35,9 @@
         <img class="rounded-image" src="{{siteInfo 'url'}}/assets/images/jonas.jpg" alt="Jonas Friedmann">
       </div>
       <div class="media__body text--center text-lap--left">
-        <h4 class="headline headline--darkbg headline--spaced headline--upper heading-5 space--bottom-none">About the Author</h4>
-        <p>Jonas Friedmann is a 23 year old network administrator, OS X user, Linux enthusiast and allergic to animals with hair/fur.</p>
+        <h4 class="headline headline--spaced headline--light headline--upper headline--seperated heading-5 space--bottom-none">About the Author</h4>
+        <h4 class="headline heading-3 headline--upper space--bottom-none">Jonas Friedmann</h4>
+        <p class="text--secondary">23 year old network administrator, OS X user, Linux enthusiast and allergic to animals with hair/fur.</p>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
 <div class="page-comments">
   <div class="constrain constrain--max">
     <div class="page-comments__inner">
-      <h4 id="comments" class="headline headline--upper headline--seperated headline--spaced heading-5">Comments</h4>
+      <h4 id="comments" class="headline headline--upper headline--seperated-space headline--spaced heading-5">Comments</h4>
       <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
