@@ -70,22 +70,23 @@ html:after {
 .page-comments,
 .page-footer {
   padding: ceil($baseUnit*2) $baseUnit;
-  background: $colorMain;
-  color: #fff;
-  position: relative;
-  z-index: $z-indexPageAuthor;
 }
 
 .page-footer {
   padding: $baseUnit $baseUnit;
+  background: $colorMain;
+  position: relative;
+  z-index: $z-indexPageAuthor;
 }
 
 .page-comments {
   padding-top: 0;
   padding-bottom: 0;
   color: inherit;
+  overflow: hidden;
   &__inner {
-    background: #fff;
-    padding: $baseUnit;
+    margin-bottom: $baseUnit*2;
+    //padding: $baseUnit;
+    //border: 3px solid $colorGreyLight;
   }
 }
