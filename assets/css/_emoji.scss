@@ -4,3 +4,7 @@
   white-space: nowrap;
   margin-right: ceil($baseUnit/4);
 }
+
+.emoji--large {
+    @include font-size( $headingSize1);
+}
