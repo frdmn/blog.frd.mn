@@ -79,6 +79,7 @@ module.exports = function(grunt) {
                 'Gruntfile.js',
                 '<%= dirs.js %>/*.js',
                 '!<%= dirs.js %>/modernizr.js',
+                '!<%= dirs.js %>/highlight.pack.js',
                 '!<%= dirs.js %>/build.js'
             ]
         },
