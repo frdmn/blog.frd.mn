@@ -33,18 +33,12 @@
       right: 0;
       height: $bodyBorderWidth;
       background: $colorMain;
-      opacity: 0;
-      transition: .3s .6s;
     }
   }
 
   &--visible {
     .header-archive__nav {
       transform: translateY(100%);
-      &:after {
-        opacity: 1;
-        transition: 0s;
-      }
     }
   }
 
@@ -52,10 +46,6 @@
     transform: translateY(100%);
     .header-archive__nav {
       transform: translateY(0);
-      &:after {
-        opacity: 1;
-        transition: 0s;
-      }
     }
 
     .header-archive__content-inner {
