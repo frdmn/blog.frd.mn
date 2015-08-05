@@ -3,6 +3,7 @@ $colorCodeBlockText: #000;
 
 .code-block {
   position: relative;
+  transition: margin .2s;
   &:before, &:after{
     content: '';
     position: absolute;
@@ -20,6 +21,18 @@ $colorCodeBlockText: #000;
   &:after {
     right: 0;
     background: linear-gradient(to left, rgba($colorCodeBlock, 1) 20%, rgba($colorCodeBlock, 0)) 100%;
+  }
+  &:hover {
+    transition: margin .2s .3s;
+    @include media($breakDesktopWide) {
+      margin-left: -15%;
+      margin-right: -15%;
+    }
+
+    @include media($breakDesktopWide + 200) {
+      margin-left: -25%;
+      margin-right: -25%;
+    }
   }
 }
 
@@ -57,7 +70,11 @@ $colorCodeBlockText: #000;
     background: $colorCodeBlock;
     overflow-x: auto;
     transform: translateZ(0);
-    padding: ceil($baseUnit/2) $baseUnit;
+    padding: ceil($baseUnit/4) ceil($baseUnit/2);
+    line-height: 1.25;
+    @include media($breakTablet) {
+      padding: ceil($baseUnit/2) $baseUnit;
+    }
   }
 
   pre code {
