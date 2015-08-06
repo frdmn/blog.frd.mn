@@ -91,7 +91,6 @@ $colorCodeBlockText: #000;
       vertical-align: inherit;
       color: #000;
   }
-  }
 
   kbd {
     @include font-size(21px,false);
@@ -108,14 +107,16 @@ $colorCodeBlockText: #000;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    padding-top: ceil($baseUnit*3.5);
-    margin-top: ceil(-$baseUnit*2);
     font-family: $fontSecondary;
     text-transform: uppercase;
     code {
       //vertical-align: .3em;
       font-weight: 300;
     }
+  }
+
+  h2 {
+    margin-top: $baseUnit*2;
   }
 
   hr {
@@ -143,12 +144,6 @@ $colorCodeBlockText: #000;
     p:last-child {
       margin-bottom: 0;
     }
-  }
-
-  h1,h2,h3 {
-    border-bottom: $baseBorder;
-    //text-align: center;
-    padding-bottom: $baseUnit;
   }
 
 }
