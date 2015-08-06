@@ -161,6 +161,10 @@ $(function() {
     hljs.initHighlighting();
   });
 
+  $('.post-content p img').each(function() {
+    $(this).parent().wrap('<div class="img-block"></div>');
+  });
+
   var test = new Disqus();
 
   test.ready(function(e) {
