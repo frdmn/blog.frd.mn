@@ -1,9 +1,9 @@
 $colorCodeBlock: #fff;
-$colorCodeBlockText: #000;
+$colorCodeBlockText: $colorGreyDark;
 
 .code-block {
   position: relative;
-  transition: margin .2s;
+  margin-bottom: ceil($baseUnit/1.5);
   &:before, &:after{
     content: '';
     position: absolute;
@@ -14,12 +14,12 @@ $colorCodeBlockText: #000;
   }
 
   &:before {
-    left: 0;
+    left: -1px;
     background: linear-gradient(to right, rgba($colorCodeBlock, 1), rgba($colorCodeBlock, 0));
   }
 
   &:after {
-    right: 0;
+    right: -1px;
     background: linear-gradient(to left, rgba($colorCodeBlock, 1) 20%, rgba($colorCodeBlock, 0)) 100%;
   }
   // &:hover {
@@ -104,6 +104,7 @@ $colorCodeBlockText: #000;
   code {
     @include font-size(24px,false);
     font-family: Menlo, Courier, monospace;
+    color: $colorCodeBlockText;
   }
 
   pre {
@@ -111,11 +112,11 @@ $colorCodeBlockText: #000;
     overflow-x: auto;
     transform: translateZ(0);
     padding: ceil($baseUnit/4) ceil($baseUnit/2);
-    margin: ceil($baseUnit/4) 0;
+    margin: ceil(-$baseUnit/4) 0;
     line-height: 1.25;
     @include media($breakTablet) {
-      padding: ceil($baseUnit/2) $baseUnit;
-      margin: ceil($baseUnit/2) 0;
+      padding: ceil($baseUnit/4) $baseUnit;
+      margin: ceil(-$baseUnit/4) 0;
     }
   }
 
@@ -125,7 +126,8 @@ $colorCodeBlockText: #000;
       white-space: pre;
       padding: 0;
       vertical-align: inherit;
-      color: #000;
+      color: $colorCodeBlockText;
+      //@include font-size(21px,false);
   }
 
   kbd {
