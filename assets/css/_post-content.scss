@@ -154,6 +154,14 @@ $colorCodeBlockText: #000;
     margin-top: $baseUnit*2;
   }
 
+  h2 {
+    @include font-size(37px);
+  }
+
+  h3, h4, h5, h6 {
+    @include font-size(28px);
+  }
+
   hr {
     margin: $baseUnit 0;
     border: 0;
