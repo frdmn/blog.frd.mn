@@ -127,21 +127,9 @@ $colorCodeBlockText: #000;
 
   blockquote {
     position: relative;
-    background: $colorGreyLight;
-    text-indent: $baseUnit;
     padding: ceil($baseUnit/2) $baseUnit;
     font-style: italic;
-    &:before {
-      position: absolute;
-      content: '\201C';
-      top: ceil(-$baseUnit*1);
-      left: ceil(-$baseUnit*.75); // offset text-indent
-      @include font-size($headingSize1 * 2, false);
-      color: $colorGrey;
-      font-family: $fontSecondary;
-      font-style: normal;
-    }
-    p:last-child {
+    *:last-child {
       margin-bottom: 0;
     }
   }
