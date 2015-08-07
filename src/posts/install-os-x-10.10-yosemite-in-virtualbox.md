@@ -16,7 +16,9 @@ It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Googl
 1. Download Yosemite from the App Store
 2. Open Terminal.app
 3. Install `iesd`, to customize OS X InstallESD:  
-  `gem install iesd`
+    ```
+gem install iesd
+    ```
 4. Turn install image into base system:  
   `iesd -i "/Applications/Install OS X Yosemite.app" -o yosemite.dmg -t BaseSystem`
 5. Convert into UDSP (sparse image) format:  
@@ -32,13 +34,14 @@ It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Googl
 10. ... as well as the sparse image:  
   `hdiutil unmount "/Volumes/OS X Base System/"`
 11. Unmount both mounted disks:  
+    * via `diskutil`:  
+        ```
+        diskutil unmountDisk $(diskutil list | grep "OS X Base System" -B 4 | head -1)
+        diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)
+        ```
+    * if that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility:  
 
-  * via `diskutil`:  
-    `diskutil unmountDisk $(diskutil list | grep "OS X Base System" -B 4 | head -1)`  
-    `diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)`  
-  * if that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility:  
-
-![](https://i.imgur.com/ZBNY9o9.gif)
+    ![](https://i.imgur.com/ZBNY9o9.gif)
 
 12. Convert back to UDZO format (compressed image):  
   `hdiutil convert yosemite.sparseimage -format UDZO -o yosemitefixed.dmg`
