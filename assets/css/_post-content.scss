@@ -38,7 +38,7 @@ $colorCodeBlockText: $colorGreyDark;
 
 .img-block {
   border: 1px solid $colorGreyLight;
-  margin-bottom: ceil($baseUnit/1.5);
+  margin-bottom: ceil($baseUnit/1.5) + $baseUnit;
 
   p, img {
     margin-bottom: 0 !important; //to overwrite `.post-content p`
