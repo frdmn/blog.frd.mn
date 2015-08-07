@@ -8,7 +8,7 @@
   </div>
 </header>
 
-<div class="page-main">
+<div class="page-main page-main--frontpage">
   <div class="constrain constrain--max">
     <h4 class="headline heading-5 headline--upper headline--spaced headline--light space--bottom-half">Latest Posts</h2>
     <nav>
