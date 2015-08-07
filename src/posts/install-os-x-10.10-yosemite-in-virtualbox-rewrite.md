@@ -1,5 +1,5 @@
 ---
-title: "Install OS X 10.10 Yosemite in VirtualBox rewrite"
+title: "Install OS X 10.10 Yosemite in VirtualBox"
 date: 2015-05-31
 disqus_id: 22
 ---
