@@ -53,9 +53,9 @@ html:after {
 }
 
 .page-main {
-  margin: 0 ceil($baseUnit/1.5);
+  margin: $baseUnit ceil($baseUnit/1.5);
   @include media($breakLaptop) {
-    margin: 0 $baseUnit;
+    margin: $baseUnit*2 $baseUnit;
   }
 }
 
@@ -77,6 +77,11 @@ html:after {
   background: $colorMain;
   position: relative;
   z-index: $z-indexPageAuthor;
+}
+
+.page-post-end {
+  padding-top: 0;
+  text-align: center;
 }
 
 .page-comments {
