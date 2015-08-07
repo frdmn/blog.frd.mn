@@ -10,9 +10,11 @@
     visibility: hidden;
     background: $colorMain;
     color: #fff;
-    padding: 0 ceil($baseUnit/4);
+    padding: ceil($baseUnit/4) ceil($baseUnit/2);
     font-family: $fontSecondary;
-    @include font-size(21px);
+    @include font-size(21px, false);
+    line-height: 1.375;
+    text-align: center;
     transition: .3s;
     transform: translateX(-50%);
     &:before {
@@ -45,6 +47,13 @@
       visibility: visible;
     }
   }
+
+  &__highlight {
+    background: #fff;
+    color: #000;
+    font-style: normal;
+    padding: 0 ceil($baseUnit/8);
+  }
 }
 
 .tooltip--dark,
@@ -55,5 +64,8 @@
     &:before {
       border-top: 10px solid #000;
     }
+  }
+  .tooltip__highlight {
+    color: $colorMain;
   }
 }
