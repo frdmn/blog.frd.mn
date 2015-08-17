@@ -1,0 +1,9 @@
+a {
+  @include pageColors(color);
+  text-decoration: none;
+}
+
+a:hover {
+  @include pageColors(color);
+  text-decoration: underline;
+}
