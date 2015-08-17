@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $colorMain;
+  @include pageColors(background);
   transition: .3s .3s;
   backface-visibility: hidden;
   &__content {
@@ -32,7 +32,7 @@
       left: 0;
       right: 0;
       height: $bodyBorderWidth;
-      background: $colorMain;
+      @include pageColors(background);
     }
   }
 
@@ -97,7 +97,7 @@
 .header-archive--active .archive-toggle {
   &:before,
   &:after {
-    background: $colorMain;
+    @include pageColors(background);
     transition: .3s .3s, transform .3s .6s;
   }
   &:before {
@@ -128,11 +128,11 @@
 
 .header-archive--active .icon--penrose-small-dark {
   #left {
-    fill: $colorMain;
+    @include pageColors(fill);
     opacity: .6;
   }
   #bottom {
-    fill: $colorMain;
+    @include pageColors(fill);
     opacity: 1;
   }
 }
