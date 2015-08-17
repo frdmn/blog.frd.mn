@@ -7,7 +7,7 @@
     display: inline-block;
     opacity: 0;
     visibility: hidden;
-    background: $colorMain;
+    @include pageColors(background);
     color: #fff;
     padding: ceil($baseUnit/4) ceil($baseUnit/2);
     font-family: $fontSecondary;
@@ -27,6 +27,7 @@
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-top: 10px solid $colorMain;
+      @include pageColors(border-top-color);
     }
     &:after {
       position: absolute;
@@ -64,6 +65,6 @@
     }
   }
   .tooltip__highlight {
-    color: $colorMain;
+    @include pageColors(color);
   }
 }
