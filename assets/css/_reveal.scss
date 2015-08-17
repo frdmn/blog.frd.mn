@@ -1,0 +1,56 @@
+.reveal {
+  position: relative;
+  &__original,
+  &__swap-left,
+  &__swap-right {
+    transition: .2s .4s;
+    display: block;
+  }
+
+  &__swap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__swap-left,
+  &__swap-right {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  &__swap-left {
+    left:0;
+    transition-delay: .3s
+  }
+
+  &__swap-right {
+    right: 0;
+    transition-delay: .2s
+  }
+  @include media($breakLaptop) {
+    .no-touch &:hover {
+      .reveal__original {
+        opacity: 0;
+        transform: translateY(-50%);
+        transition-delay: .2s
+      }
+
+      .reveal__swap-left,
+      .reveal__swap-right {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal__swap-left {
+        transition-delay: .3s
+      }
+
+      .reveal__swap-right {
+        transition-delay: .4s
+      }
+    }
+  }
+}
