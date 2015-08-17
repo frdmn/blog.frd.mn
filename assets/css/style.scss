@@ -51,6 +51,20 @@ $colorMain:     #5495FA;
 
 $colorLink: $colorMain;
 
+$pageColors: (
+  blue: $colorMain,
+  red: red,
+  green: green
+);
+
+@mixin pageColors($prop: background) {
+  #{$prop}: $colorMain;
+  @each $id, $color in $pageColors {
+    .color--#{$id} & { #{$prop}: $color; }
+    &.color--#{$id} { #{$prop}: $color; }
+  }
+}
+
 /* z-indexes */
 
 $z-indexFixedHeader:    99999;
