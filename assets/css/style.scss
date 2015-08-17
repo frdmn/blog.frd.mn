@@ -61,7 +61,6 @@ $pageColors: (
   #{$prop}: $colorMain;
   @each $id, $color in $pageColors {
     .color--#{$id} & { #{$prop}: $color; }
-    &.color--#{$id} { #{$prop}: $color; }
   }
 }
 
