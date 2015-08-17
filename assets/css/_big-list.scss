@@ -10,7 +10,7 @@
     border-top: $baseBorder;
     margin: 0;
     > a {
-      color: #000;
+      color: #000 !important; //to overwrite pageColors
     }
   }
 
@@ -23,7 +23,7 @@
   > li {
     border-top: $baseBorderLight;
     > a {
-      color: #FFF;
+      color: #FFF !important; //to overwrite pageColors
     }
   }
 

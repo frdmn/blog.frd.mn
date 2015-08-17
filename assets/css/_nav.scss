@@ -4,7 +4,7 @@
   text-transform: uppercase;
   margin-bottom: 0;
   a {
-    color: #fff;
+    color: #fff !important; //to overwrite pageColors
   }
   > li {
     &:before {

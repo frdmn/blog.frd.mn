@@ -141,5 +141,5 @@
 // see also: _title-bar.scss
 
 .header-archive__title-bar {
-  background-color: #fff;
+  background-color: #fff !important; //to overwrite pageColors
 }
