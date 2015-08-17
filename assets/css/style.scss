@@ -64,6 +64,13 @@ $pageColors: (
   }
 }
 
+@mixin pageColorsHtml($prop: background) {
+  #{$prop}: $colorMain;
+  @each $id, $color in $pageColors {
+    &.color--#{$id} { #{$prop}: $color; }
+  }
+}
+
 /* z-indexes */
 
 $z-indexFixedHeader:    99999;
