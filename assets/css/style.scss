@@ -53,8 +53,11 @@ $colorLink: $colorMain;
 
 $pageColors: (
   blue: $colorMain,
-  red: red,
-  green: green
+  red: #f75b5b,
+  green: #3bb873,
+  turquoise: #44aec2,
+  greyblue: #52616b,
+  pink: #f6538f
 );
 
 @mixin pageColors($prop: background) {
