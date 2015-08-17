@@ -2,7 +2,7 @@
   position: relative;
   z-index: $z-indexFixedHeader;
   padding: ceil($baseUnit/1.75);
-  background-color: $colorMain;
+  @include pageColors(background-color);
   transition: .3s;
   transition-delay: .6s;
   &__left,
