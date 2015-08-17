@@ -3,7 +3,6 @@
   &__content {
     position: absolute;
     bottom: $baseUnit;
-    //margin-top: -$baseUnit;
     left: 50%;
     display: inline-block;
     opacity: 0;
@@ -42,7 +41,6 @@
   }
   &:hover {
     .tooltip__content {
-      transform: translateX(-50%);
       opacity: 1;
       visibility: visible;
     }
