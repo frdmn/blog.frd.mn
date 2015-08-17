@@ -31,5 +31,5 @@
 }
 
 .headline--maincolor {
-  color: $colorMain;
+  @include pageColors(color);
 }
