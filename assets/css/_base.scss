@@ -1,5 +1,5 @@
 html {
-  @include pageColors(background);
+  @include pageColorsHtml(background);
 }
 
 .page-wrap:before,
