@@ -11,7 +11,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    right: 0
   }
 
   &__swap-left,
@@ -19,6 +19,7 @@
     position: absolute;
     top: 0;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(50%);
   }
 
@@ -42,6 +43,7 @@
       .reveal__swap-left,
       .reveal__swap-right {
         opacity: 1;
+        visibility: visible;
         transform: translateY(0);
       }
       .reveal__swap-left {

@@ -19,6 +19,7 @@
     left:0;
     top: 0;
     transform: translateY(25%);
+    visibility: hidden;
     opacity: 0;
     transition: .0s .3s;
   }
@@ -33,6 +34,7 @@
   }
   .content-swap__swap {
     transform: translateY(10%);
+    visibility: visible;
     opacity: 1;
     transition: .3s 1.2s;
   }
