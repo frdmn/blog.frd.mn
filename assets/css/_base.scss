@@ -1,15 +1,15 @@
 html {
-  background: $bodyBorderColor;
+  @include pageColors(background);
 }
 
-html:before,
-html:after,
+.page-wrap:before,
+.page-wrap:after,
 body:before,
 body:after {
   position: fixed;
   pointer-events: none;
   content: '';
-  background: $bodyBorderColor;
+  @include pageColors(background);
   z-index: $z-indexFixedBorders;
   backface-visibility: hidden;
 }
@@ -30,14 +30,14 @@ body:after {
   z-index: $z-indexFixedBorderBottom;
 }
 
-html:before {
+.page-wrap:before {
   left: 0;
   top: 0;
   bottom: 0;
   width: $bodyBorderWidth;
 }
 
-html:after {
+.page-wrap:after {
   right: 0;
   top: 0;
   bottom: 0;
@@ -79,7 +79,7 @@ html:after {
 
 .page-footer {
   padding: $baseUnit $baseUnit;
-  background: $colorMain;
+  @include pageColors(background);
   position: relative;
   z-index: $z-indexPageAuthor;
 }
