@@ -1,0 +1,15 @@
+.split {
+  text-align: right;
+  list-style: none;
+  margin: 0;
+  margin-bottom: $baseUnit;
+  > li {
+    background-repeat: repeat-x !important;
+    background-position: center bottom;
+  }
+  &__title {
+    text-align: left;
+    float: left;
+    clear: left;
+  }
+}
