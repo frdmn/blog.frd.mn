@@ -109,13 +109,7 @@
   }
 }
 
-.archive-toggle--active {
-  &:before,
-  &:after {
-    box-shadow: none;
-    transition: .3s .3s, transform .3s .6s;
-  }
-}
+
 
 .icon--penrose-small-dark {
   #left {
