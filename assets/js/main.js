@@ -175,6 +175,12 @@ $(function() {
 
   var test = new Disqus();
 
+  $('a[data-page-color]').hover(function() {
+    var color = $(this).attr('data-page-color');
+    $('html').removeClassPrefix('color--');
+    $('html').addClass('color--' + color);
+  });
+
   test.ready(function(e) {
     $('.comment-single').each(function() {
       var $c = $(this),
