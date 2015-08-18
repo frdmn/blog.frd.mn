@@ -16,6 +16,7 @@
     text-align: center;
     transition: .3s;
     transform: translateX(-50%);
+    border-left: 1px solid transparent; // bad hack in order to come around a chrome bug, that results in rendering the translated element (-50%) to blurred half-pixels...
     &:before {
       position: absolute;
       content: '';
