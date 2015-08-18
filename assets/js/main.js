@@ -162,6 +162,12 @@ $(function() {
     $headerNav.toggleClass('header-archive--active');
     $body.toggleClass('no-scroll');
     $titleBar.toggleClass('title-bar--hidden');
+    $headerNav.removeClass('header-archive--page-colors');
+    setTimeout(function() {
+      if($headerNav.hasClass('header-archive--active')) {
+        $headerNav.addClass('header-archive--page-colors');
+      }
+    },300);
   });
 
   $('.post-content pre code').each(function() {
