@@ -2,6 +2,7 @@
 title: "Install OS X 10.10 Yosemite in VirtualBox"
 date: 2015-05-31
 disqus_id: 22
+pageColor: greyblue
 ---
 The guide below explains how to install OS X Yosemite 10.10 in a virtual machine using the free and powerful VirtualBox.
 
