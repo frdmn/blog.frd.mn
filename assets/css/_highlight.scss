@@ -26,27 +26,31 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-subst,
 .hljs-request,
 .hljs-status {
-  color: #333;
+  //color: #333;
+  color: map-get($pageColors, greyblue);
   font-weight: bold;
 }
 
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
-  color: #008080;
+  //color: #008080;
+  color: map-get($pageColors, green);
 }
 
 .hljs-string,
 .hljs-tag .hljs-value,
 .hljs-doctag,
 .tex .hljs-formula {
-  color: #d14;
+  //color: #d14;
+  color: map-get($pageColors, pink);
 }
 
 .hljs-title,
 .hljs-id,
 .scss .hljs-preprocessor {
-  color: #900;
+  //color: #900;
+  color: map-get($pageColors, red);
   font-weight: bold;
 }
 
@@ -59,7 +63,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-type,
 .vhdl .hljs-literal,
 .tex .hljs-command {
-  color: #458;
+  //color: #458;
+  color: map-get($pageColors, blue);
   font-weight: bold;
 }
 
@@ -67,7 +72,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-tag .hljs-title,
 .hljs-rule .hljs-property,
 .django .hljs-tag .hljs-keyword {
-  color: #000080;
+  //color: #000080;
+  color: map-get($pageColors, blue);
   font-weight: normal;
 }
 
@@ -75,11 +81,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-variable,
 .lisp .hljs-body,
 .hljs-name {
-  color: #008080;
+  //color: #008080;
+  color: map-get($pageColors, turquoise);
 }
 
 .hljs-regexp {
-  color: #009926;
+  //color: #009926;
+  color: map-get($pageColors, turquoise);
 }
 
 .hljs-symbol,
@@ -89,11 +97,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .scheme .hljs-keyword,
 .tex .hljs-special,
 .hljs-prompt {
-  color: #990073;
+  //color: #990073;
+  color: map-get($pageColors, purple);
 }
 
 .hljs-built_in {
-  color: #0086b3;
+  //color: #0086b3;
+  color: map-get($pageColors, orange);
 }
 
 .hljs-preprocessor,
