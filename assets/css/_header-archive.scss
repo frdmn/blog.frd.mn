@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   @include pageColors(background);
-  transition: .3s .3s;
+  transition: transform .3s .3s;
   backface-visibility: hidden;
   &__content {
     width: 100%;
@@ -24,7 +24,7 @@
     bottom: 0;
     left:0;
     right: 0;
-    transition: .3s;
+    transition: transform .3s;
     &:after {
       position: absolute;
       content: '';
@@ -129,11 +129,36 @@
 .header-archive--active .icon--penrose-small-dark {
   #left {
     @include pageColors(fill);
+    transition: .3s .3s;
     opacity: .6;
   }
   #bottom {
     @include pageColors(fill);
+    transition: .3s .3s;
     opacity: 1;
+  }
+}
+
+/**
+ * alter transition timing via js class
+ * header-archive--page-colors, to ensure
+ * fast page-color transitions on archive
+ * hovers.
+ */
+
+.header-archive--page-colors .archive-toggle {
+  &:before,
+  &:after {
+    transition: transform .3s .6s;
+  }
+}
+
+.header-archive--page-colors .icon--penrose-small-dark {
+  #left {
+    transition: translate .3s .3s;
+  }
+  #bottom {
+    transition: translate .3s .3s;
   }
 }
 

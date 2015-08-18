@@ -3,7 +3,7 @@
   z-index: $z-indexFixedHeader;
   padding: ceil($baseUnit/1.75);
   @include pageColors(background-color);
-  transition: .3s;
+  transition: .3s transform;
   transition-delay: .6s;
   &__left,
   &__right {
