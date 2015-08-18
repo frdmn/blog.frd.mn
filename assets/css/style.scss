@@ -57,7 +57,9 @@ $pageColors: (
   green: #3bb873,
   turquoise: #44aec2,
   greyblue: #52616b,
-  pink: #f6538f
+  pink: #f6538f,
+  purple: #5847ad,
+  orange: #e8984a
 );
 
 @mixin pageColors($prop: background) {
