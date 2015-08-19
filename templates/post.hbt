@@ -4,7 +4,7 @@
 
 <header id="static-title-bar" class="title-bar space--bottom-double">
   <div class="title-bar__inner text--center">
-    <a href="{{siteInfo 'url'}}">
+    <a href="{{siteInfo 'url'}}" data-page-color="blue">
       <div class="icon--penrose-small" data-grunticon-embed></div>
     </a>
   </div>
@@ -37,7 +37,7 @@
       <div class="media__body text--center text-lap--left">
         <h4 class="headline headline--spaced headline--light headline--upper headline--seperated heading-5 space--bottom-none">About the Author</h4>
         <h4 class="headline heading-3 headline--upper space--bottom-none">Jonas Friedmann</h4>
-        <p class="text--secondary">23 year old network administrator, OS X user, Linux enthusiast and allergic to animals with hair/fur.</p>
+        <p class="text--secondary">network administrator, OS X user, Linux enthusiast and allergic to animals with hair/fur.</p>
       </div>
     </div>
   </div>
