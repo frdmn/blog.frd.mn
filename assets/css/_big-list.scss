@@ -10,12 +10,20 @@
     border-top: $baseBorder;
     margin: 0;
     > a {
+      display: block;
       color: #000 !important; //to overwrite pageColors
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
   > li:last-child {
     border-bottom: $baseBorder;
+  }
+
+  a:hover &__title {
+    text-decoration: underline;
   }
 }
 
