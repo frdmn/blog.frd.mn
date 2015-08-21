@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="color--{{this.pageColor}}">
+<html lang="en" class="color--{{this.pageColor}}" data-page-color-original="{{this.pageColor}}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

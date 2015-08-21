@@ -5,7 +5,7 @@
         <div class="constrain constrain--max">
           <h4 class="headline heading-5 headline--upper headline--spaced headline--light headline--darkbg space--bottom-half space--top-double">Latest Posts</h2>
           <nav>
-            <ul class="big-list big-list--darkbg">
+            <ul class="big-list big-list--darkbg" data-page-color-reset>
               {{#each collections.posts}}
                 <li>
                   <a href="{{this.link}}" data-page-color="{{this.pageColor}}"><span class="big-list__title">{{this.title}}</span> <span class="comment-wrap"><span class="comment" data-disqus-identifier="{{this.disqus_id}}"></span></a></span>

@@ -1,7 +1,7 @@
   </div>
 
   <footer class="page-footer">
-    <div class="text--center">
+    <div class="text--center" data-page-color-reset>
       {{> nav}}
     </div>
   </footer>

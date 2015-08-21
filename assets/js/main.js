@@ -187,6 +187,13 @@ $(function() {
     $('html').addClass('color--' + color);
   });
 
+  $('[data-page-color-reset]').mouseleave(function() {
+    console.log('asdf');
+    var color = $('html').attr('data-page-color-original');
+    $('html').removeClassPrefix('color--');
+    $('html').addClass('color--' + color);
+  });
+
   test.ready(function(e) {
     $('.comment-single').each(function() {
       var $c = $(this),

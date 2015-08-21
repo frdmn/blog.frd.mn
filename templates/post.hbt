@@ -3,7 +3,7 @@
 {{> archive}}
 
 <header id="static-title-bar" class="title-bar space--bottom-double">
-  <div class="title-bar__inner text--center">
+  <div class="title-bar__inner text--center" data-page-color-reset>
     <a href="{{siteInfo 'url'}}" data-page-color="blue">
       <div class="icon--penrose-small" data-grunticon-embed></div>
     </a>
