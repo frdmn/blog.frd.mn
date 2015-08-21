@@ -1,6 +1,6 @@
 <ul class="nav nav--slash">
   <li>
-    <a href="{{siteInfo 'url'}}">Posts</a>
+    <a href="{{siteInfo 'url'}}" data-page-color="blue">Posts</a>
   </li>
   {{#each collections.pages}}
     <li>
