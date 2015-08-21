@@ -2,7 +2,7 @@
 
 <header class="title-bar text--center title-bar--spaced space--bottom-double">
   <div class="title-bar__inner">
-    <a href="{{siteInfo 'url'}}">
+    <a href="{{siteInfo 'url'}}" data-page-color="blue">
       <div class="icon--penrose" data-grunticon-embed></div>
     </a>
   </div>
