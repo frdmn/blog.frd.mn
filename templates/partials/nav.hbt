@@ -4,7 +4,7 @@
   </li>
   {{#each collections.pages}}
     <li>
-      <a href="{{this.link}}">{{this.title}}</a>
+      <a href="{{this.link}}" data-page-color="blue">{{this.title}}</a>
     </li>
   {{/each}}
 </ul>
