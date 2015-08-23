@@ -4,6 +4,7 @@
   "description": "blog",
   "main": "index.js",
   "devDependencies": {
+    "fs-extra": "^0.23.1",
     "grunt": "~0.4.2",
     "grunt-autoprefixer": "~0.6.5",
     "grunt-browser-sync": "~0.5.7",
