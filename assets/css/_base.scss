@@ -57,6 +57,10 @@ body:after {
   @include media($breakLaptop) {
     margin: $baseUnit*2 $baseUnit;
   }
+
+  @media print {
+    margin: 0;
+  }
 }
 
 .page-main--default {
