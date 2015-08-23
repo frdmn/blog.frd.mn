@@ -4,6 +4,9 @@ $colorCodeBlockText: $colorGreyDark;
 .code-block {
   position: relative;
   margin-bottom: ceil($baseUnit/1.5);
+  @media print {
+    margin-bottom: 0;
+  }
   &:before, &:after{
     content: '';
     position: absolute;
@@ -34,6 +37,12 @@ $colorCodeBlockText: $colorGreyDark;
   //     margin-right: -25%;
   //   }
   // }
+  @media print {
+    &:before,
+    &:after {
+      display: none
+    }
+  }
 }
 
 .img-block {
@@ -128,6 +137,10 @@ $colorCodeBlockText: $colorGreyDark;
       vertical-align: inherit;
       color: $colorCodeBlockText;
       //@include font-size(21px,false);
+      @media print {
+        overflow-wrap: inherit;
+        white-space: inherit;
+      }
   }
 
   kbd {
