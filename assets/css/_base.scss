@@ -12,6 +12,7 @@ body:after {
   @include pageColors(background);
   z-index: $z-indexFixedBorders;
   backface-visibility: hidden;
+  transition: background .2s,
 }
 
 body:before {
@@ -84,6 +85,7 @@ body:after {
 .page-footer {
   padding: $baseUnit $baseUnit;
   @include pageColors(background);
+  transition: background .2s;
   position: relative;
   z-index: $z-indexPageAuthor;
 }

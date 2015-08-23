@@ -3,8 +3,8 @@
   z-index: $z-indexFixedHeader;
   padding: ceil($baseUnit/1.75);
   @include pageColors(background-color);
-  transition: .3s transform;
-  transition-delay: .6s;
+  transition: background-color .2s, transform .3s;
+  transition-delay: 0s .6s;
   &__left,
   &__right {
     position: absolute;

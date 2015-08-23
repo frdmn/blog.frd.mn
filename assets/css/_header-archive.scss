@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   @include pageColors(background);
-  transition: transform .3s .3s;
+  transition: background .2s, transform .3s .3s;
   backface-visibility: hidden;
   &__content {
     width: 100%;
@@ -143,16 +143,16 @@
 .header-archive--page-colors .archive-toggle {
   &:before,
   &:after {
-    transition: transform .3s .6s;
+    transition: background .2s, transform .3s .6s;
   }
 }
 
 .header-archive--page-colors .icon--penrose-small-dark {
   #left {
-    transition: translate .3s .3s;
+    transition: fill .2s, translate .3s .3s;
   }
   #bottom {
-    transition: translate .3s .3s;
+    transition: fill .2s, translate .3s .3s;
   }
 }
 
@@ -161,4 +161,5 @@
 
 .header-archive__title-bar {
   background-color: #fff !important; //to overwrite pageColors
+  transition: background-color .2s;
 }
