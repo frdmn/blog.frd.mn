@@ -2,6 +2,9 @@ html {
   @include media(max-width $breakLaptop) {
     font-size: 1.25em;
   }
+  @media print {
+    font-size: .5em;
+  }
 }
 
 .text--secondary {
