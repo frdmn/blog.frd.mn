@@ -157,8 +157,11 @@ module.exports = function(grunt) {
 
         // Execute metalsmith
         execute: {
-            target: {
+            build: {
                 src: ['index.js']
+            },
+            dev: {
+                src: ['copy_dev_assets.js']
             }
         },
 
@@ -169,7 +172,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['<%= dirs.css %>/*.scss'],
-                tasks: ['sass:dev', 'autoprefixer', 'execute']
+                tasks: ['sass:dev', 'autoprefixer', 'execute:dev']
             },
             images: {
                 files: ['<%= dirs.images %>/*.{png,jpg,gif}'],
@@ -181,19 +184,19 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['*.html'],
-                tasks: ['htmlhint', 'execute']
+                tasks: ['htmlhint', 'execute:dev']
             },
             templates: {
                 files: ['templates/**/*.hbt'],
-                tasks: ['execute']
+                tasks: ['execute:build']
             },
             content: {
                 files: ['src/**/*.md'],
-                tasks: ['execute']
+                tasks: ['execute:build']
             },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
-                tasks: ['jshint', 'concat', 'execute'],
+                tasks: ['jshint', 'concat', 'execute:dev'],
                 options: {
                     spawn: false
                 }
