@@ -127,6 +127,10 @@ $colorCodeBlockText: $colorGreyDark;
       padding: ceil($baseUnit/4) $baseUnit;
       margin: ceil(-$baseUnit/4) 0;
     }
+    @media print {
+      padding: 0 ceil($baseUnit/4);
+      margin: 0 0 ceil($baseUnit/4);
+    }
   }
 
   pre code {
@@ -166,7 +170,6 @@ $colorCodeBlockText: $colorGreyDark;
   }
 
   h2 {
-    margin-top: $baseUnit*2;
     @include font-size(50px);
   }
 
@@ -177,12 +180,20 @@ $colorCodeBlockText: $colorGreyDark;
   h1, h2, h3 {
     margin-top: $baseUnit*2;
     margin-bottom: ceil($baseUnit/1.5);
+    @media print {
+      margin-top: $baseUnit;
+      margin-bottom: ceil($baseUnit/3);
+    }
   }
 
   h4, h5, h6 {
     margin-top: $baseUnit*2;
     margin-bottom: ceil($baseUnit/1.5);
     @include font-size(28px);
+    @media print {
+      margin-top: 0;
+      margin-bottom: ceil($baseUnit/3);
+    }
   }
 
   hr {
