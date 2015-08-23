@@ -25,18 +25,6 @@ $colorCodeBlockText: $colorGreyDark;
     right: -1px;
     background: linear-gradient(to left, rgba($colorCodeBlock, 1) 20%, rgba($colorCodeBlock, 0)) 100%;
   }
-  // &:hover {
-  //   transition: margin .2s .3s;
-  //   @include media($breakDesktopWide) {
-  //     margin-left: -15%;
-  //     margin-right: -15%;
-  //   }
-  //
-  //   @include media($breakDesktopWide + 200) {
-  //     margin-left: -25%;
-  //     margin-right: -25%;
-  //   }
-  // }
   @media print {
     &:before,
     &:after {
