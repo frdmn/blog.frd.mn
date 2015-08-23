@@ -100,3 +100,11 @@ body:after {
     //border: 3px solid $colorGreyLight;
   }
 }
+
+.page-author,
+.page-comments,
+.page-footer {
+  @media print {
+    display: none;
+  }
+}
