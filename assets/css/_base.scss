@@ -12,7 +12,10 @@ body:after {
   @include pageColors(background);
   z-index: $z-indexFixedBorders;
   backface-visibility: hidden;
-  transition: background .2s,
+  transition: background .2s;
+  @media print {
+    display: none;
+  }
 }
 
 body:before {
