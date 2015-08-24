@@ -5,6 +5,11 @@
   @include pageColors(background-color);
   transition: background-color .2s, transform .3s;
   transition-delay: 0s .6s;
+
+  @media print {
+    display: none;
+  }
+
   &__left,
   &__right {
     position: absolute;
