@@ -64,6 +64,16 @@ $colorCodeBlockText: $colorGreyDark;
     }
   }
 
+  > p:first-of-type:first-letter {
+    font-family: $fontSecondary;
+    float: left;
+    @include font-size($headingSize1*2.25, false);
+    line-height: 0.75;
+    margin-top: 10px;
+    margin-left: -5px;
+    margin-right: 10px;
+  }
+
   ul {
     list-style: none;
     > li {
