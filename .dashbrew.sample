@@ -1,0 +1,11 @@
+---
+blog.frdmn.dev:
+  title: blog.frdmn
+  php:
+    build: system
+  vhost:
+    servername: blog.frdmn.dev
+    serveraliases:
+      - www.blog.frdmn.dev
+    ssl: true
+    docroot: /vagrant/public/blog.frdmn.dev/build/
