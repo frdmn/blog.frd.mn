@@ -24,7 +24,7 @@
     "metalsmith": "^1.7.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.7.0",
-    "metalsmith-feed": "0.0.6",
+    "metalsmith-feed": "0.2.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-sitemap": "0.0.9",
