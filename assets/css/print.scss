@@ -1,0 +1,21 @@
+/**
+ * Print styles via princss
+ */
+
+$princssFontSecondary: "futura-pt", sans-serif;
+$princssFontCode: "Menlo", monospace;
+
+$princssBaseUnit: 12px;
+
+$princssFontSize: (
+  base: $princssBaseUnit,
+  h3: 16px,
+  h2: 21px,
+  h1: 28px
+);
+
+/**
+ * princss import
+ */
+
+@import 'bower_components/princss/print.scss';

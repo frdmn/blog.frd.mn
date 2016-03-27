@@ -9,6 +9,7 @@ build
 info.json
 
 assets/css/style.css
+assets/css/print.css
 assets/js/modernizr.js
 assets/js/build.js
 assets/icons/grunticon

@@ -19,7 +19,8 @@ module.exports = function(grunt) {
                     loadPath: '.'
                 },
                 files: {
-                    '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss'
+                    '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss',
+                    '<%= dirs.css %>/print.css': '<%= dirs.css %>/print.scss'
                 }
             },
             build: {
@@ -28,7 +29,8 @@ module.exports = function(grunt) {
                     loadPath: '.'
                 },
                 files: {
-                    '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss'
+                    '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss',
+                    '<%= dirs.css %>/print.css': '<%= dirs.bower %>/princss/print.scss'
                 }
             }
         },
