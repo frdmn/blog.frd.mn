@@ -2,7 +2,7 @@
 
 {{> archive}}
 
-<header id="static-title-bar" class="title-bar space--bottom-double">
+<header id="static-title-bar" class="title-bar space--bottom-double unprintable">
   <div class="title-bar__inner text--center" data-page-color-reset>
     <a href="{{siteInfo 'url'}}" data-page-color="blue">
       <div class="icon--penrose-small" data-grunticon-embed></div>
@@ -25,10 +25,10 @@
     </article>
   </div>
 </div>
-<div class="page-post-end">
+<div class="page-post-end unprintable">
   <div class="emoji emoji--large">🏁</div>
 </div>
-<div class="page-author">
+<div class="page-author unprintable">
   <div class="constrain constrain--max">
     <div class="media media--small">
       <div class="media__img">
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<div class="page-comments">
+<div class="page-comments unprintable">
   <div class="constrain constrain--max">
     <div class="page-comments__inner">
       <h4 id="comments" class="headline headline--upper headline--seperated-space heading-2">Comments</h4>

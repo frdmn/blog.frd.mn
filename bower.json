@@ -18,6 +18,7 @@
     "basicss": "~0.2.0",
     "jquery": "1.11",
     "modernizr": "~2.8.1",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "princss": "rnarian/princss"
   }
 }
