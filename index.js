@@ -108,6 +108,17 @@ Metalsmith(__dirname)
   .use(setPermalink())
 
   /**
+   * Build RSS Feed
+   */
+  .use(feed({
+    collection: 'posts',
+    destination: 'rss/rss.xml',
+    postDescription: function(file) {
+      return file.contents;
+    }
+  }))
+
+  /**
    * Render pages
    */
   .use(templates({
@@ -127,14 +138,6 @@ Metalsmith(__dirname)
   .use(sitemap({
     output: 'sitemap.xml',
     hostname: info.url
-  }))
-
-  /**
-   * Build RSS Feed
-   */
-  .use(feed({
-    collection: 'posts',
-    destination: 'rss/rss.xml'
   }))
 
   /**
