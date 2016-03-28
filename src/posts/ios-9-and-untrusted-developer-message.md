@@ -1,5 +1,5 @@
 ---
-title: "iOS 9 / Xcode 7 and \"Untrusted Developer\" message"
+title: "iOS / Xcode and \"Untrusted Developer\""
 date: 2015-09-22T17:40:00.000Z
 pageColor: red
 slug: ios-9-and-untrusted-developer-message

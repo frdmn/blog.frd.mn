@@ -1,5 +1,5 @@
 ---
-title: "The CentOS disc was not found in any of your drives"
+title: "\"The CentOS disc was not found in any of your drives\""
 date: 2013-10-22T10:00:00.000Z
 pageColor: pink
 slug: the-centos-disc-was-not-found-in-any-of-your-drives

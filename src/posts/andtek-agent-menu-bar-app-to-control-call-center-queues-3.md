@@ -1,5 +1,5 @@
 ---
-title: "AndTek Agent - Menu bar App to control call center queues"
+title: "AndTek Agent"
 date: 2013-11-04T13:52:29.906Z
 pageColor: blue
 slug: andtek-agent-menu-bar-app-to-control-call-center-queues-3

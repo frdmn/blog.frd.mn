@@ -1,5 +1,5 @@
 ---
-title: "Install Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X Mavericks or Yosemite"
+title: "Install Nginx, PHP and MySQL on OS X"
 date: 2014-10-19T04:34:00.000Z
 pageColor: orange
 slug: install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew

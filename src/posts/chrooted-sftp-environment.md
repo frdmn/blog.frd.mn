@@ -1,5 +1,5 @@
 ---
-title: "chrooted SFTP environment"
+title: "Chrooted SFTP environment"
 date: 2014-02-06T18:49:47.795Z
 pageColor: green
 slug: chrooted-sftp-environment

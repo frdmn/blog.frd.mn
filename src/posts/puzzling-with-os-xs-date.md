@@ -1,5 +1,5 @@
 ---
-title: "Puzzling with OS X's date"
+title: "Puzzling with OS X's date command"
 date: 2013-09-27T10:00:00.000Z
 pageColor: greyblue
 slug: puzzling-with-os-xs-date

@@ -1,5 +1,5 @@
 ---
-title: "Custom Apple icon for MiniDLNA (incl. diff patch)"
+title: "Custom Apple icon for MiniDLNA"
 date: 2013-03-22T11:00:00.000Z
 pageColor: pink
 slug: custom-apple-icon-for-minidlna-incl-diff-patch
