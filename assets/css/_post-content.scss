@@ -70,11 +70,21 @@ $colorCodeBlockText: $colorGreyDark;
   > p:first-of-type:first-letter {
     font-family: $fontSecondary;
     float: left;
-    @include font-size($headingSize1*2.25, false);
+    @include font-size($headingSize1*1.375, false);
     line-height: 0.75;
-    margin-top: 10px;
+    margin-top: 7px;
     margin-left: -5px;
     margin-right: 10px;
+    @include media($breakLaptop) {
+      margin-top: 10px;
+    }
+    @include media($breakDesktop) {
+      @include font-size($headingSize1*2.25, false);
+      line-height: 0.75;
+      margin-top: 8px;
+      margin-left: -8px;
+      margin-right: 15px;
+    }
   }
 
   ul {
