@@ -24,6 +24,11 @@ body:before {
   top: 0;
   height: $bodyBorderWidth;
   z-index: $z-indexFixedBorderBottom;
+  @include media($breakTablet) {
+    left: $bodyBorderWidthDesktop;
+    right: $bodyBorderWidthDesktop;
+    height: $bodyBorderWidthDesktop;
+  }
 }
 
 body:after {
@@ -32,6 +37,11 @@ body:after {
   bottom: 0;
   height: $bodyBorderWidth;
   z-index: $z-indexFixedBorderBottom;
+  @include media($breakTablet) {
+    left: $bodyBorderWidthDesktop;
+    right: $bodyBorderWidthDesktop;
+    height: $bodyBorderWidthDesktop;
+  }
 }
 
 .page-wrap:before {
@@ -39,6 +49,9 @@ body:after {
   top: 0;
   bottom: 0;
   width: $bodyBorderWidth;
+  @include media($breakTablet) {
+    width: $bodyBorderWidthDesktop;
+  }
 }
 
 .page-wrap:after {
@@ -46,6 +59,9 @@ body:after {
   top: 0;
   bottom: 0;
   width: $bodyBorderWidth;
+  @include media($breakTablet) {
+    width: $bodyBorderWidthDesktop;
+  }
 }
 
 .no-scroll {
@@ -57,8 +73,8 @@ body:after {
 }
 
 .page-main {
-  margin: $baseUnit ceil($baseUnit/1.5);
-  @include media($breakLaptop) {
+  margin: $baseUnit ceil($baseUnit/2);
+  @include media($breakTablet) {
     margin: $baseUnit*2 $baseUnit;
   }
 

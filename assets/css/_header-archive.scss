@@ -40,6 +40,9 @@ $baseTransitionEasing: cubic-bezier(.41,.41,.45,.81);
       right: 0;
       height: $bodyBorderWidth;
       @include pageColors(background);
+      @include media($breakTablet) {
+        height: $bodyBorderWidthDesktop;
+      }
     }
   }
 

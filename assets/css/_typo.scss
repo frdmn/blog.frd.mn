@@ -2,6 +2,9 @@ html {
   @include media(max-width $breakLaptop) {
     font-size: 1.25em;
   }
+  @include media(max-width $breakTablet) {
+    font-size: 1em;
+  }
   @media print {
     font-size: .5em;
   }
@@ -12,25 +15,24 @@ html {
   @include font-size($headingSize4);
 }
 
-/*
+
 h1,
 .heading-1 {
-  @include media(max-width $breakLaptop) {
-    @include font-size($headingSize3);
+  @include media(max-width $breakTablet) {
+    @include font-size($headingSize2);
   }
 }
 
 h2,
 .heading-2 {
-  @include media(max-width $breakLaptop) {
-    @include font-size($headingSize4);
+  @include media(max-width $breakTablet) {
+    @include font-size($headingSize3);
   }
 }
 
 h3,
 .heading-3 {
-  @include media(max-width $breakLaptop) {
-    @include font-size($headingSize5);
+  @include media(max-width $breakTablet) {
+    @include font-size($headingSize4);
   }
 }
- */

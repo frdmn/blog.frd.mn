@@ -78,10 +78,10 @@ $pageColors: (
 
 /* z-indexes */
 
-$z-indexFixedHeader:    99999;
-$z-indexFixedHeaderNav: 99998;
-$z-indexFixedBorders:   99997;
-$z-indexPageAuthor:   99996;
+$z-indexFixedHeader:       99999;
+$z-indexFixedHeaderNav:    99998;
+$z-indexFixedBorders:      99997;
+$z-indexPageAuthor:        99996;
 $z-indexFixedBorderBottom: 99995;
 
 
@@ -91,7 +91,8 @@ $z-indexFixedBorderBottom: 99995;
 
 @import 'bower_components/basicss/basicss';
 
-$bodyBorderWidth: ceil($baseUnit/3);
+$bodyBorderWidth: ceil($baseUnit/8);
+$bodyBorderWidthDesktop: ceil($baseUnit/3);
 $bodyBorderColor: $colorMain;
 
 /**
