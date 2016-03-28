@@ -3,8 +3,10 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        info: grunt.file.readJSON('info.json'),
         dirs: {
             bower: 'bower_components',
+            build: 'build/assets/js',
             css: 'assets/css',
             js: 'assets/js',
             images: 'assets/images',
@@ -73,6 +75,23 @@ module.exports = function(grunt) {
                 ],
                 dest: '<%= dirs.js %>/build.js',
             },
+        },
+
+        // Replace
+        replace: {
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'DISQUS_PUBLIC_KEY',
+                            replacement: '<%= info.disqusPublicKey %>'
+                        }
+                    ]
+                },
+                files: [
+                    {expand: true, flatten: true, src: ['<%= dirs.build %>/build.js'], dest: '<%= dirs.build %>/'}
+                ]
+            }
         },
 
         // JShint
@@ -174,7 +193,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['<%= dirs.css %>/*.scss'],
-                tasks: ['sass:dev', 'autoprefixer', 'execute:dev']
+                tasks: ['sass:dev', 'autoprefixer', 'execute:dev', 'replace']
             },
             images: {
                 files: ['<%= dirs.images %>/*.{png,jpg,gif}'],
@@ -186,19 +205,19 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['*.html'],
-                tasks: ['htmlhint', 'execute:dev']
+                tasks: ['htmlhint', 'execute:dev', 'replace']
             },
             templates: {
                 files: ['templates/**/*.hbt'],
-                tasks: ['execute:build']
+                tasks: ['execute:build', 'replace']
             },
             content: {
                 files: ['src/**/*.md'],
-                tasks: ['execute:build']
+                tasks: ['execute:build', 'replace']
             },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
-                tasks: ['jshint', 'concat', 'execute:dev'],
+                tasks: ['jshint', 'concat', 'execute:dev', 'replace'],
                 options: {
                     spawn: false
                 }
@@ -206,7 +225,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'execute']);
+    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'execute', 'replace']);
     grunt.registerTask('dev', ['connect', 'watch', 'notify']);
     grunt.registerTask('dev:sync', ['browser_sync', 'watch', 'notify']);
 };

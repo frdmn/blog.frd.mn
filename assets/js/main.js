@@ -87,7 +87,7 @@ Disqus.prototype.ready = function(callback) {
  */
 
 Disqus.prototype.retrieveData = function (callback) {
-  var apiKey = '',
+  var apiKey = '@@DISQUS_PUBLIC_KEY',
       xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {

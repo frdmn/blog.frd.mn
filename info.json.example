@@ -2,5 +2,6 @@
   "author": "Your Name",
   "title": "Blog Title",
   "description": "Blog description",
-  "url": "http://blogurl.com"
+  "url": "http://blogurl.com",
+  "disqusPublicKey": "PUBLICKEYJ9MhoyTHIS18JEgXHnitzA0BdISsI8aKWBANHD6sSiNfZjt3EXAMPLE"
 }
