@@ -17,7 +17,7 @@ I got tired of the problem, and thought: "Okay, lets try again tomorrow. You're 
 
 I proceeded with `aptitude` updates and saw there's a new kernel update available as well. `aptitude` installed all it's updates and asked me to reboot the machine to boot from the newly installed kernel. After doing the reboot I gave `sftp` another shot and well, well, well. It was working.
 
-![wat](/content/images/2014/Feb/1430.gif)
+![wat](/assets/images/posts/chrooted-sftp-environment/1.gif)
 
 I still can't explain the origin of the problem, but in case you stumble upon such an error message while using SFTP with a chroot, just try:
 

@@ -25,7 +25,7 @@ Confirm the installation dialog with `Install`.
 
 Back in Xcode, hit `⌘ + ,` to access the *Preferences* and navigate to the *Locations* tab. Set the *Command Line Tools* to the latest version available , *Xcode 6.1 (61A1052c)* in my example:
 
-![Xcode.app → Preferences → Location | Command Line Tools](/content/images/2014/10/Bildschirmfoto-2014-10-20-um-11-27-56.png)
+![Xcode.app → Preferences → Location | Command Line Tools](/assets/images/posts/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/1.png)
 
 Make sure you use at least Xcode 6.1!
 

@@ -7,7 +7,7 @@ slug: install-os-x-10-10-yosemite-in-virtualbox
 
 The guide below explains how to install OS X Yosemite 10.10 in a virtual machine using the free and powerful VirtualBox.
 
-![](https://i.imgur.com/72faPvJ.png)
+![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/1.png)
 
 It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Google, markdownified and adjusted to work with the official Yosemite release.
 
@@ -38,7 +38,7 @@ It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Googl
     `diskutil unmountDisk $(diskutil list | grep "OS X Base System" -B 4 | head -1)`  
     `diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)`  
   * if that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility:  
-  ![](https://i.imgur.com/ZBNY9o9.gif)  
+  ![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/2.gif)  
 12. Convert back to UDZO format (compressed image):  
   `hdiutil convert yosemite.sparseimage -format UDZO -o yosemitefixed.dmg`
 13. Add `yosemitefixed.dmg` as a live cd in virtual box

@@ -15,7 +15,7 @@ Like I said above there is no configuration line to specify a path for an image 
 
 I converted the hex back to the viewable PNG, fired up Photoshop and made some Apple icons in the same dimensions of the source images. Then you just need to convert your new, customized images back into hex, format them like it is required in the `icons.c` (no whitespaces, group of 24 hex pairs, etc.) and compile it again. Thats it:
 
-![MiniDLNA icon on Samsung SmartTV](/content/images/2013/Oct/2.png)
+![MiniDLNA icon on Samsung SmartTV](/assets/images/posts/custom-apple-icon-for-minidlna-incl-diff-patch/1.png)
 
 If some of you want to do the same I created the following [Gist on GitHub](https://gist.github.com/frdmn/5222476) which includes all the needed ressources and even a **diff patch**. Follow this instructions:
 

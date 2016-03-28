@@ -9,7 +9,7 @@ Recently I've set up a [Munin](http://munin-monitoring.org) monitoring platform 
 
 Then I had the idea to include my [Bukkit](http://bukkit.org) ([Minecraft](http://minecraft.net)) server on that Munin instance as well. Due to [JSONAPI](https://github.com/alecgorge/jsonapi) — which provides [hundreds of API-calls](http://mcjsonapi.com/apidocs/) through HTTP, TCP and [WebSocket](http://www.websocket.org/) streams — it is pretty easy to get the neccesarry informations for those plugin. So I started to get some informations about plugin development in Munin and six hours later my instance looked like this: 
 
-![Munin Bukkit/JSONAPI plugins](/content/images/2013/Oct/3-1.png)
+![Munin Bukkit/JSONAPI plugins](/assets/images/posts/munin-bukkit-plugins/1.png)
 
 In the picture above you can see the three PHP-based plugins which track that lets you track:
 

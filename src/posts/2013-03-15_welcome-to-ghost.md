@@ -5,7 +5,7 @@ pageColor: green
 date: 2013-03-15T11:00:00.000Z
 ---
 
-![$ jekyll --server --auto](/content/images/2013/Oct/1-1.png)
+![$ jekyll --server --auto](/assets/images/posts/welcome-to-ghost/1.png)
 
 The one or other of you might have read [Tom](http://tom.preston-werner.com/)'s blog post "[how to blog like a hacker](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)". If not here's a quick TL;DR:
 

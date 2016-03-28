@@ -41,9 +41,9 @@ Now we can proceed with the actuall installation:
 
 # Screenshots
 
-![menubar](/content/images/2013/Nov/1_menubar.png)
+![menubar](/assets/images/posts/andtek-agent-menu-bar-app-to-control-call-center-queues-3/1.png)
 
-![settings](/content/images/2013/Nov/2_settings.png)
+![settings](/assets/images/posts/andtek-agent-menu-bar-app-to-control-call-center-queues-3/2.png)
 
 Don't hesitate to clone the repository in case you have some improvements.
 
