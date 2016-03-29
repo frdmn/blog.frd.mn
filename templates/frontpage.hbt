@@ -15,7 +15,7 @@
       <ul class="big-list" data-page-color-reset>
         {{#each collections.posts}}
           <li>
-            <a href="{{this.link}}" data-page-color="{{this.pageColor}}"><span class="big-list__title">{{this.title}}</span> <span class="comment-wrap"><span class="comment" data-disqus-identifier="{{this.disqus_id}}"></span></a></span>
+            <a href="{{this.link}}" data-page-color="{{this.pageColor}}"><span class="big-list__title">{{this.title}}</span><span class="comment-wrap"><span class="comment" data-disqus-identifier="{{this.disqus_id}}"></span></span></a>
           </li>
         {{/each}}
       </ul>
