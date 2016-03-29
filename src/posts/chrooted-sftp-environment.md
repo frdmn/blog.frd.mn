@@ -1,7 +1,7 @@
 ---
 title: "chrooted SFTP environment"
 date: 2014-02-06
-disqus_id: 16
+disqus_id: 14
 pageColor: green
 ---
 Today I had to struggle with a weird chroot + SFTP problem. I am actually familiar with those environments because i've set them up several times before, so I couldn't explain what the fuck was going on.
