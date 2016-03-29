@@ -188,7 +188,6 @@ $(function() {
   });
 
   $('[data-page-color-reset]').mouseleave(function() {
-    console.log('asdf');
     var color = $('html').attr('data-page-color-original');
     $('html').removeClassPrefix('color--');
     $('html').addClass('color--' + color);
