@@ -10,6 +10,7 @@ var Metalsmith   = require('metalsmith'),
     fs           = require('fs'),
     logger       = require('./plugins/logger'),
     setPermalink = require('./plugins/setpermalink'),
+    setPageColor = require('./plugins/setpageColor'),
     setSlug      = require('./plugins/setslug'),
     setTemplate  = require('./plugins/settemplate'),
     fixPath      = require('./plugins/fixpath'),
@@ -106,6 +107,11 @@ Metalsmith(__dirname)
    * Add 'link' prop containing permalink
    */
   .use(setPermalink())
+
+  /**
+   * Add 'link' prop containing permalink
+   */
+  .use(setPageColor())
 
   /**
    * Build RSS Feed
