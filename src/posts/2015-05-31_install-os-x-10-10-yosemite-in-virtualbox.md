@@ -2,6 +2,7 @@
 title: "Install OS X 10.10 Yosemite in VirtualBox"
 date: 2015-05-31T14:10:58.939Z
 pageColor: blue
+disqus_id: 22
 slug: install-os-x-10-10-yosemite-in-virtualbox
 ---
 
@@ -12,7 +13,7 @@ The guide below explains how to install OS X Yosemite 10.10 in a virtual machine
 It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Google, markdownified and adjusted to work with the official Yosemite release.
 
 *Legal disclaimer*: This guide aims to explain how to create a virtual machine on a regularly purchased Apple computer, running a genuine Mac OS X operating system, for testing purposes only.
- 
+
 # Howto
 
 1. Download Yosemite from the App Store

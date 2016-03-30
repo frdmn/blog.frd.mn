@@ -2,6 +2,7 @@
 title: "How to fix missing X-Forwarded-For headers for qwebirc"
 date: 2013-03-16T11:00:00.000Z
 pageColor: red
+disqus_id: 2
 slug: how-to-fix-missing-x-forwarded-for-headers-for-qwebirc
 ---
 
@@ -10,7 +11,7 @@ If you own an [uberspace](http://uberspace.de) hosting package and run a server 
 Now you just create a `.htaccess` file in the `DocumentRoot` of your-domain.com which contains this:
     RewriteEngine On
     RewriteRule (.*) http://localhost:9034/$1 [P]
-This proxy configuration will tunnel every incomming traffic on port "80" to the given "9034". Your server application is now accessable via `http://your-domain.com` without the port declaration. 
+This proxy configuration will tunnel every incomming traffic on port "80" to the given "9034". Your server application is now accessable via `http://your-domain.com` without the port declaration.
 
 Thats all well and good, but the incomming traffic of the server now will be sent with sender IP of the webserver on port "80", in that case the uberspace host. Sometimes it's mandatory for your server application to get the real IP addresses of your users (for logging purposes or if you want to check against IPs) instead. Especially with qwebirc you don't want to waive that feature because users who log into your IRC channel would have a hostname like:
 

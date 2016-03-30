@@ -2,6 +2,7 @@
 title: "AndTek Agent"
 date: 2013-11-04T13:52:29.906Z
 pageColor: blue
+disqus_id: 11
 slug: andtek-agent-menu-bar-app-to-control-call-center-queues-3
 ---
 

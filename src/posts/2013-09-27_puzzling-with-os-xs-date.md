@@ -2,6 +2,7 @@
 title: "Puzzling with OS X's date command"
 date: 2013-09-27T10:00:00.000Z
 pageColor: greyblue
+disqus_id: 6
 slug: puzzling-with-os-xs-date
 ---
 

@@ -2,6 +2,7 @@
 title: "Like a hacker"
 slug: welcome-to-ghost
 pageColor: green
+disqus_id: 1
 date: 2013-03-15T11:00:00.000Z
 ---
 
@@ -11,7 +12,7 @@ The one or other of you might have read [Tom](http://tom.preston-werner.com/)'s 
 
 # dynamic/CMS based blogs (like WordPress)
 
-* constantly lag behind the latest software release 
+* constantly lag behind the latest software release
 * time consuming
 * good themes aren't made "in a trice" and take ages
 * dynamic page construction is slow to serve

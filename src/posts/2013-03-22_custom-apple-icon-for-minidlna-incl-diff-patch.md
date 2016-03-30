@@ -2,6 +2,7 @@
 title: "Custom Apple icon for MiniDLNA"
 date: 2013-03-22T11:00:00.000Z
 pageColor: pink
+disqus_id: 3
 slug: custom-apple-icon-for-minidlna-incl-diff-patch
 ---
 
@@ -28,10 +29,10 @@ If some of you want to do the same I created the following [Gist on GitHub](http
 
     # Grab the latest MiniDLNA source via CVS
     cvs -z3 -d:pserver:anonymous@minidlna.cvs.sourceforge.net:/cvsroot/minidlna co -P minidlna
-    
+
     # Clone my GitHub gist - https://gist.github.com/frdmn/5222476
     git clone https://gist.github.com/5222476.git icon-patch
-    
+
     # Change into the MiniDLNA directory
     cd minidlna
 

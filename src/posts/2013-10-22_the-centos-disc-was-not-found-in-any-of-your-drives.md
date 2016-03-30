@@ -2,10 +2,11 @@
 title: "\"The CentOS disc was not found in any of your drives\""
 date: 2013-10-22T10:00:00.000Z
 pageColor: pink
+disqus_id: 8
 slug: the-centos-disc-was-not-found-in-any-of-your-drives
 ---
 
-I had to install several CentOS 6 virtual machines via the minimal installation image in the past time and ran into a slightly weird problem during the installation. 
+I had to install several CentOS 6 virtual machines via the minimal installation image in the past time and ran into a slightly weird problem during the installation.
 
 The assistent wants you to check the installation medium of CentOS. Doesn't sound that bad and it is focused by default, so i thought there no need to eschew this. Unfortunately as soon as you do the media check and try to continue with the installation, the following error message appears:
 

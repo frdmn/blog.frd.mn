@@ -2,6 +2,7 @@
 title: "Backscatter due to loopback MX"
 date: 2015-03-23T17:05:00.000Z
 pageColor: pink
+disqus_id: 20
 slug: backscatter-due-to-loopback-mx
 ---
 
@@ -10,10 +11,10 @@ At work we have a relatively large shared webhosting system which consists out o
 * Database and web server (MySQL and Apache)
 * Mail server (Postfix and Dovecot)
 
-However, recently the web server ended up on blacklists (DNSBL/RBL) fairly often, so I did my best to find out what exactly went south. The actual origin of the problem was [backscatter](http://en.wikipedia.org/wiki/Backscatter_%28email%29) and I had quite a fun time figuring this out. 
+However, recently the web server ended up on blacklists (DNSBL/RBL) fairly often, so I did my best to find out what exactly went south. The actual origin of the problem was [backscatter](http://en.wikipedia.org/wiki/Backscatter_%28email%29) and I had quite a fun time figuring this out.
 
 The first thing I did to investigate was to look through Postfix's `mail.log` and search for anomalies. I couldn't find anything promising so I checked the timestamp displayed in the blacklist listing to search for any violations in the mail logs at that given time. Strike!
-    
+
     $ grep "8170A4D23E6F" /var/log/mail.log
     postfix/smtpd[18858]: 8170A4D23E6F: client=localhost[127.0.0.1]
     postfix/cleanup[18861]: 8170A4D23E6F: message-id=<rW9zoq-dylj8W-rZ@correspondencect.web.company.de>
@@ -22,7 +23,7 @@ The first thing I did to investigate was to look through Postfix's `mail.log` an
     postfix/bounce[18863]: 8170A4D23E6F: sender non-delivery notification: 955C04D2300E
     postfix/qmgr[10478]: 8170A4D23E6F: removed
 
-The bounced message matches the timestamp of the DNSBL exactly, probably the origin of the listing. 
+The bounced message matches the timestamp of the DNSBL exactly, probably the origin of the listing.
 
 `$ cat /var/log/mail.log* | grep "loops back to myself"`
 
@@ -53,31 +54,31 @@ Now if we try to resolve the MX for the given recipients we notice something odd
 
     $ dig mx hot.de +short
     10 null.hot.de.
-    $ dig null.hot.de. +short 
+    $ dig null.hot.de. +short
     127.0.0.1
 
 ---
 
     $ dig mx iphone.com +short
     10 mail.iphone.com.
-    $ dig mail.iphone.com +short 
+    $ dig mail.iphone.com +short
     127.0.0.6
 
 ---
 
     $ dig mx hotmaol.de +short
     10 mail.hotmaol.de.
-    $ mail.hotmaol.de. +short 
+    $ mail.hotmaol.de. +short
     127.0.0.1
 
 ---
 
     $ dig mx beer.com +short
     10 mailnull.aftermarket.com.
-    $ mailnull.aftermarket.com +short 
+    $ mailnull.aftermarket.com +short
     127.0.0.1
 
-You can try whatever domain you like, the external DNS always returns a loopback address like "`localhost`", "`127.0.0.1`" or even "`0.0.0.0`". Ergo, spammer selectivly uses recipient addresses whose MX return such a bogus IP to create non delivery messages which gets then sent to the forged (but existing) sender mail account. 
+You can try whatever domain you like, the external DNS always returns a loopback address like "`localhost`", "`127.0.0.1`" or even "`0.0.0.0`". Ergo, spammer selectivly uses recipient addresses whose MX return such a bogus IP to create non delivery messages which gets then sent to the forged (but existing) sender mail account.
 
 Here's what happened in detail: The postfix resolves the MX -> receives "`localhost`" -> tries to relay the mail via the given "`localhost`" server -> gets rejected -> generated mailer daemon / NDM, which gets sent to the existing user "`antonettabaune@godetia.com`" -> reports the sending server (we) for backscatter.
 
@@ -92,7 +93,7 @@ After quite a lot of trial and error in our dev environment, googleing and spend
     [...]
     smtpd_recipient_restrictions =
         check_recipient_mx_access cidr:/etc/postfix/recipient_mx_access.cidr
-        
+
 ---
 
 * Create the file that contains your rejected bogus MX records:

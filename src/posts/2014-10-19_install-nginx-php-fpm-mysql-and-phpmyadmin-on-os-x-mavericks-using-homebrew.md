@@ -2,6 +2,7 @@
 title: "Install Nginx, PHP and MySQL on OS X"
 date: 2014-10-19T04:34:00.000Z
 pageColor: orange
+disqus_id: 13
 slug: install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew
 ---
 
@@ -15,7 +16,7 @@ First of all, get the latest *Xcode* version (6.1) via the Mac App Store:
 
 [Download Xcode.app (via Mac App Store)](https://itunes.apple.com/de/app/xcode/id497799835)
 
-As soon as you've finished the download, open Xcode in your `/Applications` folder and agree to the licence. 
+As soon as you've finished the download, open Xcode in your `/Applications` folder and agree to the licence.
 
 Open a new Terminal window and install the Xcode Command Line Tools:
 
@@ -29,7 +30,7 @@ Back in Xcode, hit `⌘ + ,` to access the *Preferences* and navigate to the *Lo
 
 Make sure you use at least Xcode 6.1!
 
-# Homebrew 
+# Homebrew
 
 Now we need to install *Homebrew*, which is a package manager for OS X. You probably already heard about `apt-get` or `aptitude` on Linux distributions to install packages or depencies for a specific application. `brew` works the same, just on Mac operating systems. It will also make sure that you will get the latest updates of the installed packages as well, so you don't need to worry about outdated versions or vulnerable security flaws and exploits either.
 
@@ -65,7 +66,7 @@ If you want to use the PHP command line binary, you need to update the `$PATH` e
     # If you use Bash    
     echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile
     . ~/.bash_profile
-    
+
     # If you use ZSH
     echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
     . ~/.zshrc
@@ -78,9 +79,9 @@ Create a folder for our LaunchAgents and symlink the start/stop service:
     ln -sfv /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/
 
 And start PHP-FPM:
-    
+
     launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
-   
+
 Make sure PHP-FPM is listening on port 9000:  
 
 `lsof -Pni4 | grep LISTEN | grep php`
@@ -111,9 +112,9 @@ And start the database server:
 To seure our MySQL server, we'll exececute the provided `secure_mysql_installation` binary to change the root password, remove anonymous users and disbale remote root logins:
 
     mysql_secure_installation
- 
+
  <clear>
- 
+
     > Enter current password for root (enter for none):
 
 Press enter since you don't have one set.
@@ -160,7 +161,7 @@ Install `autoconf`, which is needed for the installation of phpMyAdmin:
     brew install autoconf
 
  Set $PHP_AUTOCONF:
-    
+
     # If you use Bash
     echo 'PHP_AUTOCONF="'$(which autoconf)'"' >> ~/.bash_profile && . ~/.bash_profile
     # If you use ZSH
@@ -169,13 +170,13 @@ Install `autoconf`, which is needed for the installation of phpMyAdmin:
 Let's start with the installation of phpMyAdmin:
 
     brew install phpmyadmin
-  
+
 # Nginx
 
 Install the default *Nginx* with:
 
     brew install nginx
-  
+
 ## Setup auto start
 
 Since we want to use port 80 have to start the Nginx process as root:
@@ -213,7 +214,7 @@ Stop Nginx again:
 
 ## nginx.conf
 
-Create some folders which we are going to use in the configurtion files: 
+Create some folders which we are going to use in the configurtion files:
 
     mkdir -p /usr/local/etc/nginx/logs
     mkdir -p /usr/local/etc/nginx/sites-available
@@ -221,12 +222,12 @@ Create some folders which we are going to use in the configurtion files:
     mkdir -p /usr/local/etc/nginx/conf.d
     mkdir -p /usr/local/etc/nginx/ssl
     sudo mkdir -p /var/www
-    
+
     sudo chown :staff /var/www
     sudo chmod 775 /var/www
 
 Remove the current default `nginx.conf` (which is also available as `/usr/local/etc/nginx/nginx.conf.default` in case you want to take a look) and download my custom one via `curl` from GitHub:
-    
+
     rm /usr/local/etc/nginx/nginx.conf
     curl -L https://gist.github.com/frdmn/7853158/raw/nginx.conf -o /usr/local/etc/nginx/nginx.conf
 
@@ -245,12 +246,12 @@ Download my PHP-FPM configuration from GitHub:
     curl -L https://gist.github.com/frdmn/7853158/raw/sites-available_phpmyadmin -o /usr/local/etc/nginx/sites-available/phpmyadmin
 
 Clone my example virtual host (including 404, 403 and a `phpinfo()` rewrite) using `git`:
-    
+
     git clone http://git.frd.mn/frdmn/nginx-virtual-host.git /var/www
     rm -rf /var/www/.git
 
 And remove `/var/www/.git` folder so your future projects won't get tracked by git.
-    
+
 ## Setup SSL
 
 Create folder for our SSL certificates and private keys:
@@ -258,11 +259,11 @@ Create folder for our SSL certificates and private keys:
     mkdir -p /usr/local/etc/nginx/ssl
 
 Generate 4096bit RSA keys and the self-sign the certificates in one command:
-    
+
     openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=State/L=Town/O=Office/CN=localhost" -keyout /usr/local/etc/nginx/ssl/localhost.key -out /usr/local/etc/nginx/ssl/localhost.crt
     openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=State/L=Town/O=Office/CN=phpmyadmin" -keyout /usr/local/etc/nginx/ssl/phpmyadmin.key -out /usr/local/etc/nginx/ssl/phpmyadmin.crt
 
-    
+
 ## Enable virtual hosts
 
 Now we need to symlink the virtual hosts we want to enable into the `sites-enabled` folder:
@@ -298,14 +299,14 @@ Because your probably need to restart the one or other service sooner or later, 
     echo "source ~/.bash_aliases" >> ~/.bash_profile
     # If you use ZSH
     echo "source ~/.bash_aliases" >> ~/.zshrc
-    
+
 You can either open a new Terminal window/session or enter the following command to reload the shell configuration in your current one:
 
     source ~/.bash_profile
     # or
     source ~/.zshrc
 
-Now you can use short aliases instead of typing in `launchctl` arguments and plist paths. 
+Now you can use short aliases instead of typing in `launchctl` arguments and plist paths.
 
 ## Nginx
 

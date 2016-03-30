@@ -2,6 +2,7 @@
 title: "Raspberry Pi VPN Gateway"
 date: 2014-10-18T12:34:00.000Z
 pageColor: purple
+disqus_id: 18
 slug: raspberry-pi-vpn-gateway
 ---
 
@@ -59,9 +60,9 @@ __Intermediate assumptions__:
 * You did the base configuration of rasbian  
   (change password, timezone, localization, etc.)
 * `apt-get` repositories and packages are up to date  
-  (`sudo apt-get update && sudo apt-get upgrade -y`) 
+  (`sudo apt-get update && sudo apt-get upgrade -y`)
 * `ifconfig` shows an wlan0 interface
-* You can access the internet using ethernet 
+* You can access the internet using ethernet
   (`curl icanhazip.com` returns the external IP)
 
 ---
@@ -74,7 +75,7 @@ __Intermediate assumptions__:
   `sudo apt-get install hostapd isc-dhcp-server`
 * Adjust the `dhcp.conf` of the DHCP server like this:  
   `sudo editor /etc/dhcp/dhcpd.conf`  
-   
+
 ```
 [...]
 #option domain-name "example.org";
@@ -92,7 +93,7 @@ subnet 192.168.101.0 netmask 255.255.255.0 {
     max-lease-time 7200;
     option domain-name "local";
     option domain-name-servers 8.8.8.8, 8.8.4.4;
-} 
+}
 ```
 
 * Adjust DHCP configuration:  
@@ -210,7 +211,7 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
 ### Gimmick: Choose random VPN from the "VPN pool"
 
-Because I don't want to use the same VPN server/location all the time, I want to randomly choose from a "server pool" in `/etc/openvpn/PIA/`. As soon as I restart the VPN, it will choose a different one than before. This way I simply can recycle the power from the Pi to obtain a new location/IP address. 
+Because I don't want to use the same VPN server/location all the time, I want to randomly choose from a "server pool" in `/etc/openvpn/PIA/`. As soon as I restart the VPN, it will choose a different one than before. This way I simply can recycle the power from the Pi to obtain a new location/IP address.
 
 * Adjust the default service file:  
   `vi /etc/default/openvpn`
@@ -250,7 +251,7 @@ root@raspberrypi:/etc/openvpn/PIA# service openvpn start && service openvpn stop
 [ ok ] Starting virtual private network daemon: US_Seattle.
 [ ok ] Stopping virtual private network daemon: US_Seattle.
 ```
-    
+
 ## NAT & Netfilter/iptables adjustments
 
 * Enable IPv4 forwarding:  
