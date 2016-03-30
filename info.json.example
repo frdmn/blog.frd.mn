@@ -4,7 +4,7 @@
   "description": "Blog description",
   "url": "http://blogurl.com",
   "disqusPublicKey": "PUBLICKEYJ9MhoyTHIS18JEgXHnitzA0BdISsI8aKWBANHD6sSiNfZjt3EXAMPLE",
-  "defaultPageColor" : "blue",
+  "defaultPageColor" : "main",
   "postPageColors" : [
     "red",
     "green",
