@@ -200,8 +200,12 @@ $(function() {
   test.ready(function(e) {
     $('.comment-single').each(function() {
       var $c = $(this),
-          id = $c.attr('data-disqus-identifier');
-      $c.text(test.getComments(id));
+          id = $c.attr('data-disqus-identifier'),
+          comments = test.getComments(id),
+          label = "Comments";
+
+      if (comments === 1) label = "Comment";
+      $c.text(comments + ' ' + label);
     });
 
     $('.comment').each(function() {
