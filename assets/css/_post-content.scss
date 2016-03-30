@@ -1,6 +1,13 @@
+/**
+ * Typographic post-content adjustments.
+ */
 $colorCodeBlock: #fff;
 $colorCodeBlockText: $colorGreyDark;
 
+/**
+ * Code-block component. Code blocks will be wrapped
+ * in the .code-block div via js.
+ */
 .code-block {
   position: relative;
   margin-bottom: ceil($baseUnit/1.5);
@@ -36,6 +43,10 @@ $colorCodeBlockText: $colorGreyDark;
   }
 }
 
+/**
+ * Image-block component. Images will be wrapped
+ * in the .img-block div via js.
+ */
 .img-block {
   border: 1px solid $colorGreyLight;
   margin-bottom: ceil($baseUnit/1.5) + $baseUnit;
@@ -52,6 +63,9 @@ $colorCodeBlockText: $colorGreyDark;
 .post-content {
   word-wrap: break-word;
 
+  /**
+   * Vertical rhythm.
+   */
   h1, h2, h3, h4, h5, h6,
   ul, ol, dl,
   blockquote, p, address,
@@ -61,12 +75,34 @@ $colorCodeBlockText: $colorGreyDark;
     @include px-to-rem(margin-bottom, ceil($baseUnit/1.5));
   }
 
+
+  /**
+   * List styles
+   */
   > ul, > ol {
     @include media($breakDesktopWide) {
       margin-left: 0;
     }
   }
 
+  ul {
+    list-style: none;
+    > li {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '\2014';
+        left: ceil(-$baseUnit/1.5);
+        @include media($breakLaptop) {
+          left: -$baseUnit;
+        }
+      }
+    }
+  }
+
+  /**
+   * First letter
+   */
   > p:first-of-type:first-letter {
     font-family: $fontSecondary;
     float: left;
@@ -87,21 +123,9 @@ $colorCodeBlockText: $colorGreyDark;
     }
   }
 
-  ul {
-    list-style: none;
-    > li {
-      position: relative;
-      &:before {
-        position: absolute;
-        content: '\2014';
-        left: ceil(-$baseUnit/1.5);
-        @include media($breakLaptop) {
-          left: -$baseUnit;
-        }
-      }
-    }
-  }
-
+  /**
+   * Tables
+   */
   table {
     width: 100%;
     table-layout: fixed;
@@ -121,6 +145,9 @@ $colorCodeBlockText: $colorGreyDark;
     }
   }
 
+  /**
+   * Code. Also see '.code-block' above
+   */
   code {
     @include font-size(24px,false);
     font-family: Menlo, Courier, monospace;
@@ -158,6 +185,9 @@ $colorCodeBlockText: $colorGreyDark;
       }
   }
 
+  /**
+   * Keyboard
+   */
   kbd {
     @include font-size(21px,false);
     padding: .1em .3em;
@@ -172,6 +202,9 @@ $colorCodeBlockText: $colorGreyDark;
     border-radius: 4px;
   }
 
+  /**
+   * Headlines
+   */
   h1, h2, h3, h4, h5, h6 {
     font-family: $fontSecondary;
     text-transform: uppercase;
@@ -207,12 +240,18 @@ $colorCodeBlockText: $colorGreyDark;
     }
   }
 
+  /**
+   * Hr Seperator
+   */
   hr {
     margin: $baseUnit 0;
     border: 0;
     border-top: $baseBorder;
   }
 
+  /**
+   * Blockquotes
+   */
   blockquote {
     position: relative;
     padding: ceil($baseUnit/2) $baseUnit;

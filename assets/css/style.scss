@@ -51,7 +51,6 @@ $colorMain:     #5495FA;
 
 $colorLink: $colorMain;
 
-
 /**
  * pageColors
  *
@@ -93,7 +92,6 @@ $z-indexFixedBorders:      99997;
 $z-indexPageAuthor:        99996;
 $z-indexFixedBorderBottom: 99995;
 
-
 /**
  * basicss import
  */
@@ -110,11 +108,11 @@ $bodyBorderColor: $colorMain;
  * e.g. @import 'nav';
  */
 
-@import 'icon';
-@import 'typo';
-@import 'media';
-@import 'nav';
-@import 'constrain';
+@import 'icon';      // Extens basicss/objects/icon
+@import 'typo';      // Extens basicss/base/icon
+@import 'media';     // Extens basicss/objects/media
+@import 'nav';       // Extens basicss/objects/nav
+@import 'constrain'; // Extens basicss/objects/constrain
 
 @import 'base';
 @import 'title-bar';

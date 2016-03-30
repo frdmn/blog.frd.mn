@@ -1,3 +1,7 @@
+/**
+ * Big list component. Used to display post titles on frontpage and
+ * header-archive.
+ */
 .big-list {
   font-family: $fontSecondary;
   @include font-size($headingSize3);

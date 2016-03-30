@@ -1,3 +1,8 @@
+/**
+ * '.reveal' component is used to switch from post title to
+ * date and comments in fixed header. Not to be
+ * confused with _content-swap.scss
+ */
 .reveal {
   position: relative;
   &__original,

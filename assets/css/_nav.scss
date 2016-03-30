@@ -1,3 +1,6 @@
+/**
+ * Extends basicss/objects/nav
+ */
 .nav--slash {
   @include font-size(18px);
   font-family: $fontSecondary;

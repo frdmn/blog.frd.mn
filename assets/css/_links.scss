@@ -1,3 +1,6 @@
+/**
+ * Extends basicss/base/_links.scss
+ */
 a {
   @include pageColors(color);
   text-decoration: none;

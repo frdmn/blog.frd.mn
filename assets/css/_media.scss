@@ -1,4 +1,6 @@
-
+/**
+ * Extends basicss/objects/media
+ */
 @include media(max-width $breakLaptop - 1) {
   .media__img,
   .media__body {

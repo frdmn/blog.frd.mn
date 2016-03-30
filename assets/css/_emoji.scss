@@ -1,3 +1,10 @@
+/**
+ * Emoji helper.
+ *
+ * Somehow the emojis would not be displayed if set in
+ * non-system font (e.g. Typokit), therefore emojis have
+ * to be wrapped in the .emoji class.
+ */
 .emoji {
   font-family: sans-serif;
   @include font-size( $headingSize4);
