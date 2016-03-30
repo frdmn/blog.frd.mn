@@ -1,7 +1,6 @@
 ---
 title: "How to fix missing X-Forwarded-For headers for qwebirc"
 date: 2013-03-16T11:00:00.000Z
-pageColor: red
 disqus_id: 2
 slug: how-to-fix-missing-x-forwarded-for-headers-for-qwebirc
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Trouble with initramfs-tools and small /boot partition"
 date: 2013-11-25T12:09:17.753Z
-pageColor: blue
 disqus_id: 12
 slug: trouble-with-initramfs-tools-and-too-small-boot
 ---

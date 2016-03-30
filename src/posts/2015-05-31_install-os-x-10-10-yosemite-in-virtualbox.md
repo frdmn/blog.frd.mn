@@ -1,7 +1,6 @@
 ---
 title: "Install OS X 10.10 Yosemite in VirtualBox"
 date: 2015-05-31T14:10:58.939Z
-pageColor: blue
 disqus_id: 22
 slug: install-os-x-10-10-yosemite-in-virtualbox
 ---

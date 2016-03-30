@@ -1,7 +1,6 @@
 ---
 title: "Solving \"Unknown table engine 'InnoDB'\""
 date: 2013-04-16T10:00:00.000Z
-pageColor: orange
 disqus_id: 5
 slug: solving-unknown-table-engine-innodb
 ---

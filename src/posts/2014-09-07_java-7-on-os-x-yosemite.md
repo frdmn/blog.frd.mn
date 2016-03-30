@@ -1,7 +1,6 @@
 ---
 title: "Java 7 on OS X Yosemite"
 date: 2014-09-07T17:04:26.577Z
-pageColor: green
 disqus_id: 17
 slug: java-7-on-os-x-yosemite
 ---

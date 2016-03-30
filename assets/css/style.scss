@@ -51,15 +51,24 @@ $colorMain:     #5495FA;
 
 $colorLink: $colorMain;
 
+
+/**
+ * pageColors
+ *
+ * The following colors are used to apply random pageColors to the posts
+ * collection. Make sure to also adjust the postPageColor array in ./info.json
+ * accordingly.
+ */
 $pageColors: (
-  blue: $colorMain,
+  main: $colorMain,
   red: #f75b5b,
   green: #3bb873,
   turquoise: #44aec2,
   greyblue: #52616b,
   pink: #f6538f,
   purple: #5847ad,
-  orange: #e8984a
+  orange: #e8984a,
+  brown: #523D1F
 );
 
 @mixin pageColors($prop: background) {

@@ -1,7 +1,6 @@
 ---
 title: "Backscatter due to loopback MX"
 date: 2015-03-23T17:05:00.000Z
-pageColor: pink
 disqus_id: 20
 slug: backscatter-due-to-loopback-mx
 ---
