@@ -1,12 +1,14 @@
 ---
 title: "Java 7 on OS X Yosemite"
-date: 2014-09-07
+date: 2014-09-07T17:04:26.577Z
+pageColor: green
 disqus_id: 17
-pageColor: turquoise
+slug: java-7-on-os-x-yosemite
 ---
+
 If you want to install Java 7 on OS X 10.10 you probably already came across this annoying message:
 
-{<1>}![](/content/images/2014/Sep/Bildschirmfoto_2014_09_07_um_18_50_31.png)
+![](/assets/images/posts/java-7-on-os-x-yosemite/1.png)
 
 There is an easy way to fix this while customizing the installer and disabling the OS version check. Here's how to do so:
 

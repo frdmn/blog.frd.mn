@@ -1,8 +1,9 @@
 ---
 title: "Backscatter due to loopback MX"
-date: 2015-03-23
-disqus_id: 20
+date: 2015-03-23T17:05:00.000Z
 pageColor: pink
+disqus_id: 20
+slug: backscatter-due-to-loopback-mx
 ---
 
 At work we have a relatively large shared webhosting system which consists out of two main parts:
@@ -85,8 +86,8 @@ Now since we isolated the problem, we also have to fix it somehow as well. Maint
 
 After quite a lot of trial and error in our dev environment, googleing and spending some hours in the [#postfix](http://webchat.freenode.net/?channels=%23postfix&uio=d4) IRC channel, I came up with the following solution:
 
-* Add the following in your `smtpd_recipient_restrictions` in your `main.cf`:
-  `vi /etc/postfix/main.cf`
+* Add the following in your `smtpd_recipient_restrictions` in your `main.cf`:  
+  `vi /etc/postfix/main.cf`  
 
 ---
     [...]
@@ -96,7 +97,7 @@ After quite a lot of trial and error in our dev environment, googleing and spend
 ---
 
 * Create the file that contains your rejected bogus MX records:
-   `vi /etc/postfix/recipient_mx_access.cidr`
+   `vi /etc/postfix/recipient_mx_access.cidr`  
 
 ---
 
@@ -122,7 +123,7 @@ After quite a lot of trial and error in our dev environment, googleing and spend
 
 ---
 
-* Last but not least, restart Postfix:
+* Last but not least, restart Postfix:  
   `service postfix restart`
 
 Thats it! Try to reproduce the issue via Telnet:
