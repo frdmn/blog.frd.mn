@@ -1,4 +1,5 @@
 html {
+  transition: background .3s;
   @include pageColorsHtml(background);
 }
 
@@ -12,7 +13,7 @@ body:after {
   @include pageColors(background);
   z-index: $z-indexFixedBorders;
   backface-visibility: hidden;
-  transition: background .2s;
+  transition: background .3s;
   @media print {
     display: none;
   }
@@ -104,7 +105,7 @@ body:after {
 .page-footer {
   padding: $baseUnit $baseUnit;
   @include pageColors(background);
-  transition: background .2s;
+  transition: background .3s;
   position: relative;
   z-index: $z-indexPageAuthor;
 }
