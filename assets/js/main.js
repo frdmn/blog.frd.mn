@@ -58,7 +58,11 @@ Disqus.prototype.getCache = function () {
  */
 
 Disqus.prototype.getComments = function(identifier) {
-  return this.getCache()[identifier].posts;
+  var cache = this.getCache();
+  if (cache[identifier]) {
+    return cache[identifier].posts;
+  }
+  return 0;
 };
 
 /**
