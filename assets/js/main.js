@@ -188,7 +188,7 @@ $(function() {
 
   var test = new Disqus();
 
-  $('a[data-page-color]').hover(function() {
+  $('a[data-page-color]').mouseenter(function() {
     var color = $(this).attr('data-page-color');
     $('html').removeClassPrefix('color--');
     $('html').addClass('color--' + color);
