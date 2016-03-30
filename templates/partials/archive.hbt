@@ -43,8 +43,8 @@
           </div>
 
         </div>
-        <div class="title-bar__left">
-          <a href="{{siteInfo 'url'}}">
+        <div class="title-bar__left" data-page-color-reset>
+          <a href="{{siteInfo 'url'}}" data-page-color="blue">
             <div class="icon--penrose-small-dark" data-grunticon-embed></div>
           </a>
         </div>
