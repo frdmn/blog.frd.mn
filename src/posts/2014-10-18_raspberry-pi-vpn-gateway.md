@@ -1,7 +1,6 @@
 ---
 title: "Raspberry Pi VPN Gateway"
 date: 2014-10-18T12:34:00.000Z
-pageColor: purple
 disqus_id: 18
 slug: raspberry-pi-vpn-gateway
 ---

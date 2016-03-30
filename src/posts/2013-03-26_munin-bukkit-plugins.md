@@ -1,7 +1,6 @@
 ---
 title: "Munin Bukkit plugins"
 date: 2013-03-26T11:00:00.000Z
-pageColor: turquoise
 disqus_id: 4
 slug: munin-bukkit-plugins
 ---

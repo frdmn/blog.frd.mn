@@ -1,6 +1,5 @@
 ---
 title: About
-slug: test
 ---
 
 <span class="emoji">🙌</span>Hi, I'm Jonas Friedmann, 23 year old network administrator, <span class="emoji">💻</span>OS X user, <span class="emoji">🐧</span>Linux enthusiast and allergic to all <span class="emoji">🐁🐈🐕</span>animals with hair/fur. <span class="emoji">😿</span>

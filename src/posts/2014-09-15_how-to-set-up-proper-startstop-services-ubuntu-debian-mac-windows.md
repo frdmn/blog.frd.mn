@@ -1,7 +1,6 @@
 ---
 title: "How to set up proper start/stop services"
 date: 2014-09-15T10:00:00.000Z
-pageColor: purple
 disqus_id: 15
 slug: how-to-set-up-proper-startstop-services-ubuntu-debian-mac-windows
 ---

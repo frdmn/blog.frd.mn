@@ -1,7 +1,6 @@
 ---
 title: "Like a hacker"
 slug: welcome-to-ghost
-pageColor: green
 disqus_id: 1
 date: 2013-03-15T11:00:00.000Z
 ---

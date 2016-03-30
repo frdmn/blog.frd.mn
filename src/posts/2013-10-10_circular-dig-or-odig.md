@@ -1,7 +1,6 @@
 ---
 title: "Circular dig or odig"
 date: 2013-10-10T10:00:00.000Z
-pageColor: turquoise
 disqus_id: 7
 slug: circular-dig-or-odig
 ---
