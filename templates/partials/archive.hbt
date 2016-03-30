@@ -32,7 +32,7 @@
                   <div class="split__title">
                     <span class="reveal__swap-left text--secondary">{{this.date}}</span>
                   </div>
-                  <span class="reveal__swap-right text--secondary"><a href="#comments"><span class="comment-single" data-disqus-identifier="{{this.disqus_id}}"></span> Comments</a></span>
+                  <span class="reveal__swap-right text--secondary"><a href="#comments" class="comment-single" data-disqus-identifier="{{this.disqus_id}}">Comments</a></span>
                   </div>
                 </div>
               </div>
