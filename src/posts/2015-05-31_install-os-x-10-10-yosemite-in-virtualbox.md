@@ -5,69 +5,101 @@ disqus_id: 22
 slug: install-os-x-10-10-yosemite-in-virtualbox
 ---
 
-The guide below explains how to install OS X Yosemite 10.10 in a virtual machine using the free and powerful VirtualBox.
+The guide below tries to explains how to easily install Mac OS X Yosemite 10.10 in a virtual machine using VirtualBox. It's based on [this pastebin](http://pastebin.com/rFmQvFWc) which I found via Google, adjusted to work with Yosemite.
 
 ![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/1.png)
 
-It's based on [this pastebin](http://pastebin.com/rFmQvFWc) I've found via Google, markdownified and adjusted to work with the official Yosemite release.
-
-*Legal disclaimer*: This guide aims to explain how to create a virtual machine on a regularly purchased Apple computer, running a genuine Mac OS X operating system, for testing purposes only.
+*Legal disclaimer*: Make sure to perform the following steps on a regulary purchased Apple computer, running a genuine OS X (host) operating system.
 
 # Howto
 
-1. Download Yosemite from the App Store
-2. Open Terminal.app
-3. Install `iesd`, to customize OS X InstallESD:  
-  `gem install iesd`
-4. Turn install image into base system:  
-  `iesd -i "/Applications/Install OS X Yosemite.app" -o yosemite.dmg -t BaseSystem`
-5. Convert into UDSP (sparse image) format:  
-  `hdiutil convert yosemite.dmg -format UDSP -o yosemite.sparseimage`
-6. Mount the InstallESD ...  
-  `hdiutil mount "/Applications/Install OS X Yosemite.app/Contents/SharedSupport/InstallESD.dmg"`
-7. ... as well as the sparse image:  
-  `hdiutil mount yosemite.sparseimage`
-8. Copy base system into sparse image:  
-  `cp "/Volumes/OS X Install ESD/BaseSystem."* "/Volumes/OS X Base System/"`
-9. Unmound InstallESD ...  
-  `hdiutil unmount "/Volumes/OS X Install ESD/"`
-10. ... as well as the sparse image:  
-  `hdiutil unmount "/Volumes/OS X Base System/"`
-11. Unmount both mounted disks:  
-  * via `diskutil`:  
-    `diskutil unmountDisk $(diskutil list | grep "OS X Base System" -B 4 | head -1)`  
-    `diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)`  
-  * if that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility:  
-  ![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/2.gif)  
-12. Convert back to UDZO format (compressed image):  
-  `hdiutil convert yosemite.sparseimage -format UDZO -o yosemitefixed.dmg`
-13. Add `yosemitefixed.dmg` as a live cd in virtual box
-14. Change the chipset of your virtual machine to "_PIIX3_"
-15. Start your VM, open Disk Utility within installer and create a new HFS+ partition on the virtual disk
-16. Install it!
+## Preperation
+
+Download OS X Yosemite from the Mac App Store and open the Terminal.app to install `iesd`, a Ruby tool to customize OS X Install ESD's:
+
+```shell
+sudo gem install iesd
+```
+
+## Customize InstallESD
+
+Before we can use the vanilla Yosemite Installer in VirtualBox, we have to customize the InstallESD using `iesd` first as well as convert it into a sparse image (UDSP format):
+
+```shell
+iesd -i "/Applications/Install OS X Yosemite.app" -o yosemite.dmg -t BaseSystem
+hdiutil convert yosemite.dmg -format UDSP -o yosemite.sparseimage
+```
+
+Now we need to mount both the original InstallESD and the customized sparse image that we just generated ...
+
+```shell
+hdiutil mount "/Applications/Install OS X Yosemite.app/Contents/SharedSupport/InstallESD.dmg"
+hdiutil mount yosemite.sparseimage
+```
+
+... to copy the missing original base system files back into the customized InstallESD: 
+
+```shell
+cp "/Volumes/OS X Install ESD/BaseSystem."* "/Volumes/OS X Base System/"
+```
+
+Unmount both the InstallESD and the sparse image:
+
+```shell
+hdiutil unmount "/Volumes/OS X Install ESD/"
+hdiutil unmount "/Volumes/OS X Base System/"
+```
+
+As well as the mounted disks via `diskutil` and your Terminal:
+
+```shell
+diskutil unmountDisk $(diskutil list | grep "OS X Base System" -B 4 | head -1)
+diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)
+```
+
+_Note: If that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility.app:_
+  
+![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/2.gif)  
+
+Finally we can convert it back into a .dmg file (UDZO format): 
+
+```shell
+hdiutil convert yosemite.sparseimage -format UDZO -o yosemitefixed.dmg
+```
+
+## Installation in VirtualBox
+
+Open VirtualBox, insert the customized `yosemitefixed.dmg` in the CD-ROM drive of your guest system and make sure to adjust the chipset to "_PIIX3_".
+
+Now you can start up your VM, open the Disk Utility.app within the installer and create a new `HFS+` partition to install a fresh copy of Yosemite.
 
 # FAQ
 
-## Error message: "Kernel driver not installed (rc=-1908)"
+### Error message: "Kernel driver not installed (rc=-1908)"
 
-Try to reinstall VirtualBox to fix this error
+Try to reinstall VirtualBox to fix this error.
 
-## Stuck on boot: "Missing Bluetooth Controller Transport"
+### Stuck on boot: "Missing Bluetooth Controller Transport"
 
 Try the following steps to fix this issue:
 
-1. Stop the virtual machine in VirtualBox
-2. Open a new terminal window
-3. Run the following command to adjust the guest CPU (Replace `<YourVMname>` with your actual VM name):  
-  `VBoxManage modifyvm '<YourVMname>' --cpuidset 1 000206a7 02100800 1fbae3bf bfebfbff`
+1. Stop the virtual machine in VirtualBox.
+2. Open a new terminal window.
+3. Run the following command to adjust the guest CPU (don't forget to replace `[your_VM_name>]` with your actual VM name):
 
-## Adjust screen resolution
+  ```shell
+  VBoxManage modifyvm '[your_VM_name>]' --cpuidset 1 000206a7 02100800 1fbae3bf bfebfbff
+  ```
 
-To control GOP (_G_raphics _O_utput _P_rotocol), use the following Terminal command:
+### Adjust screen resolution
 
-  `VBoxManage setextradata "VM name" VBoxInternal2/EfiGopMode <N>`
+To control the GOP (_G_raphics _O_utput _P_rotocol), use the following Terminal command:
 
-Where N can be one of 0, 1, 2, 3, 4 or 5 referring to the 640x480, 800x600, 1024x768, 1280x1024, 1440x900, 1920x1200 screen resolution respectively.
+  ```shell
+  VBoxManage setextradata '[your_VM_name>]' VBoxInternal2/EfiGopMode [n]
+  ```
+
+Where `[n]` can be 0, 1, 2, 3, 4 or 5 referring to `640x480`, `800x600`, `1024x768`, `1280x1024`, `1440x900` or `1920x1200` screen resolution respectively.
 
 # Sources
 
