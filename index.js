@@ -77,6 +77,7 @@ Metalsmith(__dirname)
    * Use markdown
    */
   .use(markdown({
+    gfm: true,
     langPrefix: ''
   }))
 

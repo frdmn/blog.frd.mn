@@ -176,6 +176,9 @@ $(function() {
 
   $('.post-content pre code').each(function() {
     $(this).parent().wrap('<div class="code-block"></div>');
+    hljs.configure({
+      languages: []
+    });
     hljs.initHighlighting();
   });
 
