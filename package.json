@@ -33,7 +33,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "cp info.json.example info.json && bower install && grunt && true"
+    "test": "[ ! -f info.json ] && cp info.json.example info.json; bower install && grunt && true"
   },
   "repository": {
     "type": "git",
