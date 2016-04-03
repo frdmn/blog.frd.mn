@@ -360,7 +360,7 @@ openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=State/L
 
 ## Enable virtual hosts
 
-Now we need to symlink the virtual hosts we want to enable into the `sites-enabled` folder:
+Now you need to symlink the virtual hosts that you want to enable into the `sites-enabled` folder:
 
 ```shell
 ln -sfv /usr/local/etc/nginx/sites-available/default /usr/local/etc/nginx/sites-enabled/default
