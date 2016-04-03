@@ -5,21 +5,19 @@ disqus_id: 13
 slug: install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew
 ---
 
-Recently I got a new MacBook Pro and decided to set it up from scratch, because I've used the same Time Machine backup to migrate from since about four years. 
+Recently I got a new MacBook Pro and decided to set it up from scratch, because I've used the same Time Machine backup to migrate from about four years over and over again. 
 
-Perfect time to get rid of the web server/LAMP (**L**inux **A**pache **M**ySQL **P**HP) stack and replace it with Nginx and PHP-FPM as FastCGI implementation. Below you can read how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
+Perfect time to get rid of the LAMP (**L**inux **A**pache **M**ySQL **P**HP) web server stack and replace it with Nginx and PHP-FPM. Below you can read a detailed guide how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
 
-> **Updated for Yosemite users**: Updated the guide for 10.10 since Yosemite is officially released. The steps are basically the same as for Mavericks.
+> **Updated for Yosemite users**: Updated the guide for OS X 10.10 since Yosemite is officially released. The steps are basically the same as for the Mavericks installation.
 
 # Xcode
 
-First of all, get the latest *Xcode* version (6.1) via the Mac App Store:
+First of all, get the latest *Xcode* version (6.1) via the Mac App Store: [Mac App Store link](https://itunes.apple.com/en/app/xcode/id497799835)
 
-[Download Xcode.app (via Mac App Store)](https://itunes.apple.com/de/app/xcode/id497799835)
+As soon as the download is finished, open Xcode.app in your `/Applications` folder and agree to the licence.
 
-As soon as you've finished the download, open Xcode.app in your `/Applications` folder and agree to the licence.
-
-Open a new Terminal.app window and install the Xcode Command Line Tools:
+Open a new Terminal.app window and install the *Xcode command line tools*:
 
 ```shell
 xcode-select --install
@@ -27,17 +25,17 @@ xcode-select --install
 
 Confirm the installation dialog with `Install`.
 
-Back in Xcode, hit <kbd>⌘ + ,</kbd> to access the `Preferences` and then navigate to the `Locations` tab to set the `Command Line Tools` to the latest version available, `Xcode 6.1 (61A1052c)` in my example:
+Back in *Xcode*, hit <kbd>⌘ + ,</kbd> to access the `Preferences` and then navigate to the `Locations` tab to set the `Command Line Tools` to the latest version available — `Xcode 6.1 (61A1052c)` in my example:
 
 ![Xcode.app → Preferences → Location | Command Line Tools](/assets/images/posts/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/1.png)
 
-Make sure you have at least Xcode 6.1!
+Make sure you have at least *Xcode* 6.1!
 
 # Homebrew
 
-Now we need to install *Homebrew*, a package manager for OS X — kind of like `apt` is one for Linux. `brew` works the same, just for Mac operating systems. It will make sure that you receive the latest updates of your installed packages, so you don't need to worry about outdated versions or vulnerable security flaws, etc.
+Now you need to install *Homebrew*, a package manager for OS X — kind of like `apt` is one for Linux. `brew` works the same, just for Mac operating systems. It will make sure that you receive the latest updates of your installed packages, so you don't need to worry about outdated versions or vulnerable security flaws, etc.
 
-First, we need to download and install Homebrew using the following command:
+First, you need to download and install *Homebrew* using the following command:
 
 ```shell
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -53,7 +51,7 @@ Make sure the doctor responds with something along the lines:
 
 > Your system is ready to brew.
 
-In case you already had *Homebrew* installed, update the existing Homebrew installation as well as the installed packages:
+In case you already had *Homebrew* installed, update the existing *Homebrew* installation as well as the installed packages:
 
 ```shell
 brew update && brew upgrade
@@ -61,38 +59,38 @@ brew update && brew upgrade
 
 # PHP-FPM
 
-Because Homebrew doesn't come with a formula for PHP-FPM by default, we need to `tap` (or register) a special PHP repository first:
+Because Homebrew doesn't come with a formula for *PHP-FPM* by default, you need to `tap` (or register) a special *PHP* repository first:
 
 ```shell
 brew tap homebrew/dupes
 brew tap homebrew/php
 ```
 
-Now we can install PHP using the following command. The arguments make sure it compiles with MySQL support and doesn't configure the default Apache:
+Now you can install *PHP* using the following command. The arguments make sure it compiles with *MySQL* support and doesn't configure the default Apache:
 
 ```shell
 brew install --without-apache --with-fpm --with-mysql php56
 ```
 
-Homebrew is now going to download and compile the PHP-FPM source code for you. Give it some time, it could take some minutes. ☕
+Homebrew is now going to download and compile the *PHP-FPM* source code for you. Give it some time, it could take some minutes. ☕
 
 ## Setup PHP CLI binary
 
-If you want to use the PHP command line tools, you need to update the `$PATH` environment variable of your shell profile:
+If you want to use the *PHP* command line tools, you need to update the `$PATH` environment variable of your shell profile:
 
-- If you use the default Bash shell:
+- If you use the default *Bash* shell:
 
 ```shell
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile && . ~/.bash_profile
 ```
 
-- or if you use ZSH:
+- or if you use *ZSH*:
 
 ```shell
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc && . ~/.zshrc
 ```
 
-If you are not sure which one you use, run `echo $SHELL` in a Terminal.app window. Since I use ZSH it returns this:
+If you are not sure which one you use, run `echo $SHELL` in a Terminal.app window. Since I use *ZSH* it returns this:
 
 ```
 /bin/zsh
@@ -100,20 +98,20 @@ If you are not sure which one you use, run `echo $SHELL` in a Terminal.app windo
 
 ## Setup auto start
 
-Create a folder for the LaunchAgents and symlink the start/stop service:  
+Create a folder for the LaunchAgents and symlink the start/stop service:
 
 ```shell
 mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/
 ```
 
-Now try to start PHP-FPM:
+Now try to start *PHP-FPM*:
 
 ```shell
 launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 ```
 
-Make sure PHP-FPM is running. To do so, you can check if there is an open listener on port `9000`:  
+Assure *PHP-FPM* is running. To do so, check if there is an open listener on port `9000`:
 
 ```shell
 lsof -Pni4 | grep LISTEN | grep php
@@ -130,13 +128,13 @@ php-fpm   69662  frdmn    0u  IPv4 0x8d8ebe505a1ae01      0t0  TCP 127.0.0.1:900
 
 # MySQL
 
-Next step is to install our MySQL server:
+Next step is to install our *MySQL* server:
 
 ```shell
 brew install mysql
 ```
 
-And set up the start/stop service, so the MySQL server gets automatically started and stopped when the Mac is shutdown/powered on:
+And set up the start/stop service, so the *MySQL* server gets automatically started and stopped when the Mac is shutdown/powered on:
 
 ```shell
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
@@ -150,7 +148,7 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 ## Secure the installation
 
-To secure our MySQL server, we'll exececute the provided `secure_mysql_installation` binary to change the root password, remove anonymous users and disbale remote root logins:
+To secure our *MySQL* server, we'll exececute the provided `secure_mysql_installation` binary to change the root password, remove anonymous users and disbale remote root logins:
 
 ```shell
 mysql_secure_installation
@@ -184,7 +182,7 @@ Yes - <kbd>Enter</kbd>. They are not necessary.
 > Remove test database and access to it? [Y/n]
 ```
 
-<kbd>Enter</kbd> — We don't need the testing tables.
+<kbd>Enter</kbd> — You don't need the testing tables.
 
 ```
 > Reload privilege tables now? [Y/n]
@@ -198,7 +196,7 @@ Yes - <kbd>Enter</kbd>. They are not necessary.
 mysql -uroot -p
 ```
 
-Enter your root password and you should see the MySQL console:
+Enter your root password and you should see the *MySQL* console:
 
 ```
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
@@ -206,7 +204,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-Since we now know that this works, we can log out and quit the session using `\q`:
+Since you now know that this works, you can log out and quit the session using `\q`:
 
 ```
 mysql> \q
@@ -215,7 +213,7 @@ Bye
 
 # phpMyAdmin
 
-Install `autoconf`, which is needed for the installation of phpMyAdmin:
+Install `autoconf`, which is needed for the installation of *phpMyAdmin*:
 
 ```shell
 brew install autoconf
@@ -223,19 +221,19 @@ brew install autoconf
 
 And set the `$PHP_AUTOCONF` environment variable:
 
-- If you use the default Bash shell:
+- If you use the default *Bash* shell:
 
 ```shell
 echo 'PHP_AUTOCONF="'$(which autoconf)'"' >> ~/.bash_profile && . ~/.bash_profile
 ```
 
-- or if you use ZSH:
+- or if you use *ZSH*:
 
 ```shell
 echo 'PHP_AUTOCONF="'$(which autoconf)'"' >> ~/.zshrc && . ~/.zshrc
 ```
 
-Since we're now all set, we can finish this part with the installation of phpMyAdmin:
+Since now you're all set, you can finish this part with the actual installation of *phpMyAdmin*:
 
 ```shell
 brew install phpmyadmin
@@ -251,7 +249,7 @@ brew install nginx
 
 ## Setup auto start
 
-Since we want to use port 80 have to run the Nginx process as root:
+Since you want to use port 80 (default HTTP port), you have to run the *Nginx* process with root privileges:
 
 ```shell
 sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
@@ -262,7 +260,7 @@ sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 
 ## Test web server
 
-Start Nginx for the first with:
+Start *Nginx* for the first with:
 
 ```shell
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
@@ -288,7 +286,7 @@ ETag: "5444dea7-264"
 Accept-Ranges: bytes
 ```
 
-Stop Nginx again:
+Stop *Nginx* again:
 
 ```shell
 sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
@@ -311,7 +309,7 @@ sudo chown :staff /var/www
 sudo chmod 775 /var/www
 ```
 
-Remove the current `nginx.conf` (which is also available as `/usr/local/etc/nginx/nginx.conf.default` in case you want to restore the defaults) and download my custom from GitHub:
+Remove the current `nginx.conf` (which is also available as `/usr/local/etc/nginx/nginx.conf.default` in case you want to restore the defaults) and download my custom from *GitHub*:
 
 ```shell
 rm /usr/local/etc/nginx/nginx.conf
@@ -322,7 +320,7 @@ The configuration is simple and as lightweight as possible: worker settings, log
 
 ## Load PHP FPM
 
-Download my custom PHP-FPM configuration from GitHub:
+Download my custom *PHP-FPM* configuration from *GitHub*:
 
 ```shell
 curl -L https://gist.github.com/frdmn/7853158/raw/php-fpm -o /usr/local/etc/nginx/conf.d/php-fpm
@@ -353,7 +351,7 @@ Create a folder for our SSL certificates and private keys:
 mkdir -p /usr/local/etc/nginx/ssl
 ```
 
-Generate 4096bit RSA keys and the self-sign the certificates in one command:
+Generate 4096 bit RSA keys and the self-sign the certificates in one command:
 
 ```shell
 openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=State/L=Town/O=Office/CN=localhost" -keyout /usr/local/etc/nginx/ssl/localhost.key -out /usr/local/etc/nginx/ssl/localhost.crt
@@ -370,7 +368,7 @@ ln -sfv /usr/local/etc/nginx/sites-available/default-ssl /usr/local/etc/nginx/si
 ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sites-enabled/phpmyadmin
 ```
 
-And start Nginx again:
+And start *Nginx* again:
 
 ```shell
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
@@ -399,13 +397,13 @@ curl -L https://gist.github.com/frdmn/7853158/raw/bash_aliases -o /tmp/.bash_ali
 cat /tmp/.bash_aliases >> ~/.bash_aliases
 ```
 
-- If you use the default Bash shell:
+- If you use the default *Bash* shell:
 
 ```shell
 echo "source ~/.bash_aliases" >> ~/.bash_profile && . ~/.bash_profile 
 ```
 
-- or if you use ZSH:
+- or if you use *ZSH*:
 
 ```shell
 echo "source ~/.bash_aliases" >> ~/.zshrc &&  ~/.zshrc
@@ -415,7 +413,7 @@ Now you can use handy short aliases instead of typing the long `launchctl` comma
 
 ## Nginx
 
-You can start, stop and restart Nginx with:
+You can start, stop and restart *Nginx* with:
 
 ```shell
 nginx.start
@@ -442,7 +440,7 @@ sudo nginx -t
 
 ## PHP-FPM
 
-Start, start and restart PHP-FPM:
+Start, start and restart *PHP-FPM*:
 
 ```shell
 php-fpm.start
@@ -458,7 +456,7 @@ php-fpm -t
 
 ## MySQL
 
-Start, start and restart your MySQL server:
+Start, start and restart your *MySQL* server:
 
 ```shell
 mysql.start
@@ -472,7 +470,7 @@ Here are some of the frequently asked questions out of the comment section below
 
 ### Nginx: '[emerg] mkdir() "/usr/local/var/run/nginx/client_body_temp"'
 
-Upgraded to Yosemite and now Nginx doesn't start anymore? Try to reinstall the brew formula:
+Upgraded to Yosemite and now *Nginx* doesn't start anymore? Try to reinstall the `brew` formula:
 
 ```shell
 brew reinstall --force nginx
@@ -494,11 +492,11 @@ export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 ### git: 'Could not resolve host: git.frd.mn'
 
-Probably an outage of my private hosted GitLab server. To fix this, simply try to get in touch with me. Either via [Twitter](https://twitter.com/frdmn), [E-Mail](mailto:j@frd.mn) IRC (frdmn@freenode/espernet) or the comment section below. 
+Probably an outage of my private hosted *GitLab* server. To fix this, simply try to get in touch with me. Either via [Twitter](https://twitter.com/frdmn), [E-Mail](mailto:j@frd.mn) IRC (frdmn@freenode/espernet) or the comment section below. 
 
 ### curl: 'Failed to connect to localhost port 80: Connection refused'
 
-This is an IPv6 related issue, originating in the `/etc/hosts` file of your Mac. To fix this, find the line "fe80::1%lo0 localhost" and comment it out. Or just use this one-liner:
+This is an IPv6 related issue, originating in the `/etc/hosts` file of your Mac. To fix this, find the line "`fe80::1%lo0 localhost`" and comment it out. Or just use this one-liner:
 
 ```shell
 sudo sed -i "" 's/^fe80\:\:/\#fe80\:\:/g' /etc/hosts
