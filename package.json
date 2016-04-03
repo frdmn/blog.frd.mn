@@ -33,7 +33,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "grunt && true"
+    "test": "cp info.json.example info.json && grunt && true"
   },
   "repository": {
     "type": "git",
