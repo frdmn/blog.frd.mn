@@ -15,10 +15,6 @@ $baseTransitionEasing: cubic-bezier(.41,.41,.45,.81);
   transition: background .2s, transform $baseTransitionEasing .3s .3s;
   backface-visibility: hidden;
 
-  @media print {
-    display: none;
-  }
-
   &__content {
     width: 100%;
     height: 100%;

@@ -14,9 +14,6 @@ body:after {
   z-index: $z-indexFixedBorders;
   backface-visibility: hidden;
   transition: background .3s;
-  @media print {
-    display: none;
-  }
 }
 
 body:before {
@@ -78,10 +75,6 @@ body:after {
   @include media($breakTablet) {
     margin: $baseUnit*2 $baseUnit;
   }
-
-  @media print {
-    margin: 0 !important;
-  }
 }
 
 .page-main--default {
@@ -124,13 +117,5 @@ body:after {
     margin-bottom: $baseUnit*2;
     //padding: $baseUnit;
     //border: 3px solid $colorGreyLight;
-  }
-}
-
-.page-author,
-.page-comments,
-.page-footer {
-  @media print {
-    display: none;
   }
 }
