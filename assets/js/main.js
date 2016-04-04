@@ -175,15 +175,17 @@ $(function() {
   });
 
   $('.post-content pre code').each(function() {
-    $(this).parent().wrap('<div class="code-block"></div>');
+    $(this).parent().wrap('<div class="overflow-fade"></div>');
+    $(this).parent().wrap('<div class="overflow-fade__inner"></div>');
     hljs.configure({
       languages: []
     });
     hljs.initHighlighting();
   });
 
-  $('.post-content p img').each(function() {
-    $(this).parent().wrap('<div class="img-block"></div>');
+  $('.post-content table').each(function() {
+    $(this).wrap('<div class="overflow-fade"></div>');
+    $(this).wrap('<div class="overflow-fade__inner"></div>');
   });
 
   var test = new Disqus();
