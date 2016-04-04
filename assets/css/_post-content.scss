@@ -1,44 +1,47 @@
 /**
  * Typographic post-content adjustments.
  */
-$colorCodeBlock: #fff;
 $colorCodeBlockText: $colorGreyDark;
 
 /**
- * Code-block component. Code blocks will be wrapped
- * in the .code-block div via js.
- */
-.code-block {
+* overflow-fade component. Codeblocks or tables will be wrapped
+* in the .overflow-fade div via js.
+*/
+.overflow-fade {
   position: relative;
-  margin-bottom: ceil($baseUnit/1.5);
-  @media print {
-    margin-bottom: 0;
+  margin-left: -$baseUnit/4;
+  margin-right: -$baseUnit/4;
+  @include media($breakTablet) {
+    margin-left: -$baseUnit/2;
+    margin-right: -$baseUnit/2;
   }
   &:before, &:after{
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: $baseUnit/2;
+    width: $baseUnit/4;
     z-index: 100;
     @include media($breakTablet) {
-      width: $baseUnit;
+      width: $baseUnit/2;
     }
   }
 
   &:before {
-    left: -1px;
-    background: linear-gradient(to right, rgba($colorCodeBlock, 1), rgba($colorCodeBlock, 0));
+    left: 0;
+    background: linear-gradient(to right, rgba(#fff, 1), rgba(#fff, 0));
   }
 
   &:after {
-    right: -1px;
-    background: linear-gradient(to left, rgba($colorCodeBlock, 1) 20%, rgba($colorCodeBlock, 0)) 100%;
+    right: 0;
+    background: linear-gradient(to left, rgba(#fff, 1) 20%, rgba(#fff, 0)) 100%;
   }
-  @media print {
-    &:before,
-    &:after {
-      display: none
+
+  &__inner {
+    overflow-y: auto;
+    padding: 0 $baseUnit/4;
+    @include media($breakTablet) {
+      padding: 0 $baseUnit/2;
     }
   }
 }
@@ -148,20 +151,21 @@ $colorCodeBlockText: $colorGreyDark;
    */
   table {
     width: 100%;
-    table-layout: fixed;
-    @include media(max-width $breakLaptop - 1) {
-      &, tbody, tr {
-        display: block;
+    //table-layout: fixed;
+    td,th {
+      min-width: 200px;
+      text-align: center;
+
+      padding-right: $baseUnit/2;
+      &:last-child {
+        padding-right: 0;
       }
     }
+    th {
+      border-bottom: 1px solid black;
+    }
     td {
-      width: 100%;
-
-      text-align: center;
-      @include media(max-width $breakLaptop - 1) {
-        text-align: left;
-        display: block;
-      }
+      border-bottom: 1px solid #ccc;
     }
   }
 
@@ -175,34 +179,22 @@ $colorCodeBlockText: $colorGreyDark;
   }
 
   pre {
-    background: $colorCodeBlock;
-    overflow-x: auto;
-    transform: translateZ(0);
-    padding: ceil($baseUnit/4) ceil($baseUnit/2);
-    margin: ceil(-$baseUnit/4) 0;
+    overflow: visible;
     line-height: 1.25;
-    @include media($breakTablet) {
-      padding: ceil($baseUnit/4) $baseUnit;
-      margin: ceil(-$baseUnit/4) 0;
-    }
-    @media print {
-      padding: 0 ceil($baseUnit/4);
-      margin: 0 0 ceil($baseUnit/4);
-    }
   }
 
   pre code {
-      background: none;
-      overflow-wrap: normal;
-      white-space: pre;
-      padding: 0;
-      vertical-align: inherit;
-      color: $colorCodeBlockText;
-      //@include font-size(21px,false);
-      @media print {
-        overflow-wrap: inherit;
-        white-space: inherit;
-      }
+    background: none;
+    overflow-wrap: normal;
+    white-space: pre;
+    padding: 0;
+    vertical-align: inherit;
+    color: $colorCodeBlockText;
+    //@include font-size(21px,false);
+    @media print {
+      overflow-wrap: inherit;
+      white-space: inherit;
+    }
   }
 
   /**
