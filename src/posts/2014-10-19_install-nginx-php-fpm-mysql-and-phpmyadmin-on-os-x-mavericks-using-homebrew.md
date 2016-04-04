@@ -5,7 +5,7 @@ disqus_id: 13
 slug: install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew
 ---
 
-Recently I got a new MacBook Pro and decided to set it up from scratch, because I've used the same Time Machine backup to migrate from about four years over and over again. 
+Recently I got a new MacBook Pro and decided to set it up from scratch, because I've used the same Time Machine backup to migrate from about four years over and over again.
 
 Perfect time to get rid of the LAMP (**L**inux **A**pache **M**ySQL **P**HP) web server stack and replace it with Nginx and PHP-FPM. Below you can read a detailed guide how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
 
@@ -400,7 +400,7 @@ cat /tmp/.bash_aliases >> ~/.bash_aliases
 - If you use the default *Bash* shell:
 
 ```shell
-echo "source ~/.bash_aliases" >> ~/.bash_profile && . ~/.bash_profile 
+echo "source ~/.bash_aliases" >> ~/.bash_profile && . ~/.bash_profile
 ```
 
 - or if you use *ZSH*:
@@ -470,49 +470,48 @@ Here are some of the frequently asked questions out of the comment section below
 
 ### Nginx: '[emerg] mkdir() "/usr/local/var/run/nginx/client_body_temp"'
 
-Upgraded to Yosemite and now *Nginx* doesn't start anymore? Try to reinstall the `brew` formula:
-
-```shell
-brew reinstall --force nginx
-```
+> Upgraded to Yosemite and now *Nginx* doesn't start anymore? Try to reinstall the `brew` formula:
+> ```shell
+> brew reinstall --force nginx
+> ```
 
 ### PHP-FPM: 'lsof -Pni4 | grep LISTEN | grep php' doesn't return anything  
 
-Make sure your `$PATH` variable is properly set:
-
-```shell
-echo $PATH | grep php56
-```
-
-If that command doesn't return anything at all, you probably forgot to adjust your `.zshrc`/`.bash_profile`. Make sure to add this line at the end:
-
-```shell
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-```
+> Make sure your `$PATH` variable is properly set:
+>
+> ```shell
+> echo $PATH | grep php56
+> ```
+>
+> If that command doesn't return anything at all, you probably forgot to adjust your `.zshrc`/`.bash_profile`. Make sure to add this line at the end:
+>
+> ```shell
+>export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+> ```
 
 ### git: 'Could not resolve host: git.frd.mn'
 
-Probably an outage of my private hosted *GitLab* server. To fix this, simply try to get in touch with me. Either via [Twitter](https://twitter.com/frdmn), [E-Mail](mailto:j@frd.mn) IRC (frdmn@freenode/espernet) or the comment section below. 
+> Probably an outage of my private hosted *GitLab* server. To fix this, simply try to get in touch with me. Either via [Twitter](https://twitter.com/frdmn), [E-Mail](mailto:j@frd.mn) IRC (frdmn@freenode/espernet) or the comment section below.
 
 ### curl: 'Failed to connect to localhost port 80: Connection refused'
 
-This is an IPv6 related issue, originating in the `/etc/hosts` file of your Mac. To fix this, find the line "`fe80::1%lo0 localhost`" and comment it out. Or just use this one-liner:
-
-```shell
-sudo sed -i "" 's/^fe80\:\:/\#fe80\:\:/g' /etc/hosts
-```
+> This is an IPv6 related issue, originating in the `/etc/hosts` file of your Mac. To fix this, find the line "`fe80::1%lo0 localhost`" and comment it out. Or just use this one-liner:
+>
+> ```shell
+> sudo sed -i "" 's/^fe80\:\:/\#fe80\:\:/g' /etc/hosts
+> ```
 
 ### brew: 'configure: error: Can not find OpenSSL's <evp.h>'
 
-Make sure *Xcode* as well as Xcode's CLI tools as installed and up to date!
+> Make sure *Xcode* as well as Xcode's CLI tools as installed and up to date!
 
 ### Mavericks: Compilation error while building PHP / missing zlib
 
-Try to restore the `/usr/include` directory:
-
-```shell
-sudo ln -s /Applications/Xcode5-DP.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include /usr/include
-```
+> Try to restore the `/usr/include` directory:
+>
+> ```shell
+> sudo ln -s /Applications/Xcode5-DP.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include /usr/include
+> ```
 
 ---
 
