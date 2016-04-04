@@ -10,3 +10,54 @@ a:hover {
   @include pageColors(color);
   text-decoration: underline;
 }
+
+.post-content a {
+
+  background-size: .03em .1em, .03em .1em, .1em .075em;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 88%, 100% 88%, 0% 88%;
+  @include media($breakDesktop) {
+    background-position: 0% 86%, 100% 86%, 0% 86%;
+  }
+
+  text-shadow:
+    -.045em .045em 0 #fff,
+    -.045em -.045em 0 #fff,
+    .045em -.045em 0 #fff,
+    .045em .045em 0 #fff,
+    0 .045em 0 #fff,
+    -.045em 0 0 #fff,
+    .045em 0 0 #fff,
+    0 -.045em 0 #fff,
+    -.025em .045em 0 #fff,
+    -.025em -.045em 0 #fff,
+    .025em -.045em 0 #fff,
+    .025em .045em 0 #fff,
+    -.045em .025em 0 #fff,
+    -.045em -.025em 0 #fff,
+    .045em -.025em 0 #fff,
+    .045em .025em 0 #fff;
+
+  &::selection {
+    text-shadow: none;
+    background: #b5d6fa;
+  }
+
+
+  &::-moz-selection {
+    text-shadow: none;
+    background: #b5d6fa;
+  }
+
+  &:hover {
+    text-decoration: none;
+    @each $color, $hex in $pageColors {
+     .color--#{$color} & {
+       background-image:
+       linear-gradient(to right, #fff, #fff),
+       linear-gradient(to left, #fff, #fff),
+       linear-gradient($hex, $hex);
+     }
+    }
+  }
+}

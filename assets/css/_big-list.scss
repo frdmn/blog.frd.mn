@@ -27,7 +27,44 @@
   }
 
   a:hover &__title {
-    text-decoration: underline;
+    text-decoration: none;
+
+    background-image:
+      linear-gradient(to right, #fff, #fff),
+      linear-gradient(to left, #fff, #fff),
+      linear-gradient(black, black);
+    background-size: .03em .1em, .03em .1em, .1em .1em;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: 0% 90%, 100% 90%, 0% 90%;
+
+    text-shadow:
+      -.045em .045em 0 #fff,
+      -.045em -.045em 0 #fff,
+      .045em -.045em 0 #fff,
+      .045em .045em 0 #fff,
+      0 .045em 0 #fff,
+      -.045em 0 0 #fff,
+      .045em 0 0 #fff,
+      0 -.045em 0 #fff,
+      -.025em .045em 0 #fff,
+      -.025em -.045em 0 #fff,
+      .025em -.045em 0 #fff,
+      .025em .045em 0 #fff,
+      -.045em .025em 0 #fff,
+      -.045em -.025em 0 #fff,
+      .045em -.025em 0 #fff,
+      .045em .025em 0 #fff;
+
+    &::selection {
+      text-shadow: none;
+      background: #b5d6fa;
+    }
+
+
+    &::-moz-selection {
+      text-shadow: none;
+      background: #b5d6fa;
+    }
   }
 }
 
@@ -36,6 +73,38 @@
     border-top: $baseBorderLight;
     > a {
       color: #FFF !important; //to overwrite pageColors
+
+      &:hover {
+        .big-list__title {
+          transition: .2s text-shadow;
+          text-decoration: none;
+          @each $color, $hex in $pageColors {
+            .color--#{$color} & {
+              text-shadow:
+                -.045em .045em 0 $hex,
+                -.045em -.045em 0 $hex,
+                .045em -.045em 0 $hex,
+                .045em .045em 0 $hex,
+                0 .045em 0 $hex,
+                -.045em 0 0 $hex,
+                .045em 0 0 $hex,
+                0 -.045em 0 $hex,
+                -.025em .045em 0 $hex,
+                -.025em -.045em 0 $hex,
+                .025em -.045em 0 $hex,
+                .025em .045em 0 $hex,
+                -.045em .025em 0 $hex,
+                -.045em -.025em 0 $hex,
+                .045em -.025em 0 $hex,
+                .045em .025em 0 $hex !important;
+              background-image:
+              linear-gradient(to right, $hex, $hex),
+              linear-gradient(to left, $hex, $hex),
+              linear-gradient(#fff, #fff) !important;
+            }
+          }
+        }
+      }
     }
   }
 
