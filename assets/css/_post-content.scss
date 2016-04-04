@@ -255,9 +255,22 @@ $colorCodeBlockText: $colorGreyDark;
    */
   blockquote {
     position: relative;
-    padding: ceil($baseUnit/2) $baseUnit;
     font-style: italic;
-    *:last-child {
+    padding-left: $baseUnit/4;
+    @include media($breakTablet) {
+      padding-left: $baseUnit/2;
+    }
+    @include media($breakLaptop) {
+      padding-left: ceil($baseUnit/1.5);
+    }
+    border-left: .3em solid black;
+    pre {
+      margin-bottom: $baseUnit/2;
+    }
+    > *:last-child {
+      margin-bottom: 0;
+    }
+    > .overflow-fade:last-child *:last-child {
       margin-bottom: 0;
     }
   }
