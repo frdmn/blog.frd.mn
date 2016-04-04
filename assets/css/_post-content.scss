@@ -160,6 +160,7 @@ $colorCodeBlockText: $colorGreyDark;
     }
     th {
       border-bottom: 1px solid black;
+      font-family: $fontSecondary;
     }
     td {
       border-bottom: 1px solid #ccc;
@@ -188,10 +189,6 @@ $colorCodeBlockText: $colorGreyDark;
     vertical-align: inherit;
     color: $colorCodeBlockText;
     //@include font-size(21px,false);
-    @media print {
-      overflow-wrap: inherit;
-      white-space: inherit;
-    }
   }
 
   /**
@@ -216,10 +213,14 @@ $colorCodeBlockText: $colorGreyDark;
    */
   h1, h2, h3, h4, h5, h6 {
     font-family: $fontSecondary;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     code {
       font-weight: 300;
     }
+  }
+
+  h1 {
+    margin-bottom: toRem($baseUnit);
   }
 
   h2 {
@@ -231,22 +232,13 @@ $colorCodeBlockText: $colorGreyDark;
   }
 
   h1, h2, h3 {
-    margin-top: $baseUnit*2;
-    margin-bottom: ceil($baseUnit/1.5);
-    @media print {
-      margin-top: $baseUnit;
-      margin-bottom: ceil($baseUnit/3);
-    }
+  margin-top: toRem($baseUnit*2);
+  margin-bottom: toRem(ceil($baseUnit/1.5));
   }
 
   h4, h5, h6 {
-    margin-top: $baseUnit*2;
-    margin-bottom: ceil($baseUnit/1.5);
+    margin-bottom: toRem(ceil($baseUnit/1.5));
     @include font-size(28px);
-    @media print {
-      margin-top: 0;
-      margin-bottom: ceil($baseUnit/3);
-    }
   }
 
   /**
