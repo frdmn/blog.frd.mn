@@ -183,10 +183,6 @@ $(function() {
     hljs.initHighlighting();
   });
 
-  $('.post-content p img').each(function() {
-    $(this).parent().wrap('<div class="img-block"></div>');
-  });
-
   $('.post-content table').each(function() {
     $(this).wrap('<div class="overflow-fade"></div>');
     $(this).wrap('<div class="overflow-fade__inner"></div>');

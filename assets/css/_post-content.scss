@@ -46,25 +46,22 @@ $colorCodeBlockText: $colorGreyDark;
   }
 }
 
-/**
- * Image-block component. Images will be wrapped
- * in the .img-block div via js.
- */
-.img-block {
-  border: 1px solid $colorGreyLight;
-  margin-bottom: ceil($baseUnit/1.5) + $baseUnit;
 
-  p, img {
-    margin-bottom: 0 !important; //to overwrite `.post-content p`
-  }
-
-  padding: $baseUnit;
-
-  text-align: center;
-}
 
 .post-content {
   word-wrap: break-word;
+
+  /**
+   * Images
+   */
+  img {
+    margin: $baseUnit auto;
+    display: block;
+    @include media($breakDesktop) {
+      margin-top: $baseUnit*2;
+      margin-bottom: $baseUnit*2;
+    }
+  }
 
   /**
    * Vertical rhythm.
