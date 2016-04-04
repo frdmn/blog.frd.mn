@@ -219,6 +219,10 @@ $colorCodeBlockText: $colorGreyDark;
     }
   }
 
+  h1 {
+    margin-bottom: toRem($baseUnit);
+  }
+
   h2 {
     @include font-size(50px);
   }
@@ -228,13 +232,12 @@ $colorCodeBlockText: $colorGreyDark;
   }
 
   h1, h2, h3 {
-    margin-top: $baseUnit*2;
-    margin-bottom: ceil($baseUnit/1.5);
+  margin-top: toRem($baseUnit*2);
+  margin-bottom: toRem(ceil($baseUnit/1.5));
   }
 
   h4, h5, h6 {
-    margin-top: $baseUnit*2;
-    margin-bottom: ceil($baseUnit/1.5);
+    margin-bottom: toRem(ceil($baseUnit/1.5));
     @include font-size(28px);
   }
 
