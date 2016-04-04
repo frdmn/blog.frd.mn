@@ -115,11 +115,31 @@ $colorCodeBlockText: $colorGreyDark;
       margin-top: 10px;
     }
     @include media($breakDesktop) {
-      @include font-size($headingSize1*2.25, false);
+      @include font-size($headingSize1*2.3750, false);
       line-height: 0.75;
-      margin-top: 8px;
+      margin-top: 5px;
       margin-left: -8px;
       margin-right: 15px;
+    }
+  }
+
+  /**
+   * :first-letter fix for firefox
+   *
+   * DON'T TELL ANYONE!
+   */
+  @supports (-moz-appearance:none) and (display:contents) {
+    > p:first-of-type:first-letter {
+      margin-top: 8px;
+      @include media($breakTablet) {
+        margin-top: 10px;
+      }
+      @include media($breakLaptop) {
+        margin-top: 14px;
+      }
+      @include media($breakDesktop) {
+        margin-top: 12px;
+      }
     }
   }
 
