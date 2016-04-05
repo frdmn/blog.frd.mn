@@ -59,13 +59,16 @@ $colorCodeBlockText: $colorGreyDark;
       color: #ccc;
       border-radius: 100px;
       font-family: $fontSecondary;
-      font-size: 16px;
+      font-size: toRem(16px);
       text-transform: uppercase;
       padding: 0 $baseUnit/4;
       z-index: 101;
       box-shadow: 0 0 10px 10px #fff;
       &--stuck {
         opacity: 1;
+      }
+      .touch & {
+        display: none;
       }
     }
     &:hover {
