@@ -174,18 +174,29 @@ $(function() {
     },300);
   });
 
+  var codeIndex = 0;
   $('.post-content pre code').each(function() {
-    $(this).parent().wrap('<div class="overflow-fade"></div>');
-    $(this).parent().wrap('<div class="overflow-fade__inner"></div>');
+    $(this).attr('id', 'js-copy-code-' + codeIndex);
+    $(this).parent().wrap('<div class="overflow-fade overflow-fade--code js-copy-code"><div class="overflow-fade__inner"></div></div>');
+    $(this).parent().parent().append('<button class="js-copy-code-button overflow-fade__button" data-clipboard-target="#js-copy-code-' + codeIndex +'">✄ Copy</button>');
     hljs.configure({
       languages: []
     });
     hljs.initHighlighting();
+
+    codeIndex++;
   });
 
   $('.post-content table').each(function() {
-    $(this).wrap('<div class="overflow-fade"></div>');
-    $(this).wrap('<div class="overflow-fade__inner"></div>');
+    $(this).wrap('<div class="overflow-fade"><div class="overflow-fade__inner"></div></div>');
+  });
+
+  var clipboard = new Clipboard('.js-copy-code-button');
+
+  clipboard.on('success', function(e) {
+    e.trigger.innerHTML = '✔ Copied';
+    e.trigger.className += ' overflow-fade__button--stuck';
+    e.clearSelection();
   });
 
   var test = new Disqus();
