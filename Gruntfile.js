@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss',
-                    '<%= dirs.css %>/print.css': '<%= dirs.bower %>/princss/print.scss'
+                    '<%= dirs.css %>/print.css': '<%= dirs.css %>/print.scss'
                 }
             }
         },
