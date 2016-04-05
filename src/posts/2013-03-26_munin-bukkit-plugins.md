@@ -5,9 +5,11 @@ disqus_id: 4
 slug: munin-bukkit-plugins
 ---
 
-Recently I've set up a [Munin](http://munin-monitoring.org) monitoring platform to get some more in depth overview for my running services and server. The installation and configuration is pretty easy through the awesomeness of package managers like `aptitude`. By default the following plugins are enabled: disk utilization, exim (MTA), munin, network usage, processes and system. If you want to track your Apache and MySQL instance you have to enable those manually.
+Recently I've set up a [Munin](http://munin-monitoring.org) monitoring platform to get an indepth overview for my running services and servers. Here's how to monitor your Minecraft server using Munin monitoring.
 
-Then I had the idea to include my [Bukkit](http://bukkit.org) ([Minecraft](http://minecraft.net)) server on that Munin instance as well. Due to [JSONAPI](https://github.com/alecgorge/jsonapi) — which provides [hundreds of API-calls](http://mcjsonapi.com/apidocs/) through HTTP, TCP and [WebSocket](http://www.websocket.org/) streams — it is pretty easy to get the neccesarry informations for those plugin. So I started to get some informations about plugin development in Munin and six hours later my instance looked like this:
+Someday, I had the great idea to add and track my [Bukkit](http://bukkit.org) ([Minecraft](http://minecraft.net)) server somehow on that Munin instance as well. Due to [JSONAPI](https://github.com/alecgorge/jsonapi) — which provides [hundreds of API-calls](http://mcjsonapi.com/apidocs/) through HTTP, TCP and [WebSocket](http://www.websocket.org/) streams — it is pretty easy to get the neccesarry informations for the Munin plugin. 
+
+So I started to gather some informations about plugin development in Munin and six hours later my Munin looked like this:
 
 ![Munin Bukkit/JSONAPI plugins](/assets/images/posts/munin-bukkit-plugins/1.png)
 
@@ -27,7 +29,11 @@ You can grab them via [my GitHub repo](https://github.com/yeahwhat-mc/munin-bukk
 # Configuration
 
 1. Clone the [git repo](https://github.com/frdmn/munin-bukkit-plugins):  
-`git clone git://github.com/frdmn/munin-bukkit-plugins.git`
+
+  ```shell
+  git clone git://github.com/frdmn/munin-bukkit-plugins.git
+  ```
+
 1. Adjust the varibales in each plugin file
 1. Make sure the PHP binary in the Shebang line is executable
 
@@ -35,19 +41,42 @@ You can grab them via [my GitHub repo](https://github.com/yeahwhat-mc/munin-bukk
 
 1. Perform your configuration (see above)
 1. Move the plugins into the Munin plugin directory:  
-`mv mcjson* /usr/share/munin/plugins/`
-1. Change the ownership:  
-`chown munin:munin /usr/share/munin/plugins/mcjson*`
-1. Make sure they are exectuable:  
-`chmod 755 /usr/share/munin/plugins/mcjson*`
-1. Enable the plugins:  
-`ln -s /usr/share/munin/plugins/mcjson* /etc/munin/plugins/`
-1. Restart your munin-node:  
-`service munin-node restart`
-1. Run your cron:  
-`su - munin --shell=/bin/sh -c /usr/bin/munin-cron`
 
-Aaaaand you made it. Point your browser to your munin instance and enjoy the nice Bukkit graphs! :)
+  ```shell
+  mv mcjson* /usr/share/munin/plugins/
+  ```
+
+1. Change the ownership:  
+
+  ```shell
+  chown munin:munin /usr/share/munin/plugins/mcjson*
+  ```
+
+1. Make sure they are exectuable:  
+
+  ```shell
+  chmod 755 /usr/share/munin/plugins/mcjson*
+  ```
+
+1. Enable the plugins:  
+
+  ```shell
+  ln -s /usr/share/munin/plugins/mcjson* /etc/munin/plugins/
+  ```
+
+1. Restart your munin-node:  
+
+  ```shell
+  service munin-node restart
+  ```
+
+1. Run your cron:  
+
+  ```shell
+  su - munin --shell=/bin/sh -c /usr/bin/munin-cron
+  ```
+
+Aaaaand, you did it. Point your browser to your munin instance and enjoy the nice Bukkit graphs! :)
 
 # Update <sup>on March 27, 07:29 am</sup>
 
