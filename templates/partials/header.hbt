@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="color--{{this.pageColor}}" data-page-color-original="{{this.pageColor}}">
+<html lang="en" class="color--{{this.pageColor}} no-js no-touch" data-page-color-original="{{this.pageColor}}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,8 +49,8 @@
   <script src="//use.typekit.net/buq7vrx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
-  <!-- Modernizr -->
-  <script src="{{siteInfo 'url'}}/assets/js/modernizr.js"></script>
+  <!-- Mini Modernizr -->
+  <script>!function(a,b){"use strict";b.documentElement.className=b.documentElement.className.replace("no-js","js"),("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)&&(document.documentElement.className=document.documentElement.className.replace("no-touch","touch"))}(window,document);</script>
 </head>
 <body>
   <div class="page-wrap">
