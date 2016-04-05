@@ -226,7 +226,7 @@ $(function() {
       });
 
       if (buzz) {
-        $c.html('<span class="tooltip">' + buzz + '<span class="tooltip__content">Hot Topic!<br><i class="tooltip__highlight">' + comments + '</i> comments <br>waiting inside!</span></span>');
+        $c.html('<span class="tooltip">' + buzz + '<span class="tooltip__content">This post has<br><i class="tooltip__highlight">' + comments + '</i> comments.<br>Add yours!</span></span>');
         setTimeout(function() {
           $c.parent().addClass('comment-wrap--active');
         },50);
