@@ -200,7 +200,7 @@ In this case, I assume that our example service is Python’s `SimpleHTTPServer`
 
 # Mac OS X (launchd)
 
-Note: For some reasons the SimpleHTTPServer python module didn’t work via `launchd`, so i included this tiny web server python script in [the repo](https://raw.github.com/frdmn/service-daemons/master/macosx-httpd.py).
+Note: For some reasons the SimpleHTTPServer python module didn’t work via `launchd`, so I included this tiny web server python script in [the repo](https://raw.github.com/frdmn/service-daemons/master/macosx-httpd.py).
 
 1. Create an user for the desired service  
 1. Create a log folder for the service:  

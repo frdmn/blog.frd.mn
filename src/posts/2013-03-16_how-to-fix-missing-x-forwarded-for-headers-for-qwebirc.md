@@ -44,4 +44,4 @@ FORWARDED_FOR_IPS = ["127.0.0.1"]
 
 (Make sure you compile your instance again to make the changes in the `qwebirc/config.py` effective!)
 
-Now qwebirc will parse that header, treats the containing IP as the sender IP of the HTTP request and will set a proper hostname like i showed above. Just convert the hexadecimal part into a decimal notation and you reveal the IPv4 address of your user.
+Now qwebirc will parse that header, treats the containing IP as the sender IP of the HTTP request and will set a proper hostname like I showed above. Just convert the hexadecimal part into a decimal notation and you reveal the IPv4 address of your user.
