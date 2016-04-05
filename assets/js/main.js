@@ -190,6 +190,12 @@ $(function() {
   $('.post-content table').each(function() {
     $(this).wrap('<div class="overflow-fade"></div>');
     $(this).wrap('<div class="overflow-fade__inner"></div>');
+  var clipboard = new Clipboard('.js-copy-code-button');
+
+  clipboard.on('success', function(e) {
+    e.trigger.innerHTML = '✔ Copied';
+    e.trigger.className += ' overflow-fade__button--stuck';
+    e.clearSelection();
   });
 
   var test = new Disqus();
