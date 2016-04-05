@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    style: 'expanded',
+                    outputStyle: 'expanded',
                     loadPath: '.'
                 },
                 files: {
@@ -27,12 +27,12 @@ module.exports = function(grunt) {
             },
             build: {
                 options: {
-                    style: 'compressed',
+                    outputStyle: 'compressed',
                     loadPath: '.'
                 },
                 files: {
                     '<%= dirs.css %>/style.css': '<%= dirs.css %>/style.scss',
-                    '<%= dirs.css %>/print.css': '<%= dirs.bower %>/princss/print.scss'
+                    '<%= dirs.css %>/print.css': '<%= dirs.css %>/print.scss'
                 }
             }
         },
