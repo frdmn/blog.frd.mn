@@ -5,7 +5,7 @@ disqus_id: 3
 slug: custom-apple-icon-for-minidlna-incl-diff-patch
 ---
 
-Since a couple of days i've been running a [MiniDLNA](http://sourceforge.net/projects/minidlna/) media server which is allegedly fully compliant with all the common `DLNA/UPnP` clients. In my case is the client a [Samsung UE40ES5700](http://www.amazon.de/Samsung-UE40ES5700-LED-Backlight-Fernseher-Energieeffizienzklasse-Full-HD/dp/B007H72AFM) SmartTV with the latest AllShare Play software.
+Since a couple of days i've been running a [MiniDLNA](http://sourceforge.net/projects/minidlna/) media server which seems compatible to all the common `DLNA/UPnP` clients. In my case, the client is a [Samsung UE40ES5700](http://www.amazon.de/Samsung-UE40ES5700-LED-Backlight-Fernseher-Energieeffizienzklasse-Full-HD/dp/B007H72AFM) SmartTV with the latest AllShare Play implementation.
 
 The initial configuration was very comfortable: You define your media folders/shares, create a `launchd` service and everything works like a charm.  
 
@@ -19,31 +19,55 @@ I converted the hex back to the viewable PNG, fired up Photoshop and made some A
 
 If some of you want to do the same I created the following [Gist on GitHub](https://gist.github.com/frdmn/5222476) which includes all the needed ressources and even a **diff patch**. Follow this instructions:
 
-    # Make sure you disabled the launchd daemon before you start
-    sudo launchctl unload /Library/LaunchDaemons/your.bundle.minidlna.plist
-    sudo launchctl stop your.bundle.minidlna
+1. Make sure you disabled the launchd daemon before you start:
 
-    # Go into a temporary directory
-    cd /tmp
+  ```shell
+  sudo launchctl unload /Library/LaunchDaemons/your.bundle.minidlna.plist
+  sudo launchctl stop your.bundle.minidlna
+  ```
 
-    # Grab the latest MiniDLNA source via CVS
-    cvs -z3 -d:pserver:anonymous@minidlna.cvs.sourceforge.net:/cvsroot/minidlna co -P minidlna
+1. Go into a temporary directory:
 
-    # Clone my GitHub gist - https://gist.github.com/frdmn/5222476
-    git clone https://gist.github.com/5222476.git icon-patch
+  ```shell
+  cd /tmp
+  ```
 
-    # Change into the MiniDLNA directory
-    cd minidlna
+1. Grab the latest MiniDLNA source via CVS:
 
-    # Apply the diff patch
-    patch < ../icon-patch/minidlna-apple-icon.patch
+  ```shell
+  cvs -z3 -d:pserver:anonymous@minidlna.cvs.sourceforge.net:/cvsroot/minidlna co -P minidlna
+  ```
 
-    # Compile and install
-    ./autogen.sh && ./configure && make
-    sudo make install
+1. Clone my GitHub gist - <https://gist.github.com/frdmn/5222476>:
 
-    # Start the daemon again
-    sudo launchctl load /Library/LaunchDaemons/your.bundle.minidlna.plist
-    sudo launchctl start your.bundle.minidlna
+  ```shell
+  git clone https://gist.github.com/5222476.git icon-patch
+  ```
 
-And you are done. Reboot your `DLNA/UPnP` client in case the icon didn't change for you.
+1. Change into the MiniDLNA directory:
+
+  ```shell
+  cd minidlna
+  ```
+
+1. Apply the diff patch:
+
+  ```shell
+  patch < ../icon-patch/minidlna-apple-icon.patch
+  ```
+
+1. Compile and install:
+
+  ```shell
+  ./autogen.sh && ./configure && make
+  sudo make install
+  ```
+
+1. Start the daemon again:
+
+  ```shell
+  sudo launchctl load /Library/LaunchDaemons/your.bundle.minidlna.plist
+  sudo launchctl start your.bundle.minidlna
+  ```
+
+And you are done. Reboot your `DLNA/UPnP` client in case the icon didn't change immediately for you.
