@@ -1,6 +1,6 @@
 {{> header}}
 
-<header class="title-bar text--center title-bar--spaced space--bottom-double">
+<header class="title-bar text--center title-bar--fullclick title-bar--fullclick-large space--bottom-double">
   <div class="title-bar__inner">
     <a href="{{siteInfo 'url'}}" data-page-color="blue">
       <div class="icon--penrose" data-grunticon-embed></div>
