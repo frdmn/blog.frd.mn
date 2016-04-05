@@ -188,8 +188,9 @@ $(function() {
   });
 
   $('.post-content table').each(function() {
-    $(this).wrap('<div class="overflow-fade"></div>');
-    $(this).wrap('<div class="overflow-fade__inner"></div>');
+    $(this).wrap('<div class="overflow-fade"><div class="overflow-fade__inner"></div></div>');
+  });
+
   var clipboard = new Clipboard('.js-copy-code-button');
 
   clipboard.on('success', function(e) {
