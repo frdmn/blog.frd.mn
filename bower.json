@@ -19,6 +19,7 @@
     "jquery": "1.11",
     "modernizr": "~2.8.1",
     "headroom.js": "~0.7.0",
-    "princss": "rnarian/princss"
+    "princss": "rnarian/princss",
+    "clipboard": "^1.5.10"
   }
 }
