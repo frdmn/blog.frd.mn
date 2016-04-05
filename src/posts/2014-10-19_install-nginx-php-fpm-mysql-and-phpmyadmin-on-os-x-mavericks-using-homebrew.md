@@ -25,7 +25,7 @@ xcode-select --install
 
 Confirm the installation dialog with `Install`.
 
-Back in *Xcode*, hit <kbd>⌘ + ,</kbd> to access the `Preferences` and then navigate to the `Locations` tab to set the `Command Line Tools` to the latest version available — `Xcode 6.1 (61A1052c)` in my example:
+Back in *Xcode*, hit <kbd>⌘</kbd> + <kbd>,</kbd> to access the `Preferences` and then navigate to the `Locations` tab to set the `Command Line Tools` to the latest version available — `Xcode 6.1 (61A1052c)` in my example:
 
 ![Xcode.app → Preferences → Location | Command Line Tools](/assets/images/posts/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/1.png)
 
