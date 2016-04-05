@@ -69,6 +69,7 @@ module.exports = function(grunt) {
                     '<%= dirs.bower %>/jquery/dist/jquery.js',
                     '<%= dirs.bower %>/headroom.js/dist/headroom.js',
                     '<%= dirs.bower %>/headroom.js/dist/jQuery.headroom.js',
+                    '<%= dirs.bower %>/clipboard/dist/clipboard.js',
                     '<%= dirs.js %>/*.js',
                     '!<%= dirs.js %>/modernizr.js',
                     '!<%= dirs.js %>/build.js'
