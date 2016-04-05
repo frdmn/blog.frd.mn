@@ -5,7 +5,7 @@ disqus_id: 14
 slug: chrooted-sftp-environment
 ---
 
-Today I had to strugge with a weird chroot / SFTP problem. I am actually familiar with those environments because i've set them up several times before, so I couldn't really explain what the fuck was going on at first.
+Today I had to strugge with a weird chroot / SFTP problem. I am actually familiar with those environments because I've set them up several times before, so I couldn't really explain what the fuck was going on at first.
 
 The issue was, that you were not able to create a folder inside the chroot, as long as you didnt create a file before (o_O). After you created a file, you could create directories as well. If you didn't done that, you were greeted with the following error message by the `sftp` binary:
 
