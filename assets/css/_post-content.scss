@@ -51,7 +51,7 @@ $colorCodeBlockText: $colorGreyDark;
       opacity: 0;
       position: absolute;
       top: .1em;
-      right: $baseUnit/2;
+      right: $baseUnit/4;
       transition: .2s;
       background: #fff;
       border: .3em solid transparent;
@@ -59,13 +59,16 @@ $colorCodeBlockText: $colorGreyDark;
       color: #ccc;
       border-radius: 100px;
       font-family: $fontSecondary;
-      font-size: 16px;
+      font-size: toRem(16px);
       text-transform: uppercase;
       padding: 0 $baseUnit/4;
       z-index: 101;
       box-shadow: 0 0 10px 10px #fff;
       &--stuck {
         opacity: 1;
+      }
+      .touch & {
+        display: none;
       }
     }
     &:hover {
@@ -225,16 +228,20 @@ $colorCodeBlockText: $colorGreyDark;
    * Keyboard
    */
   kbd {
-    @include font-size(21px,false);
-    padding: .1em .3em;
-    vertical-align: .1em;
+    @include font-size(22px,false);
+    font-family: $fontSecondary;
+    vertical-align: baseline;
+    min-width: 1em;
+    text-align: center;
+    padding: 0 .3em;
+    display: inline-block;
+    vertical-align: middle;
     box-shadow:
       0 -1px 0 rgba(0,0,0,.05) inset,
       0 0 0 1px rgba(0,0,0,.1),
       0 1px 1px rgba(0,0,0,.2),
       0 1px 2px rgba(0,0,0,.2);
     text-transform: uppercase;
-    color: #333;
     border-radius: 4px;
   }
 
