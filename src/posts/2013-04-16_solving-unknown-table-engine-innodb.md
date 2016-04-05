@@ -5,16 +5,15 @@ disqus_id: 5
 slug: solving-unknown-table-engine-innodb
 ---
 
-In case you run into such an error after tuning / tweaking your MySQL configuration:
+In case you ever run into an error `Unknown table engine 'InnoDB'
+` after tuning / tweaking your MySQL configuration, here's how to fix it easily:
 
-# Unknown table engine 'InnoDB'
+(Please note, that we're going to clear all of your __ib_logfile__. Yes — it's usually safe to delete them as soon as the database isn't running anymore. They are getting recreated with the 3rd step)
 
-... you should make sure that you clear all of your __ib_logfile[01]__:  
-
-(Yes — it's safe to delete them once the database isn't running anymore. They are getting recreated with the 3rd step)
-
-    $ service mysql stop
-    $ rm /var/lib/mysql/ib_logfile*
-    $ service mysql start
+```shell
+service mysql stop
+rm /var/lib/mysql/ib_logfile*
+service mysql start
+```
 
 Et voilà! :)
