@@ -5,17 +5,27 @@ disqus_id: 7
 slug: circular-dig-or-odig
 ---
 
-As you might know I work for a small web hoster. We have have several shared web servers to manage and host our clients.
+As you might already know, I work for a small regional web hosting ISP. We have have several shared web environments to manage and host our clients on.
 
 Now if we need to find out which shared web server is responsible for a specific domain name of one of the clients (in this example, "iwelt.de"), you probably do something like this:
 
-    $ dig +short iwelt.de
-    82.212.222.175
+```shell
+dig +short iwelt.de
+```
+
+> ```
+> 82.212.222.175
+> ```
 
 Okay, now we have an IP address but that probably doesnt help us out unless we know our whole IPAM system inside out. Next step is trying to figure out which server is using the IP "82.212.222.175". We can use `dig` again for that:
 
-    $ dig +short -x 82.212.222.175
-    t1.iwelt-ag.net.
+```shell
+dig +short -x 82.212.222.175
+```
+
+> ```
+> t1.iwelt-ag.net.
+> ```
 
 And now we found out about the responsible web server which is serving the domain "iwelt.de". Since I do those steps nearly everyday I am getting tired of doing it step by step all the time, I wrote a small Bash script for this.
 
@@ -23,18 +33,28 @@ And now we found out about the responsible web server which is serving the domai
 
 Basically __[odig](https://github.com/w/circular-dig)__ just combines the two commands above and simplifies the whole process:
 
-    $ odig iwelt.de
-    iwelt.de returned the following DNS records:
-    1. returned IP: 82.212.222.175
-       corresponding PTR: t1.iwelt-ag.net.
+```shell
+odig iwelt.de
+```
+
+> ```
+> iwelt.de returned the following DNS records:
+> 1. returned IP: 82.212.222.175
+>    corresponding PTR: t1.iwelt-ag.net.
+> ```
 
 In case you get some CNAME records, it will try to resolve the A records instead:
 
-    $ odig www.frd.mn
-    www.frd.mn returned the following DNS records:
-    1. returned hostname (CNAME): c-3po.frd.mn. -> skip
-    2. returned IP: 82.196.7.61
-       corresponding PTR: c-3po.frd.mn.
+```shell
+odig www.frd.mn
+```
+
+> ```
+> www.frd.mn returned the following DNS records:
+> 1. returned hostname (CNAME): c-3po.frd.mn. -> skip
+> 2. returned IP: 82.196.7.61
+>    corresponding PTR: c-3po.frd.mn.
+> ```
 
 If you want to take a look for yourself checkout my [repo on GitHub](https://github.com/frdmn/circular-dig). In case you found some problems or improvements, feel free to send a pull request.
 
@@ -42,22 +62,27 @@ If you want to take a look for yourself checkout my [repo on GitHub](https://git
 
 One of my coworkers asked me if I could implement a feature to lookup MX records of a Domain as well. Got him satisfied [some minutes later](https://github.com/frdmn/circular-dig/commit/af3587dc3ec29145883594a856e733a0fa921441):
 
-    odig -m yeahwh.at
-    yeahwh.at returned the following MX records:
-    1. returned hostname (CNAME): alt2.aspmx.l.google.com.
-       -> resolved IP: 173.194.79.26
-       -> resolved PTR: pb-in-f26.1e100.net.
-    2. returned hostname (CNAME): aspmx2.googlemail.com.
-       -> resolved IP: 74.125.143.26
-       -> resolved PTR: la-in-f26.1e100.net.
-    3. returned hostname (CNAME): aspmx3.googlemail.com.
-       -> resolved IP: 173.194.79.26
-       -> resolved PTR: pb-in-f26.1e100.net.
-    4. returned hostname (CNAME): aspmx.l.google.com.
-       -> resolved IP: 173.194.70.26
-       -> resolved PTR: fa-in-f26.1e100.net.
-    5. returned hostname (CNAME): alt1.aspmx.l.google.com.
-       -> resolved IP: 74.125.143.26
-       -> resolved PTR: la-in-f26.1e100.net.
+```shell
+odig -m yeahwh.at
+```
+
+> ```
+> yeahwh.at returned the following MX records:
+> 1. returned hostname (CNAME): alt2.aspmx.l.google.com.
+>    -> resolved IP: 173.194.79.26
+>    -> resolved PTR: pb-in-f26.1e100.net.
+> 2. returned hostname (CNAME): aspmx2.googlemail.com.
+>    -> resolved IP: 74.125.143.26
+>    -> resolved PTR: la-in-f26.1e100.net.
+> 3. returned hostname (CNAME): aspmx3.googlemail.com.
+>    -> resolved IP: 173.194.79.26
+>    -> resolved PTR: pb-in-f26.1e100.net.
+> 4. returned hostname (CNAME): aspmx.l.google.com.
+>    -> resolved IP: 173.194.70.26
+>    -> resolved PTR: fa-in-f26.1e100.net.
+> 5. returned hostname (CNAME): alt1.aspmx.l.google.com.
+>    -> resolved IP: 74.125.143.26
+>    -> resolved PTR: la-in-f26.1e100.net.
+> ```
 
 As you can see in the example above, you just need to pass the __-m__ switch to query MX records instead of A/CNAMEs.
