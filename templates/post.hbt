@@ -4,7 +4,7 @@
 
 <header id="static-title-bar" class="title-bar title-bar--fullclick space--bottom-double unprintable">
   <div class="title-bar__inner text--center" data-page-color-reset>
-    <a href="{{siteInfo 'url'}}" data-page-color="blue">
+    <a href="{{siteInfo 'url'}}" data-page-color="main">
       <div class="icon--penrose-small" data-grunticon-embed></div>
     </a>
   </div>

@@ -2,7 +2,7 @@
 
 <header class="title-bar text--center title-bar--fullclick title-bar--fullclick-large space--bottom-double">
   <div class="title-bar__inner">
-    <a href="{{siteInfo 'url'}}" data-page-color="blue">
+    <a href="{{siteInfo 'url'}}" data-page-color="main">
       <div class="icon--penrose" data-grunticon-embed></div>
     </a>
   </div>
