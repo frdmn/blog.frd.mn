@@ -46,8 +46,20 @@
   </script>
   <noscript><link href="{{siteInfo 'url'}}/assets/icons/grunticon/icons.fallback.css" rel="stylesheet"></noscript>
 
-  <script src="//use.typekit.net/buq7vrx.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
+  <!-- Typekit -->
+  <script>
+    try{!function(t,e,n,r,a,s,i,l){n&&(s=n[r],s&&(i=t.createElement("style"),i.innerHTML=s,t.getElementsByTagName("head")[0].appendChild(i)),l=e.setAttribute,e.setAttribute=function(t,p,u,c){"string"==typeof p&&p.indexOf(a)>-1&&(u=new XMLHttpRequest,u.open("GET",p,!0),u.onreadystatechange=function(){if(4===u.readyState){c=u.responseText.replace(/url\(\//g,"url("+a+"/");try{c!==s&&(n[r]=c)}catch(t){s&&(s=i.innerHTML="")}}},u.send(null),e.setAttribute=l),l.apply(this,arguments)})}(document,Element.prototype,localStorage,"tk","https://use.typekit.net")}catch(x){}
+  </script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'buq7vrx',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 
   <!-- Mini Modernizr -->
   <script>!function(a,b){"use strict";b.documentElement.className=b.documentElement.className.replace("no-js","js"),("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)&&(document.documentElement.className=document.documentElement.className.replace("no-touch","touch"))}(window,document);</script>
