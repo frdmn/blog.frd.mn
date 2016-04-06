@@ -309,7 +309,7 @@ $colorCodeBlockText: $colorGreyDark;
     > *:last-child {
       margin-bottom: 0;
     }
-    > .overflow-fade:last-child *:last-child {
+    > .overflow-fade:last-child pre {
       margin-bottom: 0;
     }
   }
