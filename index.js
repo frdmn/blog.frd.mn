@@ -110,7 +110,7 @@ Metalsmith(__dirname)
   .use(setPermalink())
 
   /**
-   * Add 'link' prop containing permalink
+   * Add 'pageColor' prop
    */
   .use(setPageColor())
 
