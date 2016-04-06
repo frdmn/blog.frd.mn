@@ -219,10 +219,9 @@ $colorCodeBlockText: $colorGreyDark;
     overflow-wrap: normal;
     white-space: pre;
     padding: 0;
-    padding-right: $baseUnit*2;
+    padding-right: $baseUnit*3;
     vertical-align: inherit;
     color: $colorCodeBlockText;
-    //@include font-size(21px,false);
   }
 
   /**
@@ -309,7 +308,7 @@ $colorCodeBlockText: $colorGreyDark;
     > *:last-child {
       margin-bottom: 0;
     }
-    > .overflow-fade:last-child *:last-child {
+    > .overflow-fade:last-child pre {
       margin-bottom: 0;
     }
   }
