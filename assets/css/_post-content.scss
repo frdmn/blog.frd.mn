@@ -219,6 +219,7 @@ $colorCodeBlockText: $colorGreyDark;
     overflow-wrap: normal;
     white-space: pre;
     padding: 0;
+    padding-right: $baseUnit*2;
     vertical-align: inherit;
     color: $colorCodeBlockText;
     //@include font-size(21px,false);
