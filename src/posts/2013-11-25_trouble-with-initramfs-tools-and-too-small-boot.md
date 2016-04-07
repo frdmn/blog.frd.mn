@@ -12,7 +12,7 @@ There is no automatic cleanup so you either need to tidy up to make sure you hav
 # Story so far
 
 * `aptitude update` came up with a new kernel which I tried to install
-* `/boot` partititon too small
+* `/boot` partition too small
 * `aptitude` failed with a "No space left on device" kinda error
 * `/boot` partition manually expanded
 * New kernel via `aptitude upgrade` installed
