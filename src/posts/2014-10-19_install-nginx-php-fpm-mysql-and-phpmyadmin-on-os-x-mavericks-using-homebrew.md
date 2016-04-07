@@ -466,7 +466,7 @@ mysql.restart
 
 # FAQ
 
-Here are some of the frequently asked questions out of the comment section below. In case you encounter any issue or problem, check below if you find a solution.
+Here are some of the frequently asked questions from the comments. In case you encounter any issues or problems, check below to find a solution.
 
 ### Nginx: '[emerg] mkdir() "/usr/local/var/run/nginx/client_body_temp"'
 
