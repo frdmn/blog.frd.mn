@@ -44,6 +44,9 @@ $baseTransitionEasing: cubic-bezier(.41,.41,.45,.81);
       @include media($breakTablet) {
         height: $bodyBorderWidthDesktop;
       }
+      @include media($breakDesktopWide) {
+        height: $bodyBorderWidthDesktopWide;
+      }
     }
   }
 
