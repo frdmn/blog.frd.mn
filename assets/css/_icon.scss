@@ -1,27 +1,38 @@
 /**
  * Icons.
  */
+
+/**
+ * `icon--penrose` is used solely on the frontpage.
+ */
 .icon--penrose {
-  width: 120px;
-  height: 109px;
+  width: 40px;
+  height: 37px;
+  background-position: center center;
+  background-size: 100% auto;
+  @include media($breakLaptop) {
+    width: 120px;
+    height: 109px;
+  }
 }
 
+/**
+ * `icon--penrose` is used on posts/pages and
+ * in the header-archive.
+ */
 .icon--penrose-small,
 .icon--penrose-small-dark, {
   width: 40px;
   height: 37px;
 }
 
-.icon--penrose {
-  display: inline-block;
-  vertical-align: middle;
-}
-
+.icon--penrose,
 .icon--penrose-small,
 .icon--penrose-small-dark, {
   display: block;
 }
 
+.icon--penrose,
 .icon--penrose-small {
   margin: 0 auto;
 }
