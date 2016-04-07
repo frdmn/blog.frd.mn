@@ -76,15 +76,15 @@ Homebrew is now going to download and compile the *PHP-FPM* source code for you.
 
 ## Setup PHP CLI binary
 
-If you want to use the *PHP* command line tools, you need to update the `$PATH` environment variable of your shell profile:
+If you want to use the *PHP* command line tools, you need to update the `$PATH` environment variable of your shell profile.
 
-- If you use the default *Bash* shell:
+**If you use the default *Bash* shell:**
 
 ```shell
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile && . ~/.bash_profile
 ```
 
-- or if you use *ZSH*:
+**If you use *ZSH*:**
 
 ```shell
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc && . ~/.zshrc
@@ -221,13 +221,13 @@ brew install autoconf
 
 And set the `$PHP_AUTOCONF` environment variable:
 
-- If you use the default *Bash* shell:
+**If you use the default *Bash* shell:**
 
 ```shell
 echo 'PHP_AUTOCONF="'$(which autoconf)'"' >> ~/.bash_profile && . ~/.bash_profile
 ```
 
-- or if you use *ZSH*:
+**or if you use *ZSH*:**
 
 ```shell
 echo 'PHP_AUTOCONF="'$(which autoconf)'"' >> ~/.zshrc && . ~/.zshrc
@@ -397,13 +397,13 @@ curl -L https://gist.github.com/frdmn/7853158/raw/bash_aliases -o /tmp/.bash_ali
 cat /tmp/.bash_aliases >> ~/.bash_aliases
 ```
 
-- If you use the default *Bash* shell:
+**If you use the default *Bash* shell:**
 
 ```shell
 echo "source ~/.bash_aliases" >> ~/.bash_profile && . ~/.bash_profile
 ```
 
-- or if you use *ZSH*:
+**or if you use *ZSH*:**
 
 ```shell
 echo "source ~/.bash_aliases" >> ~/.zshrc &&  ~/.zshrc
