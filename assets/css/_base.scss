@@ -27,6 +27,11 @@ body:before {
     right: $bodyBorderWidthDesktop;
     height: $bodyBorderWidthDesktop;
   }
+  @include media($breakDesktopWide) {
+    left: $bodyBorderWidthDesktopWide;
+    right: $bodyBorderWidthDesktopWide;
+    height: $bodyBorderWidthDesktopWide;
+  }
 }
 
 body:after {
@@ -35,10 +40,15 @@ body:after {
   bottom: 0;
   height: $bodyBorderWidth;
   z-index: $z-indexFixedBorderBottom;
-  @include media($breakTablet) {
-    left: $bodyBorderWidthDesktop;
-    right: $bodyBorderWidthDesktop;
-    height: $bodyBorderWidthDesktop;
+  @include media($breakDesktopWide) {
+    left: $bodyBorderWidthDesktopWide;
+    right: $bodyBorderWidthDesktopWide;
+    height: $bodyBorderWidthDesktopWide;
+  }
+  @include media($breakDesktopWide) {
+    left: $bodyBorderWidthDesktopWide;
+    right: $bodyBorderWidthDesktopWide;
+    height: $bodyBorderWidthDesktopWide;
   }
 }
 
@@ -50,6 +60,9 @@ body:after {
   @include media($breakTablet) {
     width: $bodyBorderWidthDesktop;
   }
+  @include media($breakDesktopWide) {
+    width: $bodyBorderWidthDesktopWide;
+  }
 }
 
 .page-wrap:after {
@@ -59,6 +72,9 @@ body:after {
   width: $bodyBorderWidth;
   @include media($breakTablet) {
     width: $bodyBorderWidthDesktop;
+  }
+  @include media($breakDesktopWide) {
+    width: $bodyBorderWidthDesktopWide;
   }
 }
 
