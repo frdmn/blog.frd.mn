@@ -5,7 +5,7 @@ disqus_id: 11
 slug: andtek-agent-menu-bar-app-to-control-call-center-queues-3
 ---
 
-We use an [AndTek](http://www.andtek.de/) call center server at work which is an extension for an exisiting [Cisco Unified Communications Manager](http://www.cisco.com/web/DE/solutions/unified_communication/unified-communications-manager.html) environment. 
+We use an [AndTek](http://www.andtek.de/) call center server at work which is an extension for an existing [Cisco Unified Communications Manager](http://www.cisco.com/web/DE/solutions/unified_communication/unified-communications-manager.html) environment.
 
 Due to the nature of my job, I often have to get up from my desk to walk to our data centers. My coworkers and I often had the problem, that we forgot to logout of the call center queues so you came back to about five missed calls.
 
@@ -21,7 +21,7 @@ One or two months later I came up with the first version of __[AndTek Agent](htt
 * 0.3.1: Auto logout before application gets quit (fixed [#1](http://git.frd.mn/iWelt/andtekagent/issues/1))
 * 0.3.2: GiraHelper integration (fixed [#2](http://git.frd.mn/iWelt/andtekagent/issues/2))
 
-In order to compile and use the applicaion, we need to meet some requirements first:
+In order to compile and use the application, we need to meet some requirements first:
 
 # Requirements
 
@@ -30,7 +30,7 @@ In order to compile and use the applicaion, we need to meet some requirements fi
 * OS X workstation
 * Xcode
 
-Now we can proceed with the actuall installation:
+Now we can proceed with the actual installation:
 
 # Installation
 
