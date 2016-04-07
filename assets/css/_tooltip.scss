@@ -17,7 +17,7 @@
     @include font-size(21px, false);
     line-height: 1.375;
     text-align: center;
-    transition: .3s;
+    transition: all .3s, background $pageColorTransitionDuration;
     transform: translateX(-50%);
     border-left: 1px solid transparent; // bad hack in order to come around a chrome bug, that results in rendering the translated element (-50%) to blurred half-pixels...
     &:before {
@@ -32,6 +32,7 @@
       border-right: 10px solid transparent;
       border-top: 10px solid $colorMain;
       @include pageColors(border-top-color);
+      transition: border-top-color $pageColorTransitionDuration;
     }
     &:after {
       position: absolute;
@@ -69,6 +70,7 @@
     }
   }
   .tooltip__highlight {
+    transition: color $pageColorTransitionDuration;
     @include pageColors(color);
   }
 }

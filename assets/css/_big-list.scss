@@ -76,7 +76,7 @@
 
       &:hover {
         .big-list__title {
-          transition: .2s text-shadow;
+          transition: text-shadow $pageColorTransitionDuration;
           text-decoration: none;
           @each $color, $hex in $pageColors {
             .color--#{$color} & {

@@ -4,6 +4,7 @@
 a {
   @include pageColors(color);
   text-decoration: none;
+  transition: color $pageColorTransitionDuration;
 }
 
 a:hover {
