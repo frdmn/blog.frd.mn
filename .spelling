@@ -125,3 +125,5 @@ Utility.app
 rc
 nginx.conf
 VirtualBox
+proxied
+Frontpage
