@@ -7,12 +7,12 @@ slug: trouble-with-initramfs-tools-and-too-small-boot
 
 The last days I had to fight with Ubuntus new kernels and a stingy `/boot` partition. Since years, I am used to allocate about 150 MBs for that partition, so you have enough space for about 3-4 kernels.
 
-There is no automatic cleanup so you either need to tidy up to make sure you have enough space for further kernels or you expand your partion with a partition manager of your choise. If you don't do that, you probably run into a problem like I did.
+There is no automatic cleanup so you either need to tidy up to make sure you have enough space for further kernels or you expand your partition with a partition manager of your choice. If you don't do that, you probably run into a problem like I did.
 
 # Story so far
 
 * `aptitude update` came up with a new kernel which I tried to install
-* `/boot` partiton too small
+* `/boot` partititon too small
 * `aptitude` failed with a "No space left on device" kinda error
 * `/boot` partition manually expanded
 * New kernel via `aptitude upgrade` installed
