@@ -5,7 +5,7 @@ disqus_id: 2
 slug: how-to-fix-missing-x-forwarded-for-headers-for-qwebirc
 ---
 
-If you own an [uberspace](http://uberspace.de) hosting package and run a server application, you (used to) have to contact the support first to demand a TCP port that your application can listen to. 
+If you own an [uberspace](http://uberspace.de) hosting package and run a server application, you (used to) have to contact the support first to demand a TCP port that your application can listen to.
 
 If this application is a web-based one you probably don't want to use the given "9034", otherwise your users had to type in something like `http://your-domain.com:9034` to access your web server. To solve this problem you can resort to Apache's `mod_proxy ` module which is enabled by default on uberspace.
 
@@ -16,9 +16,9 @@ RewriteEngine On
 RewriteRule (.*) http://localhost:9034/$1 [P]
 ```
 
-This proxy configuration will tunnel every incomming traffic on port "80" to the given "9034". Your server application is now accessable via `http://your-domain.com` without the port declaration.
+This proxy configuration will tunnel every incoming traffic on port "80" to the given "9034". Your server application is now accessible via `http://your-domain.com` without the port declaration.
 
-Thats all well and good, but the incomming traffic of the server now will be sent with sender IP of the webserver on port "80", in that case the uberspace host. Sometimes it's mandatory for your server application to get the real IP addresses of your users (for logging purposes or if you want to check against IPs) instead. Especially with qwebirc you don't want to waive that feature because users who log into your IRC channel would have a hostname like:
+That's all well and good, but the incoming traffic of the server now will be sent with sender IP of the webserver on port "80", in that case the uberspace host. Sometimes it's mandatory for your server application to get the real IP addresses of your users (for logging purposes or if you want to check against IPs) instead. Especially with qwebirc you don't want to waive that feature because users who log into your IRC channel would have a hostname like:
 
 ```
 <nickname_of_user>!7F000001@phoenix.uberspace.de    
@@ -29,7 +29,7 @@ Instead of:
 
 ```
 <nickname_of_user>!0A16212C@phoenix.uberspace.de
-# 0A16212C is the real IP adress of the user in 
+# 0A16212C is the real IP adress of the user in
 # hexadecimal notation
 ```
 

@@ -7,7 +7,7 @@ slug: install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebre
 
 Recently I got a new MacBook Pro and decided to set it up from scratch, because I've used the same Time Machine backup to migrate from about four years over and over again.
 
-Perfect time to get rid of the LAMP (**L**inux **A**pache **M**ySQL **P**HP) web server stack and replace it with Nginx and PHP-FPM. Below you can read a detailed guide how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
+Perfect time to get rid of the LAMP (Linux Apache MySQL PHP) web server stack and replace it with Nginx and PHP-FPM. Below you can read a detailed guide how to setup Nginx, PHP-FPM, MySQL and phpMyAdmin on OS X 10.9 / Mavericks.
 
 > **Updated for Yosemite users**: Updated the guide for OS X 10.10 since Yosemite is officially released. The steps are basically the same as for the Mavericks installation.
 
@@ -41,7 +41,7 @@ First, you need to download and install *Homebrew* using the following command:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Check for any conflicts or problems (If you have confilcts, sort them out before you continue with this guide):
+Check for any conflicts or problems (If you have conflicts, sort them out before you continue with this guide):
 
 ```shell
 brew doctor
@@ -148,7 +148,7 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 ## Secure the installation
 
-To secure our *MySQL* server, we'll exececute the provided `secure_mysql_installation` binary to change the root password, remove anonymous users and disbale remote root logins:
+To secure our *MySQL* server, we'll execute the provided `secure_mysql_installation` binary to change the root password, remove anonymous users and disable remote root logins:
 
 ```shell
 mysql_secure_installation
@@ -376,7 +376,7 @@ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 
 # Final tests
 
-Congratulations, thats it! Everything should be set up and running. Click on the links below to ensure that your virtual hosts show the correct content:
+Congratulations, that's it! Everything should be set up and running. Click on the links below to ensure that your virtual hosts show the correct content:
 
 | Virtual host | Expected content |
 | :------ | :------ |

@@ -17,7 +17,7 @@ dig +short iwelt.de
 > 82.212.222.175
 > ```
 
-Okay, now we have an IP address but that probably doesnt help us out unless we know our whole IPAM system inside out. Next step is trying to figure out which server is using the IP "82.212.222.175". We can use `dig` again for that:
+Okay, now we have an IP address but that probably doesn't help us out unless we know our whole IPAM system inside out. Next step is trying to figure out which server is using the IP "82.212.222.175". We can use `dig` again for that:
 
 ```shell
 dig +short -x 82.212.222.175

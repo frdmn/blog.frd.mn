@@ -9,11 +9,11 @@ The guide below tries to explains how to easily install Mac OS X Yosemite 10.10 
 
 ![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/1.png)
 
-*Legal disclaimer*: Make sure to perform the following steps on a regulary purchased Apple computer, running a genuine OS X (host) operating system.
+*Legal disclaimer*: Make sure to perform the following steps on a regularly purchased Apple computer, running a genuine OS X (host) operating system.
 
-# Howto
+# How-to
 
-## Preperation
+## Preparation
 
 Download OS X Yosemite from the Mac App Store and open the Terminal.app to install `iesd`, a Ruby tool to customize OS X Install ESD's:
 
@@ -37,7 +37,7 @@ hdiutil mount "/Applications/Install OS X Yosemite.app/Contents/SharedSupport/In
 hdiutil mount yosemite.sparseimage
 ```
 
-... to copy the missing original base system files back into the customized InstallESD: 
+... to copy the missing original base system files back into the customized InstallESD:
 
 ```shell
 cp "/Volumes/OS X Install ESD/BaseSystem."* "/Volumes/OS X Base System/"
@@ -58,10 +58,10 @@ diskutil unmountDisk $(diskutil list | grep "OS X Install ESD" -B 4 | head -1)
 ```
 
 _Note: If that doesn't work and you get a "resource busy" message in step 12, try using the Disk Utility.app:_
-  
+
 ![](/assets/images/posts/install-os-x-10-10-yosemite-in-virtualbox/2.gif)  
 
-Finally we can convert it back into a .dmg file (UDZO format): 
+Finally we can convert it back into a .dmg file (UDZO format):
 
 ```shell
 hdiutil convert yosemite.sparseimage -format UDZO -o yosemitefixed.dmg
@@ -93,7 +93,7 @@ VBoxManage modifyvm '[your_VM_name>]' --cpuidset 1 000206a7 02100800 1fbae3bf bf
 
 ### Adjust screen resolution
 
-To control the GOP (_G_raphics _O_utput _P_rotocol), use the following Terminal command:
+To control the GOP (Graphics Output Protocol), use the following Terminal command:
 
 ```shell
 VBoxManage setextradata '[your_VM_name>]' VBoxInternal2/EfiGopMode [n]

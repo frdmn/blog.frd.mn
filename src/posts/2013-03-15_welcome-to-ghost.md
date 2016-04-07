@@ -25,10 +25,10 @@ The one or other of you might have read [Tom](http://tom.preston-werner.com/)'s 
 * no need for HTML knowledge
 * no need for any DBMS
 * way faster serve to the clients
-* very complex to setup (gems, ruby, bundle, rake) and a lot of depencies
+* very complex to setup (gems, ruby, bundle, rake) and a lot of dependencies
 
 So that's why I also made the decision to give the whole blogging thing another try. This time the static and awesome way.
 
 After some hours of failing and getting started with Ruby in general, I made it and set up a proper working Jekyll instance. I spent a day into the design and templates (thanks to @[ffffancy](http://twitter.com/ffffancy) at this point) and here we go. This is my first markdown written blog post ever!
 
-Don't excpect updates every second day. I will probably post very fluctuating and spontaneous.
+Don't expect updates every second day. I will probably post very fluctuating and spontaneous.

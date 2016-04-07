@@ -5,11 +5,11 @@ disqus_id: 18
 slug: raspberry-pi-vpn-gateway
 ---
 
-Netflix finally arrived in Germany, but guess what? It's library is heavily limited in comparision to the US one and if you like TV series as much as I do, you don't want to wait until they eventually release it year(s) later for us german users.
+Netflix finally arrived in Germany, but guess what? It's library is heavily limited in comparison to the US one and if you like TV series as much as I do, you don't want to wait until they eventually release it year(s) later for us german users.
 
 Maybe you've heard recently of Anonabox — a small device with two ethernet ports that you can plug in front of your router and everything behind the device is routed through Tor (_side note_: turned out to [be a scam](https://www.reddit.com/r/privacy/comments/2j9caq/anonabox_tor_router_box_is_false_representation/) and got pulled [from Kickstarter](https://www.kickstarter.com/projects/augustgermar/anonabox-a-tor-hardware-router) in the end). However, it made me come up with an idea: Instead of having a Tor-box, I want a VPN-box that is connected to my PrivateInternetAccess VPN. If I'm in need of a VPN connection I just switch the WiFi network and I'm good to go. This way I can easily watch US content from Netflix as well as unblock location restricted content like YouTube, even with my iPhone or Xbox.
 
-Another purpose might be to use it as an anoynmizer if you care abour your privacy and anonymity while browsing the web.
+Another purpose might be to use it as an anonymizer if you care about your privacy and anonymity while browsing the web.
 
 All you need for this is a Raspberry Pi, a WiFi Stick and a 8 or 16 GB SD card. Let's start with the general assumptions:
 
@@ -17,8 +17,8 @@ All you need for this is a Raspberry Pi, a WiFi Stick and a 8 or 16 GB SD card. 
 
 ## General
 
-* You have a Rapsberry Pi and you want to use it as a VPN gateway
-* The gateway should be accessable within a dedicated VPN-only WiFi SSID
+* You have a Raspberry Pi and you want to use it as a VPN gateway
+* The gateway should be accessible within a dedicated VPN-only WiFi SSID
 * The Pi is connected via Ethernet to your home network
 * The WiFi stick is a [RTL8188CUS](http://www.amazon.de/s/field-keywords=RTL8188CUS) 802.11n WLAN Adapter  
   (Not sure if these are really RTL8188CUS sticks though)
@@ -58,9 +58,9 @@ In the prompt, select the number of the disk drive (I had to select `5`) of your
 
 __Intermediate assumptions__:
 
-* You pluged in the WiFi stick
+* You plugged in the WiFi stick
 * You booted the Pi from the SD card
-* You did the base configuration of rasbian  
+* You did the base configuration of raspbian  
   (change password, timezone, localization, etc.)
 * `apt-get` repositories and packages are up to date  
   (`sudo apt-get update && sudo apt-get upgrade -y`)
@@ -259,7 +259,7 @@ vi /etc/default/openvpn
 > CONFIG_DIR=/etc/openvpn/PIA
 > [...]
 > test -d $CONFIG_DIR || exit 0
-> 
+>
 > # Helper array and selector variable to pick random element
 > returnRandomVPN (){
 >     CHOSEN=`find $CONFIG_DIR -maxdepth 1 -type f | shuf -n1 | grep conf`
@@ -271,7 +271,7 @@ vi /etc/default/openvpn
 >         echo $CHOSEN
 >     fi
 > }
-> 
+>
 > # Source defaults file; edit that file to configure this script.
 > AUTOSTART=`returnRandomVPN`
 > [...]
@@ -345,14 +345,14 @@ sudo iptables -vL && iptables -vL -t nat
 
 > ```
 > [...]
-> 
+>
 > Chain FORWARD (policy ACCEPT 2758 packets, 1347K bytes)
 >  pkts bytes target     prot opt in     out     source               destination
 >     0     0 REJECT     all  --  wlan0  eth0    192.168.101.0/24      anywhere             ctstate NEW /* Block traffic from clients to eth0 */ reject-with icmp-port-unreachable
 >   117  8618 ACCEPT     all  --  wlan0  tun0    192.168.101.0/24      anywhere             ctstate NEW /* Allow only traffic from clients to tun0 */
-> 
+>
 > [...]
-> 
+>
 > Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
 >  pkts bytes target     prot opt in     out     source               destination
 >   116  8536 MASQUERADE  all  --  any    tun0    anywhere             anywhere             /* Use VPN IP for tun0 */
@@ -409,7 +409,7 @@ sudo service openvpn status
   curl icanhazip.com
   ```
 
-* Connect to the new VPN WiFI of the Pi, open http://ipleak.net and check if there are leaking DNS requests
+* Connect to the new VPN WiFi of the Pi, open http://ipleak.net and check if there are leaking DNS requests
 * Reboot the Pi (either `sudo reboot` or power cycle) and check if you get a new IP from a new VPN location
 
 # Sources

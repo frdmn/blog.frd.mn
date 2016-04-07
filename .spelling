@@ -73,7 +73,7 @@ _O
 specs
 OpenSSH
 OpenVPN
-Communigate
+CommuniGate
 dmg
 Terminal.app
 ethernet
@@ -125,3 +125,10 @@ Utility.app
 rc
 nginx.conf
 VirtualBox
+proxied
+Frontpage
+anymore
+analyze
+Anonabox
+raspbian
+anonymizer

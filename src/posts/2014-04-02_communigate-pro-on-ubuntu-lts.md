@@ -5,7 +5,7 @@ disqus_id: 16
 slug: communigate-pro-on-ubuntu-lts
 ---
 
-Since there are no packages available for Debian based ditributions, here's a short guide how to easily install **Communigate Pro 6.0** on Ubuntu LTS 12.04.
+Since there are no packages available for Debian based distributions, here's a short guide how to easily install **CommuniGate Pro 6.0** on Ubuntu LTS 12.04.
 
 First of all, we need `alien` to convert the *.rpm* based installer to a `dpkg` compatible format:
 
