@@ -201,13 +201,13 @@ $(function() {
 
   var test = new Disqus();
 
-  $('a[data-page-color]').mouseenter(function() {
+  $('.no-touch a[data-page-color]').mouseenter(function() {
     var color = $(this).attr('data-page-color');
     $('html').removeClassPrefix('color--');
     $('html').addClass('color--' + color);
   });
 
-  $('[data-page-color-reset]').mouseleave(function() {
+  $('.no-touch [data-page-color-reset]').mouseleave(function() {
     var color = $('html').attr('data-page-color-original');
     $('html').removeClassPrefix('color--');
     $('html').addClass('color--' + color);
