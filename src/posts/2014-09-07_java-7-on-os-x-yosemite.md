@@ -14,7 +14,7 @@ There is an easy way to fix this though. You can easily open the installer and f
 1. Download the latest [Java 7 .dmg from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 2. Open and mount the downloaded image
 3. Open a new window in the Terminal.app
-4. Based on the downloaded version adjust the variabale below which will help us during the following customization:
+4. Based on the downloaded version adjust the variable below which will help us during the following customization:
   `JAVABUILD="67"`
 5. Unpack the installer:
 
