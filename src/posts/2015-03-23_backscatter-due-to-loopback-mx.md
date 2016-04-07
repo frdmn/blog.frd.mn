@@ -87,14 +87,14 @@ Almost any resolved MX of the offending log entries returns a loopback address l
 
 Now a bit more in detail: The postfix resolves the MX → receives "`localhost`" → tries to relay the mail via the given "`localhost`" server → gets rejected → generated mailer daemon / NDM, which gets sent to the existing user "`antonettabaune@godetia.com`" → reports the sending server (we) for backscatter.
 
-Now since we figured out what's going on, we also have to fix the issue somehow. Maintaining a transport rule list that contains domains with bogus MX addresses manually? Nah, not a future proof option to stick with. We have to fix the actual root cause of the problem not only it's symtomps.
+Now since we figured out what's going on, we also have to fix the issue somehow. Maintaining a transport rule list that contains domains with bogus MX addresses manually? Nah, not a future proof option to stick with. We have to fix the actual root cause of the problem not only it's symptoms.
 
 # The solution
 
-After quite a lot of trial and error in the dev environment, googleing and spending some hours in the [#postfix](http://webchat.freenode.net/?channels=%23postfix&uio=d4) IRC channel, I came up with the following solution:
+After quite a lot of trial and error in the dev environment, googling and spending some hours in the [#postfix](http://webchat.freenode.net/?channels=%23postfix&uio=d4) IRC channel, I came up with the following solution:
 
 I added the following line in the `smtpd_recipient_restrictions` in Postfix's `main.cf`:
-    
+
 ```
 smtpd_recipient_restrictions =
     check_recipient_mx_access cidr:/etc/postfix/recipient_mx_access.cidr
@@ -102,7 +102,7 @@ smtpd_recipient_restrictions =
 ```
 
 And created the file `/etc/postfix/recipient_mx_access.cidr` that only contains CIDR network notations of bogus MX'es with loopback:
-    
+
 ```
 0.0.0.0/8       REJECT Domain MX in broadcast network
 10.0.0.0/8      REJECT Domain MX in RFC 1918 private network
@@ -116,7 +116,7 @@ And created the file `/etc/postfix/recipient_mx_access.cidr` that only contains 
 224.0.0.0/4     REJECT Domain MX in class D multicast network
 240.0.0.0/5     REJECT Domain MX in class E reserved network
 248.0.0.0/5     REJECT Domain MX in reserved network
-    
+
 ::1/128         REJECT Domain MX is Loopback address
 ::/128          REJECT Domain MX is Unspecified address
 ::/96           REJECT Domain MX in IPv4-Compatible IPv6
@@ -126,12 +126,12 @@ fec0::/10       REJECT Domain MX in Site-local unicast network
 ```
 
 Last but not least, I needed to restart Postfix:
-  
+
 ```shell
 $ service postfix restart
 ```
 
-Thats it! To make sure it's fixed, I tried to reproduce the issue via Telnet:
+That's it! To make sure it's fixed, I tried to reproduce the issue via Telnet:
 
 ```shell
 $ telnet localhost 25
