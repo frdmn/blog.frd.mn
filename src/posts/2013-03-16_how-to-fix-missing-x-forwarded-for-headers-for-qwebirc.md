@@ -18,7 +18,7 @@ RewriteRule (.*) http://localhost:9034/$1 [P]
 
 This proxy configuration will tunnel every incoming traffic on port "80" to the given "9034". Your server application is now accessible via `http://your-domain.com` without the port declaration.
 
-Thats all well and good, but the incoming traffic of the server now will be sent with sender IP of the webserver on port "80", in that case the uberspace host. Sometimes it's mandatory for your server application to get the real IP addresses of your users (for logging purposes or if you want to check against IPs) instead. Especially with qwebirc you don't want to waive that feature because users who log into your IRC channel would have a hostname like:
+That's all well and good, but the incoming traffic of the server now will be sent with sender IP of the webserver on port "80", in that case the uberspace host. Sometimes it's mandatory for your server application to get the real IP addresses of your users (for logging purposes or if you want to check against IPs) instead. Especially with qwebirc you don't want to waive that feature because users who log into your IRC channel would have a hostname like:
 
 ```
 <nickname_of_user>!7F000001@phoenix.uberspace.de    
