@@ -40,10 +40,10 @@ body:after {
   bottom: 0;
   height: $bodyBorderWidth;
   z-index: $z-indexFixedBorderBottom;
-  @include media($breakDesktopWide) {
-    left: $bodyBorderWidthDesktopWide;
-    right: $bodyBorderWidthDesktopWide;
-    height: $bodyBorderWidthDesktopWide;
+  @include media($breakTablet) {
+    left: $bodyBorderWidthDesktop;
+    right: $bodyBorderWidthDesktop;
+    height: $bodyBorderWidthDesktop;
   }
   @include media($breakDesktopWide) {
     left: $bodyBorderWidthDesktopWide;
