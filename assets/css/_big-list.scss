@@ -10,10 +10,11 @@
   padding-bottom: ceil($baseUnit*2);
 
   > li {
-    padding: ceil($baseUnit/2) 0;
     border-top: $baseBorder;
     margin: 0;
+    padding: 0;
     > a {
+      padding: ceil($baseUnit/2) 0;
       display: block;
       color: #000 !important; //to overwrite pageColors
       &:hover {
