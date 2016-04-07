@@ -75,31 +75,33 @@ Now you can start up your VM, open the Disk Utility.app within the installer and
 
 # FAQ
 
+Here are some of the frequently asked questions from the comments. In case you encounter any issues or problems, check below to find a solution.
+
 ### Error message: "Kernel driver not installed (rc=-1908)"
 
-Try to reinstall VirtualBox to fix this error.
+> Try to reinstall VirtualBox to fix this error.
 
 ### Stuck on boot: "Missing Bluetooth Controller Transport"
 
-Try the following steps to fix this issue:
-
-1. Stop the virtual machine in VirtualBox.
-2. Open a new terminal window.
-3. Run the following command to adjust the guest CPU (don't forget to replace `[your_VM_name>]` with your actual VM name):
-
-```shell
-VBoxManage modifyvm '[your_VM_name>]' --cpuidset 1 000206a7 02100800 1fbae3bf bfebfbff
-```
+> Try the following steps to fix this issue:
+>
+> 1. Stop the virtual machine in VirtualBox.
+> 2. Open a new terminal window.
+> 3. Run the following command to adjust the guest CPU (don't forget to replace `[your_VM_name>]` with your actual VM name):
+>
+> ```shell
+> VBoxManage modifyvm '[your_VM_name>]' --cpuidset 1 000206a7 02100800 1fbae3bf bfebfbff
+> ```
 
 ### Adjust screen resolution
 
-To control the GOP (Graphics Output Protocol), use the following Terminal command:
-
-```shell
-VBoxManage setextradata '[your_VM_name>]' VBoxInternal2/EfiGopMode [n]
-```
-
-Where `[n]` can be 0, 1, 2, 3, 4 or 5 referring to `640x480`, `800x600`, `1024x768`, `1280x1024`, `1440x900` or `1920x1200` screen resolution respectively.
+> To control the GOP (Graphics Output Protocol), use the following Terminal command:
+>
+> ```shell
+> VBoxManage setextradata '[your_VM_name>]' VBoxInternal2/EfiGopMode [n]
+> ```
+>
+> Where `[n]` can be 0, 1, 2, 3, 4 or 5 referring to `640x480`, `800x600`, `1024x768`, `1280x1024`, `1440x900` or `1920x1200` screen resolution respectively.
 
 # Sources
 
