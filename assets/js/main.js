@@ -91,17 +91,19 @@ Disqus.prototype.ready = function(callback) {
  */
 
 Disqus.prototype.retrieveData = function (callback) {
-  var apiKey = '@@DISQUS_PUBLIC_KEY',
+  if (window.XMLHttpRequest) {
+    var apiKey = '@@DISQUS_PUBLIC_KEY',
       xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      var json = JSON.parse(xhr.responseText);
-      callback(json);
-    }
-  };
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        var json = JSON.parse(xhr.responseText);
+        callback(json);
+      }
+    };
 
-  xhr.open('GET', 'https://disqus.com/api/3.0/forums/listThreads.json?forum=frdmn&limit=100&include=open&api_key='+apiKey, true);
-  xhr.send(null);
+    xhr.open('GET', 'https://disqus.com/api/3.0/forums/listThreads.json?forum=frdmn&limit=100&include=open&api_key='+apiKey, true);
+    xhr.send(null);
+  }
 };
 
 /**
