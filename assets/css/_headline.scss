@@ -36,5 +36,5 @@
 
 .headline--maincolor {
   @include pageColors(color);
-  transition: color .2s,
+  transition: color $pageColorTransitionDuration,
 }
