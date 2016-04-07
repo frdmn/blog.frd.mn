@@ -40,6 +40,9 @@
   }
 }
 
+/**
+ * `--fullclick-large` is used solely on the frontpage.
+ */
 .title-bar--fullclick {
   padding: 0;
   .title-bar__inner {
@@ -52,10 +55,16 @@
   }
 }
 
+/**
+ * `--fullclick-large` is used on posts/pages.
+ */
 .title-bar--fullclick-large {
   a {
     display: block;
-    padding: ceil($baseUnit*1.25);
+    padding: ceil($baseUnit/1.75);
+    @include media($breakLaptop) {
+      padding: ceil($baseUnit*1.25);
+    }
   }
 }
 
