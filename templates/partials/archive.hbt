@@ -45,7 +45,7 @@
         </div>
         <div class="title-bar__left" data-page-color-reset>
           <a href="{{siteInfo 'url'}}" data-page-color="blue">
-            <div class="icon--penrose-small-dark" data-grunticon-embed></div>
+            <i class="icon--penrose-small-dark" data-grunticon-embed></i>
           </a>
         </div>
         <div class="title-bar__right">
