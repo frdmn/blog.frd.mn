@@ -17,6 +17,7 @@
     "grunt-execute": "^0.2.2",
     "grunt-grunticon": "~1.2.0",
     "grunt-htmlhint": "~0.4.0",
+    "grunt-mdspell": "^0.4.0",
     "grunt-notify": "^0.4.1",
     "grunt-replace": "^0.11.0",
     "grunt-sass": "^1.0.0",
