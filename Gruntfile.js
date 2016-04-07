@@ -59,6 +59,16 @@ module.exports = function(grunt) {
             }
         },
 
+        mdspell: {
+            options: {
+                ignoreAcronyms: true,
+                ignoreNumbers: true
+            },
+            files: {
+                src: ['src/**/*.md']
+            },
+        },
+
         // Concat
         concat: {
             options: {
@@ -211,7 +221,7 @@ module.exports = function(grunt) {
             },
             content: {
                 files: ['src/**/*.md'],
-                tasks: ['execute:build', 'replace']
+                tasks: ['mdspell', 'execute:build', 'replace']
             },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
@@ -223,7 +233,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'execute:build', 'replace']);
+    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'mdspell', 'execute:build', 'replace']);
     grunt.registerTask('dev', ['connect', 'watch', 'notify']);
     grunt.registerTask('dev:sync', ['browser_sync', 'watch', 'notify']);
 };
