@@ -6,6 +6,7 @@ var Metalsmith   = require('metalsmith'),
     feed         = require('metalsmith-feed'),
     sitemap      = require('metalsmith-sitemap'),
     assets       = require('metalsmith-assets'),
+    robots       = require('metalsmith-robots'),
     Handlebars   = require('handlebars'),
     fs           = require('fs'),
     logger       = require('./plugins/logger'),
@@ -145,6 +146,15 @@ Metalsmith(__dirname)
   .use(sitemap({
     output: 'sitemap.xml',
     hostname: info.url
+  }))
+
+  /**
+   * Create robots.txt
+   */
+  .use(robots({
+    "useragent": "*",
+    "allow": ["/"],
+    "sitemap": info.url + "/sitemap.xml"
   }))
 
   /**
