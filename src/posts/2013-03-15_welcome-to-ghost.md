@@ -1,5 +1,5 @@
 ---
-title: "Like a hacker"
+title: "How to blog like a hacker"
 slug: welcome-to-ghost
 disqus_id: 1
 date: 2013-03-15T11:00:00.000Z
