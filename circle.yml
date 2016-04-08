@@ -1,3 +1,7 @@
 machine:
   node:
     version: v5
+test:
+  pre:
+    - npm install -g bower
+    - npm install -g grunt-cli
