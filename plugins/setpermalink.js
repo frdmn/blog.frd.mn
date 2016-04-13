@@ -17,7 +17,7 @@ function setPermalink(domain) {
     }
     for (var file in files) {
       _f = files[file];
-      _f.link = metalsmith._metadata.site.url + '/' + _f.path;
+      _f.link = metalsmith._metadata.site.url + '/' + _f.path + '/';
     }
     done();
   };
