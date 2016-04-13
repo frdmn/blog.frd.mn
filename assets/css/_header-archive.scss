@@ -19,6 +19,7 @@ $baseTransitionEasing: cubic-bezier(.41,.41,.45,.81);
     width: 100%;
     height: 100%;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     transform: translateZ(0);
     &-inner {
       transition: .3s;
