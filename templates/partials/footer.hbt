@@ -1,6 +1,6 @@
   </div>
 
-  <footer class="page-footer">
+  <footer class="page-footer unprintable">
     <div class="text--center" data-page-color-reset>
       {{> nav}}
     </div>
