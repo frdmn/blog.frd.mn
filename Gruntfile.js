@@ -104,6 +104,21 @@ module.exports = function(grunt) {
             }
         },
 
+        cacheBust: {
+            taskName: {
+                options: {
+                    baseDir: 'build',
+                    assets: ['assets/js/build.js','assets/css/style.css', 'assets/images/**', 'assets/icons/**/*.css'],
+                    deleteOriginals: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'build',
+                    src: ['**/index.html']
+                }]
+            }
+        },
+
         // JShint
         jshint: {
             all: [
@@ -233,7 +248,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'mdspell', 'execute:build', 'replace']);
+    grunt.registerTask('default', ['sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'grunticon', 'mdspell', 'execute:build', 'replace', 'cacheBust']);
     grunt.registerTask('dev', ['connect', 'watch', 'notify']);
     grunt.registerTask('dev:sync', ['browser_sync', 'watch', 'notify']);
 };
