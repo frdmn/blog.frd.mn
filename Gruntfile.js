@@ -108,7 +108,7 @@ module.exports = function(grunt) {
             taskName: {
                 options: {
                     baseDir: 'build',
-                    assets: ['assets/js/build.js','assets/css/style.css', 'assets/images/**', 'assets/icons/**/*.css'],
+                    assets: ['assets/js/build.js','assets/css/*.css', 'assets/images/**', 'assets/icons/**/*.css'],
                     deleteOriginals: true
                 },
                 files: [{
