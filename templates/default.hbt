@@ -1,6 +1,6 @@
 {{> header}}
 
-<header class="title-bar text--center title-bar--fullclick title-bar--fullclick-large space--bottom-double">
+<header class="title-bar text--center title-bar--fullclick title-bar--fullclick-large space--bottom-double unprintable">
   <div class="title-bar__inner">
     <a href="{{siteInfo 'url'}}" data-page-color="main">
       <i class="icon--penrose"></i>
