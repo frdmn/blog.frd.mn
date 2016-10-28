@@ -27,21 +27,21 @@ Here's an easy way to disable them again. First you need to change into the dire
 Then figure out which log settings are currently enabled by invoking:
 
 ```bash
-❯ ./airport debug
+❯ sudo ./airport debug
 DriverWPA
 ```
 
 In this case only the `DriverWPA` setting is active. To disable that you just need to prefix it with a dash sign:
 
 ```bash
-❯ ./airport debug -DriverWPA
+❯ sudo ./airport debug -DriverWPA
 ```
 
 Last but not least, double check and confirm that the log setting is not active anymore:
 
 
 ```bash
-❯ ./airport debug
+❯ sudo ./airport debug
 ```
 
 As you can see, the command return no output anymore so the log setting is successfully disabled.
