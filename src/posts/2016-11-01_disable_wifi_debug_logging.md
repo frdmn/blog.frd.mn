@@ -39,9 +39,8 @@ In this case only the `DriverWPA` setting is active. To disable that you just ne
 
 Last but not least, double check and confirm that the log setting is not active anymore:
 
-
 ```bash
 ❯ sudo ./airport debug
 ```
 
-As you can see, the command return no output anymore so the log setting is successfully disabled.
+As you can see the command returns no output anymore so our log setting is successfully disabled.
