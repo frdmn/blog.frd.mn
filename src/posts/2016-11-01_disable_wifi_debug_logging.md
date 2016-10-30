@@ -1,3 +1,10 @@
+---
+title: "Disable WiFi debug logging"
+date: 2016-11-01T15:12:42.237Z
+slug: disable-wifi-debug-logging
+disqus_id: 25
+---
+
 Some months ago, I used to have some WiFi issues so I did some google-fu and managed to enable the debug logs of the macOS' network component.
 
 Apparently I forgot to disable the debug logging again, which lead my `/var/log/` folder to be filled up with temporary `wifi.log`'s:
